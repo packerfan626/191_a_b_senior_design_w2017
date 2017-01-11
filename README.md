@@ -1,1 +1,1 @@
-# 191_a_b_senior_design_w2017
+191 A/B Senior Design - Winter-Spring 2017
