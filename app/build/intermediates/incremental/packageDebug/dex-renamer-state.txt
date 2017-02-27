@@ -1,7 +1,0 @@
-#Sun Feb 26 20:26:17 PST 2017
-base.0=/Users/agrm/Google Drive/UC Irvine/Courses/Winter 2017/IN4MATX 191A/project git repo/191_a_b_senior_design_w2017/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_467f5c91bd5310bcda09684101f6b3d826a2b7e7
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/agrm/Google Drive/UC Irvine/Courses/Winter 2017/IN4MATX 191A/project git repo/191_a_b_senior_design_w2017/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_dc872ee8e779adfdebf3c8844da4de7f45a7444c/classes.dex
-base.1=/Users/agrm/Google Drive/UC Irvine/Courses/Winter 2017/IN4MATX 191A/project git repo/191_a_b_senior_design_w2017/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_dc872ee8e779adfdebf3c8844da4de7f45a7444c
-file.0=/Users/agrm/Google Drive/UC Irvine/Courses/Winter 2017/IN4MATX 191A/project git repo/191_a_b_senior_design_w2017/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_467f5c91bd5310bcda09684101f6b3d826a2b7e7/classes.dex
