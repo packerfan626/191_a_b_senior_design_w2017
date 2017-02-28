@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="millionkids.millionkidseducation.menuUI.About">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="Million Kids at a Glance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAboutDescriptionTitle"
+            android:textStyle="normal|bold"
+            android:textSize="24sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:text="Million Kids began with a simple concept. We believe if the bad guys are harming this many children a year, then the good guys must help even more. And with the efforts of our partners and your support, we can.  Million Kids works with local law enforcement and concerned citizens, businesses, and organizations to end human trafficking domestically. Locally, we serve on the Riverside County Anti-Human Trafficking Task Force (RCAHT). We help activists and communities develop effective anti-trafficking programs in their locales. We educate and engage individuals, organizations and corporations about human trafficking. Internationally, we conduct programs and work with partners to serve rescued children and to create prevention strategies. We provide local solutions while taking a global perspective on the human trafficking problem.  In order to conduct our work, both here and abroad, we depend on the generous support of individuals, businesses, and organizations. Million Kids is a 501(c)(3) public benefit nonprofit that fights human trafficking. All gifts are tax deductible."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAboutDescription"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</RelativeLayout>
