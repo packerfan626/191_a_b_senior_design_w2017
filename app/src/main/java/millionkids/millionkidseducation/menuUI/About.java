@@ -14,7 +14,7 @@ public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);             //testing 123 testing 123 hehe.
         setContentView(R.layout.activity_about);
     }
 
