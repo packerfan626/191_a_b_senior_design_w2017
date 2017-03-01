@@ -64,13 +64,22 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     }
     //Menu option ENDS
 
+
+
     //age selection buttons BEGINS
     @Override
     public void onClick(View v) {
-        switch( v.getId()) {
+        Intent intentExtras;
+        String nextClass = "";
+        switch(v.getId()) {
             case R.id.bAge5_8:
                 //intent AGE 5-8
                 //this.startActivity(this, .class);
+                nextClass = "eightToTen";
+                intentExtras = new Intent(MainHomePage.this, GameStart.class);
+                intentExtras.putExtra("whichClass", nextClass);
+                startActivity(intentExtras);
+               // startActivity(new Intent(this, GameStart.class));
                 break;
             case R.id.bAge9_12:
                 //intent AGE 9-12
