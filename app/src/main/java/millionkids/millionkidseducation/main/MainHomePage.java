@@ -88,4 +88,9 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     }
     //age selection buttons ENDS
 
+    //Disables back button from going to previous activity
+    @Override
+    public void onBackPressed(){
+    }
+
 }
