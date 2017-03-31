@@ -1,6 +1,7 @@
 package millionkids.millionkidseducation.Children;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -19,7 +20,9 @@ public class ChildrenHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_children_home);
 
-        System.out.print("Here");
+        //Set screen orientation to landscape
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        
     }
 
     //Menu option BEGINS
