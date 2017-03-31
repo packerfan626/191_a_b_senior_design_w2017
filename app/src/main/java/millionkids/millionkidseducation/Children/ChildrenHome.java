@@ -18,6 +18,8 @@ public class ChildrenHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_children_home);
+
+        System.out.print("Here");
     }
 
     //Menu option BEGINS
