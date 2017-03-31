@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.menuUI.About;
@@ -14,10 +15,16 @@ import millionkids.millionkidseducation.menuUI.Settings;
 
 public class ParentHome extends AppCompatActivity {
 
+    //class that handles all the parent information
+    Content con = new Content();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_home);
+
+        final TextView tvWord = (TextView) findViewById(R.id.tvParent);
+        tvWord.setText(con.homeContent());
     }
 
     //Menu option BEGINS
