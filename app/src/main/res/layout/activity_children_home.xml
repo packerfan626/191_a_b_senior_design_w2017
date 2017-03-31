@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="348dp"
         android:layout_height="65dp"
-        android:text="TEST CHILDREN MAIN"
+        android:text="TEST CHILDREN MAIN Arameh"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="134dp" />
 </android.support.constraint.ConstraintLayout>
