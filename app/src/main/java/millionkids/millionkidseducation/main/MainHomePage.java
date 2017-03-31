@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 
+import millionkids.millionkidseducation.Children.ChildrenHome;
+import millionkids.millionkidseducation.Parent.ParentHome;
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
@@ -22,14 +24,12 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_page);
 
-        final Button bAge5_8 = (Button) findViewById(R.id.bAge5_8);
-        final Button bAge9_12 = (Button) findViewById(R.id.bAge9_12);
-        final Button bAge13_16 = (Button) findViewById(R.id.bAge13_16);
-        final Button bAdults = (Button) findViewById(R.id.bAdults);
-        bAge5_8.setOnClickListener(this);
-        bAge9_12.setOnClickListener(this);
-        bAge13_16.setOnClickListener(this);
-        bAdults.setOnClickListener(this);
+        final Button bParent = (Button) findViewById(R.id.bParent);
+        final Button bChild = (Button) findViewById(R.id.bChild);
+        bParent.setOnClickListener(this);
+        bChild.setOnClickListener(this);
+//        bAge13_16.setOnClickListener(this);
+//        bAdults.setOnClickListener(this);
     }
 
     //Menu option BEGINS
@@ -72,27 +72,28 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         Intent intentExtras;
         String nextClass = "";
         switch(v.getId()) {
-            case R.id.bAge5_8:
+            case R.id.bChild:
                 //intent AGE 5-8
                 //this.startActivity(this, .class);
-                nextClass = "eightToTen";
-                intentExtras = new Intent(MainHomePage.this, GameStart.class);
-                intentExtras.putExtra("whichClass", nextClass);
+//                nextClass = "eightToTen";
+                intentExtras = new Intent(MainHomePage.this, ChildrenHome.class);
+//                intentExtras.putExtra("whichClass", nextClass);
                 startActivity(intentExtras);
                // startActivity(new Intent(this, GameStart.class));
                 break;
-            case R.id.bAge9_12:
-                //intent AGE 9-12
-                //this.startActivity(this, .class);
+            case R.id.bParent:
+                //intent Parent
+                intentExtras = new Intent(MainHomePage.this, ParentHome.class);
+                startActivity(intentExtras);
                 break;
-            case R.id.bAge13_16:
-                //intent AGE 13-16
-                //this.startActivity(this, .class);
-                break;
-            case R.id.bAdults:
-                //intent AGE adults
-                //this.startActivity(this, .class);
-                break;
+//            case R.id.bAge13_16:
+//                //intent AGE 13-16
+//                //this.startActivity(this, .class);
+//                break;
+//            case R.id.bAdults:
+//                //intent AGE adults
+//                //this.startActivity(this, .class);
+//                break;
         }
     }
     //age selection buttons ENDS

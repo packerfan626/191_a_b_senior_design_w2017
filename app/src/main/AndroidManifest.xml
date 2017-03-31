@@ -19,7 +19,9 @@
         <activity android:name=".menuUI.LearnMore" />
         <activity android:name=".menuUI.Help" />
         <activity android:name=".menuUI.Settings" />
-        <activity android:name=".main.MainHomePage"></activity>
+        <activity android:name=".main.MainHomePage" />
+        <activity android:name=".Parent.ParentHome" />
+        <activity android:name=".Children.ChildrenHome"></activity>
     </application>
 
 </manifest>

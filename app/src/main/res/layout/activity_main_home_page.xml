@@ -10,6 +10,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="millionkids.millionkidseducation.main.MainHomePage">
 
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="149dp"
+        android:layout_below="@+id/tvWelcomHomePage"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/bParent"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="Parent" />
+
+        <Button
+            android:id="@+id/bChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:text="Child" />
+    </GridLayout>
+
     <TextView
         android:text="Welcome to Million Kids Educational"
         android:layout_width="wrap_content"
@@ -20,35 +44,4 @@
         android:layout_alignParentStart="true"
         android:textColor="@android:color/black" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="320dp"
-        android:layout_below="@+id/tvWelcomHomePage"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:text="Age 5-8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bAge5_8" />
-
-        <Button
-            android:text="Age 9-12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bAge9_12" />
-
-        <Button
-            android:text="Age 13-16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bAge13_16" />
-
-        <Button
-            android:text="Adults 17+"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bAdults" />
-    </GridLayout>
 </RelativeLayout>
