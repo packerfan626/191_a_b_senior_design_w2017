@@ -18,6 +18,7 @@
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:cropToPadding="true"
+        android:onClick="onClick"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/girl5_8" />
 
@@ -31,6 +32,7 @@
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:cropToPadding="true"
+        android:onClick="onClick"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/boy5_8" />
 
@@ -38,25 +40,27 @@
         android:id="@+id/girl9_12"
         android:layout_width="80dp"
         android:layout_height="120dp"
-        android:layout_marginStart="14dp"
+        android:layout_alignBottom="@+id/boy5_8"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/boy5_8"
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:cropToPadding="true"
+        android:onClick="onClick"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/girl9_12"
-        android:layout_alignBottom="@+id/boy5_8"
-        android:layout_toEndOf="@+id/boy5_8" />
+        app:srcCompat="@drawable/girl9_12" />
 
     <ImageButton
         android:id="@+id/boy9_12"
         android:layout_width="80dp"
         android:layout_height="120dp"
         android:layout_alignTop="@+id/girl9_12"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="14dp"
         android:layout_toEndOf="@+id/girl9_12"
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:cropToPadding="true"
+        android:onClick="onClick"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/boy9_12" />
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
 
 import millionkids.millionkidseducation.R;
@@ -16,7 +17,7 @@ import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
 import millionkids.millionkidseducation.menuUI.Settings;
 
-public class ChildrenHome extends AppCompatActivity {
+public class ChildrenHome extends AppCompatActivity implements View.OnClickListener {
 
     //ImageButton declarations
     ImageButton girl5_8, boy5_8, girl9_12, boy9_12, girl13_17, boy13_17;
@@ -34,19 +35,12 @@ public class ChildrenHome extends AppCompatActivity {
         boy5_8 = (ImageButton)findViewById(R.id.boy5_8);
         girl9_12 = (ImageButton)findViewById(R.id.girl9_12);
         boy9_12 = (ImageButton)findViewById(R.id.boy9_12);
-
-//        //SetImages for buttons
-//        girl5_8.setBackgroundResource(R.drawable.girl5_8);
-//        girl5_8.setAlpha(1.0f);
-//
-//        boy5_8.setBackgroundResource(R.drawable.boy5_8);
-//        boy5_8.setAlpha(1.0f);
-//
-//        girl9_12.setBackgroundResource(R.drawable.girl9_12);
-//        girl9_12.setAlpha(1.0f);
-//
-//        boy9_12.setBackgroundResource(R.drawable.boy9_12);
-//        boy9_12.setAlpha(1.0f);
+        
+        //SetOnClick Listeners
+        girl5_8.setOnClickListener(this);
+        boy5_8.setOnClickListener(this);
+        girl9_12.setOnClickListener(this);
+        boy9_12.setOnClickListener(this);
     }
 
     //Menu option BEGINS
@@ -78,6 +72,24 @@ public class ChildrenHome extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()){
+            case R.id.girl5_8:
+                System.out.print("girl5_8");
+                break;
+            case R.id.boy5_8:
+                System.out.print("boy5_8");
+                break;
+            case R.id.girl9_12:
+                System.out.print("girl9_12");
+                break;
+            case R.id.boy9_12:
+                System.out.print("boy9_12");
+                break;
+        }
     }
     //Menu option ENDS
 }
