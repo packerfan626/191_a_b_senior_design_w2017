@@ -21,7 +21,8 @@
         <activity android:name=".menuUI.Settings" />
         <activity android:name=".main.MainHomePage" />
         <activity android:name=".Parent.ParentHome" />
-        <activity android:name=".Children.ChildrenHome"></activity>
+        <activity android:name=".Children.ChildrenHome" />
+        <activity android:name=".Children.ScenarioOptions"></activity>
     </application>
 
 </manifest>

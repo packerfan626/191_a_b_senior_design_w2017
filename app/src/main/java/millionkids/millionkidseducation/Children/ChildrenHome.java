@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,7 +36,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         boy5_8 = (ImageButton)findViewById(R.id.boy5_8);
         girl9_12 = (ImageButton)findViewById(R.id.girl9_12);
         boy9_12 = (ImageButton)findViewById(R.id.boy9_12);
-        
+
         //SetOnClick Listeners
         girl5_8.setOnClickListener(this);
         boy5_8.setOnClickListener(this);
@@ -76,20 +77,34 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        //Type to pass in to recognize which folder to open
+        String folder = "";
+
+        //Prepare to send data to ScenarioOptions.java
+        Intent intent = new Intent(ChildrenHome.this, ScenarioOptions.class);
+        Bundle data = new Bundle();
+
         switch(view.getId()){
             case R.id.girl5_8:
-                System.out.print("girl5_8");
+                folder = "girl5-8";
                 break;
             case R.id.boy5_8:
-                System.out.print("boy5_8");
+                folder = "boy5-8";
                 break;
             case R.id.girl9_12:
-                System.out.print("girl9_12");
+                folder = "girl9-12";
                 break;
             case R.id.boy9_12:
-                System.out.print("boy9_12");
+                folder = "boy9-12";
                 break;
         }
+
+        //Put data in bundle to send to ScenarioOptions.java
+        data.putString("folder", folder);
+
+        //Start the new activity w/ send data
+        intent.putExtras(data);
+        startActivity(intent);
     }
     //Menu option ENDS
 }
