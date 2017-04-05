@@ -54,7 +54,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         bWarrningSigns = (Button) findViewById(R.id.bWarrningSigns);
         bPreventMeasure = (Button) findViewById(R.id.bPreventMeasure);
         prevButton = bSummary;
-
+        setTitle("Sex Trafficking - Minor");
         //set initial load
         bSummary.setBackgroundColor(Color.BLUE);
         tvCurrentContent.setText(con.summaryContent());
