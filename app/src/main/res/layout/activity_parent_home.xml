@@ -29,20 +29,21 @@
                 android:textColor="@android:color/black" />
 
             <LinearLayout
-                android:layout_width="390dp"
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
                 android:layout_height="59dp"
-                android:layout_marginLeft="8dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:layout_below="@+id/tvSectionName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
-                android:id="@+id/linearLayout">
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+                <!--android:layout_below="@+id/tvSectionName"-->
 
                 <Button
                     android:id="@+id/bSummary"
                     android:layout_width="98dp"
                     android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"
                     android:background="#a7afbc"
                     android:text="Summary"
                     android:textSize="14dp" />
@@ -53,6 +54,7 @@
                     android:layout_height="58dp"
                     android:background="#a7afbc"
                     android:text="Grooming Process"
+                    android:layout_marginLeft="2dp"
                     android:textSize="14dp" />
 
                 <Button
@@ -61,27 +63,30 @@
                     android:layout_height="58dp"
                     android:background="#a7afbc"
                     android:text="Warning Signs"
+                    android:layout_marginLeft="2dp"
                     android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/bPreventMeasure"
-                    android:layout_width="105dp"
+                    android:layout_width="match_parent"
                     android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:background="#a7afbc"
                     android:text="Preventative Measure"
                     android:textSize="14dp" />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvSectionName"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:text="Sex Trafficking - Minor"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:id="@+id/tvSectionName"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:text="Sex Trafficking - Minor"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="24sp"-->
+                <!--android:textStyle="bold" />-->
         </RelativeLayout>
 
     </LinearLayout>

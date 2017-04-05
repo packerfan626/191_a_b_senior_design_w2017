@@ -45,7 +45,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         setContentView(R.layout.activity_parent_home);
 
         //set private variables
-        tvSectionName = (TextView) findViewById(R.id.tvSectionName);
+//        tvSectionName = (TextView) findViewById(R.id.tvSectionName);
         tvCurrentContent = (TextView) findViewById(R.id.tvCurrentContent);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.close);
@@ -122,7 +122,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
 //                currentContent = "SexTraffickingMinor";
                 con.setcurrentContent(SEX_TRAFFICKING_MINOR);
                 this.setTitle("Sex Trafficking - Minor");
-                tvSectionName.setText("Sex Trafficking - Minor");
+//                tvSectionName.setText("Sex Trafficking - Minor");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
                 mDrawerLayout.closeDrawers();
@@ -131,7 +131,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
 //                currentContent = "SexTraffickingAdult";
                 con.setcurrentContent(SEX_TRAFFICKING_ADULT);
                 this.setTitle("Sex Trafficking - Adult");
-                tvSectionName.setText("Sex Trafficking - Adult");
+//                tvSectionName.setText("Sex Trafficking - Adult");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
                 mDrawerLayout.closeDrawers();
@@ -140,7 +140,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
 //                currentContent = "LaborTrafficking";
                 con.setcurrentContent(LABOR_TRAFFICKING);
                 this.setTitle("Labor Trafficking");
-                tvSectionName.setText("Labor Trafficking");
+//                tvSectionName.setText("Labor Trafficking");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
                 mDrawerLayout.closeDrawers();
@@ -149,7 +149,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
 //                currentContent = "Sextortion";
                 con.setcurrentContent(SEXTORTION);
                 this.setTitle("Sextortion");
-                tvSectionName.setText("Sextortion");
+//                tvSectionName.setText("Sextortion");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
                 mDrawerLayout.closeDrawers();
@@ -158,7 +158,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
 //                currentContent = "ChildPornography";
                 con.setcurrentContent(CHILD_PORNOGRAPHY);
                 this.setTitle("Child Pornography");
-                tvSectionName.setText("Child Pornography");
+//                tvSectionName.setText("Child Pornography");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
                 mDrawerLayout.closeDrawers();
@@ -167,7 +167,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
 //                currentContent = "SocialMediaExploitation";
                 con.setcurrentContent(SOCIAL_MEDIA_EXPLOITATION);
                 this.setTitle("Social Media Exploitation");
-                tvSectionName.setText("Social Media Exploitation");
+//                tvSectionName.setText("Social Media Exploitation");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
                 mDrawerLayout.closeDrawers();
