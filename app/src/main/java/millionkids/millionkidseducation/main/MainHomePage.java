@@ -1,6 +1,10 @@
 package millionkids.millionkidseducation.main;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -17,8 +21,10 @@ import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
 import millionkids.millionkidseducation.menuUI.Settings;
 
-public class MainHomePage extends AppCompatActivity implements View.OnClickListener{
+public class MainHomePage extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
 
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +34,16 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         final Button bChild = (Button) findViewById(R.id.bChild);
         bParent.setOnClickListener(this);
         bChild.setOnClickListener(this);
-//        bAge13_16.setOnClickListener(this);
-//        bAdults.setOnClickListener(this);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.activity_main_home_page);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //listen for buttons in navigation Menu
+        NavigationView nv = (NavigationView) findViewById(R.id.navigationViewDefault);
+        nv.setNavigationItemSelectedListener(this);
     }
 
     //Menu option BEGINS
@@ -47,17 +61,8 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
             case R.id.mHome:
                 //this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-            case R.id.mAbout:
-                this.startActivity(new Intent(this, About.class));
-                break;
-            case R.id.mLearnMore:
-                this.startActivity(new Intent(this, LearnMore.class));
-                break;
             case R.id.mHelp:
                 this.startActivity(new Intent(this, Help.class));
-                break;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -86,14 +91,7 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
                 intentExtras = new Intent(MainHomePage.this, ParentHome.class);
                 startActivity(intentExtras);
                 break;
-//            case R.id.bAge13_16:
-//                //intent AGE 13-16
-//                //this.startActivity(this, .class);
-//                break;
-//            case R.id.bAdults:
-//                //intent AGE adults
-//                //this.startActivity(this, .class);
-//                break;
+//
         }
     }
     //age selection buttons ENDS
@@ -103,4 +101,19 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed(){
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch(menuItem.getItemId()) {
+            case R.id.mAbout:
+                this.startActivity(new Intent(this, About.class));
+                return true;
+            case R.id.mLearnMore:
+                this.startActivity(new Intent(this, LearnMore.class));
+                return true;
+            case R.id.mSetting:
+                this.startActivity(new Intent(this, Settings.class));
+                return true;
+        }
+        return false;
+    }
 }

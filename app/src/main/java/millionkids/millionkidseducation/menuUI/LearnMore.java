@@ -33,18 +33,18 @@ public class LearnMore extends AppCompatActivity {
             case R.id.mHome:
                 this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-            case R.id.mAbout:
-                this.startActivity(new Intent(this, About.class));
-                break;
-            case R.id.mLearnMore:
-                //this.startActivity(new Intent(this, LearnMore.class));
-                break;
+//            case R.id.mAbout:
+//                this.startActivity(new Intent(this, About.class));
+//                break;
+//            case R.id.mLearnMore:
+//                //this.startActivity(new Intent(this, LearnMore.class));
+//                break;
             case R.id.mHelp:
                 this.startActivity(new Intent(this, Help.class));
                 break;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
-                break;
+//            case R.id.mSetting:
+//                this.startActivity(new Intent(this, Settings.class));
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }
