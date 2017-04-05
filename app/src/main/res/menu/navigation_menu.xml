@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mSexTraffickingMinor"
+        android:title="Sex Trafficking Minor">
+
+        <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingMinor_Summary"-->
+                <!--android:title="Summary" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingMinor_GroomingProcess"-->
+                <!--android:title="Grooming Process" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingMinor_WarningSigns"-->
+                <!--android:title="Warning Signs" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingMinor_PreventativeMeasures"-->
+                <!--android:title="Preventative Measures" />-->
+        <!--</menu>-->
+
+    </item>
+
+    <item android:id="@+id/mSexTraffickingAdult"
+        android:title="Sex Trafficking Adult">
+
+        <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingAdult_Summary"-->
+                <!--android:title="Summary"-->
+                <!--android:visible="false" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingAdult_GroomingProcess"-->
+                <!--android:title="Grooming Process"-->
+                <!--android:visible="false" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingAdult_WarningSigns"-->
+                <!--android:title="Warning Signs"-->
+                <!--android:visible="false" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/mSexTraffickingAdult_PreventativeMeasures"-->
+                <!--android:title="Preventative Measures"-->
+                <!--android:visible="false" />-->
+        <!--</menu>-->
+    </item>
+
+    <item android:id="@+id/mLaborTrafficking"
+        android:title="Labor Trafficking">
+
+        <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+            <!--<item android:id="@+id/mLaborTrafficking_Summary"-->
+                <!--android:title="Summary"/>-->
+
+            <!--<item android:id="@+id/mLaborTrafficking_GroomingProcess"-->
+                <!--android:title="Grooming Process"/>-->
+
+            <!--<item android:id="@+id/mLaborTrafficking_WarningSigns"-->
+                <!--android:title="Warning Signs"/>-->
+
+            <!--<item android:id="@+id/mLaborTrafficking_PreventativeMeasures"-->
+                <!--android:title="Preventative Measures"/>-->
+        <!--</menu>-->
+    </item>
+
+    <item android:id="@+id/mSextortion"
+        android:title="Sextortion" >
+
+        <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+            <!--<item android:id="@+id/mSextortion_Summary"-->
+                <!--android:title="Summary"/>-->
+
+            <!--<item android:id="@+id/mSextortion_GroomingProcess"-->
+                <!--android:title="Grooming Process"/>-->
+
+            <!--<item android:id="@+id/mSextortion_WarningSigns"-->
+                <!--android:title="Warning Signs"/>-->
+
+            <!--<item android:id="@+id/mSextortion_PreventativeMeasures"-->
+                <!--android:title="Preventative Measures"/>-->
+        <!--</menu>-->
+    </item>
+
+    <item android:id="@+id/mChildPornography"
+        android:title="Child Pornography" >
+
+        <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+            <!--<item android:id="@+id/mChildPornography_Summary"-->
+                <!--android:title="Summary"/>-->
+
+            <!--<item android:id="@+id/mChildPornography_GroomingProcess"-->
+                <!--android:title="Grooming Process"/>-->
+
+            <!--<item android:id="@+id/mChildPornography_WarningSigns"-->
+                <!--android:title="Warning Signs"/>-->
+
+            <!--<item android:id="@+id/mChildPornography_PreventativeMeasures"-->
+                <!--android:title="Preventative Measures"/>-->
+        <!--</menu>-->
+    </item>
+
+    <item android:id="@+id/mSocialMediaExploitation"
+        android:title="Social Media Exploitation" >
+
+        <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+            <!--<item android:id="@+id/mSocialMediaExploitation_Summary"-->
+                <!--android:title="Summary"/>-->
+
+            <!--<item android:id="@+id/mSocialMediaExploitation_GroomingProcess"-->
+                <!--android:title="Grooming Process"/>-->
+
+            <!--<item android:id="@+id/mSocialMediaExploitation_WarningSigns"-->
+                <!--android:title="Warning Signs"/>-->
+
+            <!--<item android:id="@+id/mSocialMediaExploitation_PreventativeMeasures"-->
+                <!--android:title="Preventative Measures"/>-->
+        <!--</menu>-->
+    </item>
+
+</menu>

@@ -20,7 +20,8 @@
         <activity android:name=".menuUI.Help" />
         <activity android:name=".menuUI.Settings" />
         <activity android:name=".main.MainHomePage" />
-        <activity android:name=".Parent.ParentHome" />
+        <activity android:name=".Parent.ParentHome"
+            android:label="Parent Home"/>
         <activity android:name=".Children.ChildrenHome"></activity>
     </application>
 
