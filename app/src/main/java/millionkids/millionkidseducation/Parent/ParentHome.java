@@ -125,6 +125,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                 tvSectionName.setText("Sex Trafficking - Minor");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
+                mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSexTraffickingAdult:
 //                currentContent = "SexTraffickingAdult";
@@ -133,6 +134,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                 tvSectionName.setText("Sex Trafficking - Adult");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
+                mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mLaborTrafficking:
 //                currentContent = "LaborTrafficking";
@@ -141,6 +143,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                 tvSectionName.setText("Labor Trafficking");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
+                mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSextortion:
 //                currentContent = "Sextortion";
@@ -149,6 +152,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                 tvSectionName.setText("Sextortion");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
+                mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mChildPornography:
 //                currentContent = "ChildPornography";
@@ -157,6 +161,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                 tvSectionName.setText("Child Pornography");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
+                mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSocialMediaExploitation:
 //                currentContent = "SocialMediaExploitation";
@@ -165,6 +170,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                 tvSectionName.setText("Social Media Exploitation");
                 tvCurrentContent.setText(con.summaryContent());
                 changeButtonColors(bSummary, prevButton);
+                mDrawerLayout.closeDrawers();
                 return true;
         }
         return false;
