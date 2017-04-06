@@ -25,6 +25,7 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +36,14 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         bParent.setOnClickListener(this);
         bChild.setOnClickListener(this);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.activity_main_home_page);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutMain);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //listen for buttons in navigation Menu
-        NavigationView nv = (NavigationView) findViewById(R.id.navigationViewDefault);
+        NavigationView nv = (NavigationView) findViewById(R.id.navigationViewDefaultMain);
         nv.setNavigationItemSelectedListener(this);
     }
 
@@ -57,9 +58,14 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
+
         switch (item.getItemId()) {
             case R.id.mHome:
-                //this.startActivity(new Intent(this, MainHomePage.class));
                 break;
             case R.id.mHelp:
                 this.startActivity(new Intent(this, Help.class));
@@ -68,8 +74,6 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
     //Menu option ENDS
-
-
 
     //age selection buttons BEGINS
     @Override
