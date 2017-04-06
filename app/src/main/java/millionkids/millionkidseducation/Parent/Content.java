@@ -6,6 +6,7 @@ package millionkids.millionkidseducation.Parent;
 
 public class Content
 {
+
     private String returnSummaryContent = "",
             returnGroomingContent = "",
             returnWarningSignsContent = "",
@@ -57,7 +58,7 @@ public class Content
 
     private void setSexTraffickingMinor()
     {
-        returnSummaryContent = "SEX_TRAFFICKING_MINOR Summary content";
+        returnSummaryContent = "file:///android_asset/testHTML.html";
         returnGroomingContent = "SEX_TRAFFICKING_MINOR Grooming Process Content";
         returnWarningSignsContent = "SEX_TRAFFICKING_MINOR Warning Signs Content";
         returnPreventativeMeasure = "SEX_TRAFFICKING_MINOR Preventative Mesaure Content";

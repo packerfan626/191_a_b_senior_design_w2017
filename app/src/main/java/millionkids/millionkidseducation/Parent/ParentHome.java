@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,7 +22,7 @@ import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
 import millionkids.millionkidseducation.menuUI.Settings;
-
+import android.webkit.WebView;
 public class ParentHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private final String SEX_TRAFFICKING_MINOR = "sex trafficking minor",
                         SEX_TRAFFICKING_ADULT = "sex trafficking adult",
@@ -29,7 +30,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
                         SEXTORTION = "sextortion",
                         CHILD_PORNOGRAPHY = "child pornography",
                         SOCIAL_MEDIA_EXPLOITATION = "social media exploitation";
-
+    private WebView mWebView;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private TextView tvSectionName, tvCurrentContent;
@@ -43,6 +44,12 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_home);
+
+        //webview for html
+        mWebView = (WebView) findViewById(R.id.test);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.loadUrl(con.summaryContent());
 
         //set private variables
 //        tvSectionName = (TextView) findViewById(R.id.tvSectionName);
@@ -180,6 +187,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     @Override
     public void onClick(View v)
     {
+        // getting the subcategory for each content category
         switch(v.getId())
         {
             case R.id.bSummary:
