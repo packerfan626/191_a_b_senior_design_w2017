@@ -22,7 +22,8 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         super.onCreate(savedInstanceState);             //testing 123 testing 123 hehe.
         setContentView(R.layout.activity_about);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        //set Hamburger Menu
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutAbout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -44,26 +45,24 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(mToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
+
         switch (item.getItemId()) {
             case R.id.mHome:
                 this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-//            case R.id.mAbout:
-//                //this.startActivity(new Intent(this, About.class));
-//                break;
-//            case R.id.mLearnMore:
-//                this.startActivity(new Intent(this, LearnMore.class));
-//                break;
             case R.id.mHelp:
                 this.startActivity(new Intent(this, Help.class));
                 break;
-//            case R.id.mSetting:
-//                this.startActivity(new Intent(this, Settings.class));
-//                break;
         }
         return super.onOptionsItemSelected(item);
     }
+    //Menu option end
 
+    //Hamburger Menu
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch(menuItem.getItemId()) {
@@ -79,5 +78,5 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         }
         return false;
     }
-    //Menu option end
+
 }
