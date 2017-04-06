@@ -45,15 +45,8 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_home);
 
-        //webview for html
+        //set private variables;
         mWebView = (WebView) findViewById(R.id.test);
-        WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl(con.summaryContent());
-
-        //set private variables
-//        tvSectionName = (TextView) findViewById(R.id.tvSectionName);
-        tvCurrentContent = (TextView) findViewById(R.id.tvCurrentContent);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.close);
         bSummary = (Button) findViewById(R.id.bSummary);
@@ -62,9 +55,13 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         bPreventMeasure = (Button) findViewById(R.id.bPreventMeasure);
         prevButton = bSummary;
         setTitle("Sex Trafficking - Minor");
+
         //set initial load
         bSummary.setBackgroundColor(Color.BLUE);
-        tvCurrentContent.setText(con.summaryContent());
+        //webview for html
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.loadUrl(con.summaryContent());
 
         //Button Listeners
         bSummary.setOnClickListener(this);
@@ -117,59 +114,42 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         switch(item.getItemId())
         {
             case R.id.mSexTraffickingMinor:
-//                currentContent = "SexTraffickingMinor";
                 con.setcurrentContent(SEX_TRAFFICKING_MINOR);
                 this.setTitle("Sex Trafficking - Minor");
-//                tvSectionName.setText("Sex Trafficking - Minor");
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSexTraffickingAdult:
-//                currentContent = "SexTraffickingAdult";
                 con.setcurrentContent(SEX_TRAFFICKING_ADULT);
                 this.setTitle("Sex Trafficking - Adult");
-//                tvSectionName.setText("Sex Trafficking - Adult");
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mLaborTrafficking:
-//                currentContent = "LaborTrafficking";
                 con.setcurrentContent(LABOR_TRAFFICKING);
                 this.setTitle("Labor Trafficking");
-//                tvSectionName.setText("Labor Trafficking");
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSextortion:
-//                currentContent = "Sextortion";
                 con.setcurrentContent(SEXTORTION);
                 this.setTitle("Sextortion");
-//                tvSectionName.setText("Sextortion");
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mChildPornography:
-//                currentContent = "ChildPornography";
                 con.setcurrentContent(CHILD_PORNOGRAPHY);
                 this.setTitle("Child Pornography");
-//                tvSectionName.setText("Child Pornography");
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSocialMediaExploitation:
-//                currentContent = "SocialMediaExploitation";
                 con.setcurrentContent(SOCIAL_MEDIA_EXPLOITATION);
                 this.setTitle("Social Media Exploitation");
-//                tvSectionName.setText("Social Media Exploitation");
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
+
             case R.id.mAbout:
                 this.startActivity(new Intent(this, About.class));
                 return true;
@@ -191,27 +171,25 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         switch(v.getId())
         {
             case R.id.bSummary:
-                tvCurrentContent.setText(con.summaryContent());
-                changeButtonColors(bSummary, prevButton);
+                changeButtonColors(bSummary, prevButton, con.summaryContent());
                 break;
             case R.id.bGroomingProcess:
-                tvCurrentContent.setText(con.groomingProcessContent());
-                changeButtonColors(bGroomingProcess, prevButton);
+                changeButtonColors(bGroomingProcess, prevButton, con.groomingProcessContent());
                 break;
             case R.id.bWarrningSigns:
-                tvCurrentContent.setText(con.warningSignsContent());
-                changeButtonColors(bWarrningSigns, prevButton);
+                changeButtonColors(bWarrningSigns, prevButton, con.warningSignsContent());
                 break;
             case R.id.bPreventMeasure:
-                tvCurrentContent.setText(con.preventativeMeasureContent());
-                changeButtonColors(bPreventMeasure, prevButton);
+                changeButtonColors(bPreventMeasure, prevButton, con.preventativeMeasureContent());
                 break;
         }
     }
 
     //change the buttons color
-    private void changeButtonColors(Button blue, Button gray)
+    private void changeButtonColors(Button blue, Button gray, String currentContext)
     {
+//        tvCurrentContent.setText(currentContext);
+        mWebView.loadUrl(currentContext);
         int lighGray = Color.parseColor("#a7afbc");
         gray.setBackgroundColor(lighGray);
         blue.setBackgroundColor(Color.BLUE);
