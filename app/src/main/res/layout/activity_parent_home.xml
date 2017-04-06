@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="millionkids.millionkidseducation.Parent.ParentHome"
-    android:id="@+id/drawerLayout">
+    android:id="@+id/drawerLayout"
+    android:background="@color/darkGrayBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
                 android:layout_below="@+id/linearLayout"
                 android:layout_marginTop="30dp"
                 android:text="CurrentContent"
-                android:textColor="@android:color/black" />
+                android:textColor="@color/whiteText" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -46,7 +47,9 @@
                     android:layout_marginLeft="2dp"
                     android:background="#a7afbc"
                     android:text="Summary"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/whiteText"
+                    android:textAllCaps="false"/>
 
                 <Button
                     android:id="@+id/bGroomingProcess"
@@ -55,7 +58,10 @@
                     android:background="#a7afbc"
                     android:text="Grooming Process"
                     android:layout_marginLeft="2dp"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/whiteText"
+                    android:textAllCaps="false"/>
+
 
                 <Button
                     android:id="@+id/bWarrningSigns"
@@ -64,7 +70,10 @@
                     android:background="#a7afbc"
                     android:text="Warning Signs"
                     android:layout_marginLeft="2dp"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/whiteText"
+                    android:textAllCaps="false"/>
+
 
                 <Button
                     android:id="@+id/bPreventMeasure"
@@ -74,7 +83,10 @@
                     android:layout_marginRight="2dp"
                     android:background="#a7afbc"
                     android:text="Preventative Measure"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/whiteText"
+                    android:textAllCaps="false"/>
+
 
             </LinearLayout>
 
