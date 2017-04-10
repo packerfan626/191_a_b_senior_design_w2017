@@ -62,6 +62,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         mWebView.loadUrl(con.summaryContent());
+        mWebView.setBackgroundColor(Color.TRANSPARENT);
 
         //Button Listeners
         bSummary.setOnClickListener(this);

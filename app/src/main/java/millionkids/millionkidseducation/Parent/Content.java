@@ -58,7 +58,7 @@ public class Content
 
     private void setSexTraffickingMinor()
     {
-        returnSummaryContent = "file:///android_asset/testHTML.html";
+        returnSummaryContent = "Sextortion/testHTML.html";
         returnGroomingContent = "SEX_TRAFFICKING_MINOR Grooming Process Content";
         returnWarningSignsContent = "SEX_TRAFFICKING_MINOR Warning Signs Content";
         returnPreventativeMeasure = "SEX_TRAFFICKING_MINOR Preventative Mesaure Content";
