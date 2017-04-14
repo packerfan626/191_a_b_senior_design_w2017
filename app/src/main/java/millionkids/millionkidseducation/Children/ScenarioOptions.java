@@ -40,6 +40,7 @@ public class ScenarioOptions extends AppCompatActivity {
         //Testing Dynamic ImageViews in ScenarioOptions UI
         ImageButton image = new ImageButton(this);
 
+
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 

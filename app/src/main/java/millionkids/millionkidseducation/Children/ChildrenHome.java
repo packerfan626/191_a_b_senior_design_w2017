@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import io.realm.Realm;
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
@@ -30,6 +31,10 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
 
         //Set screen orientation to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        Realm realm = Realm.getDefaultInstance();
+
+        realm.beginTransaction();
 
         //SetButtons for image buttons based on UI
         girl5_8 = (ImageButton)findViewById(R.id.girl5_8);
