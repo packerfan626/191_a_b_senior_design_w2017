@@ -39,7 +39,7 @@
 
                 <Button
                     android:id="@+id/bSummary"
-                    android:layout_width="98dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="58dp"
                     android:layout_marginLeft="2dp"
                     android:background="#a7afbc"
@@ -50,7 +50,7 @@
 
                 <Button
                     android:id="@+id/bGroomingProcess"
-                    android:layout_width="98dp"
+                    android:layout_width="86dp"
                     android:layout_height="58dp"
                     android:background="#a7afbc"
                     android:text="Grooming Process"
@@ -62,7 +62,7 @@
 
                 <Button
                     android:id="@+id/bWarrningSigns"
-                    android:layout_width="98dp"
+                    android:layout_width="79dp"
                     android:layout_height="58dp"
                     android:background="#a7afbc"
                     android:text="Warning Signs"
