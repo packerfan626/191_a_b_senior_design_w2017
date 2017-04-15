@@ -58,49 +58,49 @@ public class Content
 
     private void setSexTraffickingMinor()
     {
-        returnSummaryContent = "Sextortion/testHTML.html";
-        returnGroomingContent = "SEX_TRAFFICKING_MINOR Grooming Process Content";
-        returnWarningSignsContent = "SEX_TRAFFICKING_MINOR Warning Signs Content";
-        returnPreventativeMeasure = "SEX_TRAFFICKING_MINOR Preventative Mesaure Content";
+        returnSummaryContent = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Summary.html";
+        returnGroomingContent = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Grooming-Process.html";
+        returnWarningSignsContent = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Warning-Signs.html";
+        returnPreventativeMeasure = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Preventative-Measure.html";
     }
 
     private void setSexTraffickingAdult()
     {
-        returnSummaryContent = "SEX_TRAFFICKING_ADULT Summary content";
-        returnGroomingContent = "SEX_TRAFFICKING_ADULT Grooming Process Content";
-        returnWarningSignsContent = "SEX_TRAFFICKING_ADULT Warning Signs Content";
-        returnPreventativeMeasure = "SEX_TRAFFICKING_ADULT Preventative Mesaure Content";
+        returnSummaryContent = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Summary.html";
+        returnGroomingContent = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Grooming-Process.html";
+        returnWarningSignsContent = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Warning-Signs.html";
+        returnPreventativeMeasure = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Preventative-Measure.html";
     }
 
     private void setLaborTrafficking()
     {
-        returnSummaryContent = "LABOR_TRAFFICKING Summary content";
-        returnGroomingContent = "SEX_TRAFFICKING_ADULT Grooming Process Content";
-        returnWarningSignsContent = "SEX_TRAFFICKING_ADULT Warning Signs Content";
-        returnPreventativeMeasure = "SEX_TRAFFICKING_ADULT Preventative Mesaure Content";
+        returnSummaryContent = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Summary.html";
+        returnGroomingContent = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Grooming-Process.html";
+        returnWarningSignsContent = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Warning-Signs.html";
+        returnPreventativeMeasure = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Preventative-Measure.html";
     }
 
     private void setSextortion()
     {
-        returnSummaryContent = "SEXTORTION Summary content";
-        returnGroomingContent = "SEXTORTION Grooming Process Content";
-        returnWarningSignsContent = "SEXTORTION Warning Signs Content";
-        returnPreventativeMeasure = "SEXTORTION Preventative Mesaure Content";
+        returnSummaryContent = "file:///android_asset/Sextortion/SEXTORTION_Summary.html";
+        returnGroomingContent = "file:///android_asset/Sextortion/SEXTORTION_Grooming-Process.html";
+        returnWarningSignsContent = "file:///android_asset/Sextortion/SEXTORTION_Warning-Signs.html";
+        returnPreventativeMeasure = "file:///android_asset/Sextortion/SEXTORTION_Preventative-Measure.html";
     }
 
     private void setChildPornography()
     {
-        returnSummaryContent = "CHILD_PORNOGRAPHY Summary content";
-        returnGroomingContent = "CHILD_PORNOGRAPHY Grooming Process Content";
-        returnWarningSignsContent = "CHILD_PORNOGRAPHY Warning Signs Content";
-        returnPreventativeMeasure = "CHILD_PORNOGRAPHY Preventative Mesaure Content";
+        returnSummaryContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Summary.html";
+        returnGroomingContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html";
+        returnWarningSignsContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html";
+        returnPreventativeMeasure = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Preventative-Measure.html";
     }
 
     private void setSocialMediaExploitation()
     {
-        returnSummaryContent = "SOCIAL_MEDIA_EXPLOITATION Summary content";
-        returnGroomingContent = "SOCIAL_MEDIA_EXPLOITATION Grooming Process Content";
-        returnWarningSignsContent = "SOCIAL_MEDIA_EXPLOITATION Warning Signs Content";
-        returnPreventativeMeasure = "SOCIAL_MEDIA_EXPLOITATION Preventative Mesaure Content";
+        returnSummaryContent = "file:///android_asset/SocialMediaExploitation/SOCIAL_Summary.html";
+        returnGroomingContent = "file:///android_asset/SocialMediaExploitation/SOCIAL_Grooming-Process.html";
+        returnWarningSignsContent = "file:///android_asset/SocialMediaExploitation/SOCIAL_Warning-Signs.html";
+        returnPreventativeMeasure = "file:///android_asset/SocialMediaExploitation/SOCIAL_Preventative-Measure.html";
     }
 }

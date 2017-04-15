@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <meta>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </meta>
+ 
  
  <style>
  body {
@@ -11,12 +15,28 @@
 
 h1{
 	font-family: helvetica;
-	
-	
-	
+
 }
-.summary{
-font-family:Arial;
+.emphasisText
+{
+	color:	#dfdf20;
+	font-size: 20px;
+	display:inline;
+}
+
+#title
+{
+	font-family:Georgia;
+	text-align: center;
+	font-size:25px;
+}
+
+.intro{
+font-family:Georgia;
+margin:auto;
+padding:10px;
+line-height: 30px;
+
 }
 
 .bullets{
@@ -29,6 +49,12 @@ font-family:Arial
 text-size:30dp
 }
  
+#summary
+{
+	display:inline;
+
+}
+
  </style>
  
 
@@ -36,27 +62,33 @@ text-size:30dp
 
 
 <body>
-<h1>Summary</h1> <br>
+<h1 id = "title">Summary</h1> <br>
 
-<div>
-<p class="summary"> 
-Sextortion happens all over the world. It is a form of blackmailing 
-involving sexual information or images in order to force or <big>extort</big> 
-sexual favors. 
+<div class = "intro">
+	<p id ="summary"> 
+	Sextortion happens <big><u>all</u></big> over the world. It is a form of blackmailing 
+	involving sexual information or images in order to force or <b>extort</b> 
+	sexual favors. <br> This <h3 class = "emphasisText">non-physical</h3> form of <big><u>coercion</u></big> primarily occurs 
+	online and young boys and girls commonly fall victim through <big>social
+	media </big> and text messaging. 
  
  
-</p>
+	</p>
+	<div id = "content">
+	<p class="bullets">
+	<ul>
+	<li> list element one </li>
+	<li> <big> <b>an <large>important </large></b></big> list element </li>
 
-<p class="bullets">
-<ul>
-<li> list element one </li>
-<li> <big> <b>an <large>important </large></b></big> list element </li>
+	</ul>
 
-</ul>
-</p>
+</div>
 
-</p>
+<div class = "content">
+	<p>
+		More content here
 
+	</p>
 </div>
 
 
