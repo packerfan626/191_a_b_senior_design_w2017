@@ -21,4 +21,30 @@ public class Scenario {
         this.location = location;
         this.image = image;
     }
+
+    //Scenario toString to transport data
+    public String toString(){
+        return "Scenario [scenarioid="+ scenarioid + ", ageid=" + ageid + ", location=" +location
+        + ", image=" + image+ "]";
+    }
+
+    //SetScenario ID
+    public void setScenarioid(int scenarioid){
+        this.scenarioid = scenarioid;
+    }
+
+    //Set AGEId
+    public void setAgeid(int ageid){
+        this.ageid = ageid;
+    }
+
+    //Set Location
+    public void setLocation(String location){
+        this.location = location;
+    }
+
+    //Set Image
+    public void setImage(String image){
+        this.image = image;
+    }
 }

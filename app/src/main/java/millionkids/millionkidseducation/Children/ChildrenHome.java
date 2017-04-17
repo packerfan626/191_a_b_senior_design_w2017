@@ -17,10 +17,14 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import io.realm.Realm;
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.SQLite.MySQLiteHelper;
+import millionkids.millionkidseducation.SQLite.Scenario;
+import millionkids.millionkidseducation.SQLite.ScenarioData;
 import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
@@ -32,6 +36,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
     ImageButton girl5_8, boy5_8, girl9_12, boy9_12, girl13_17, boy13_17;
     MySQLiteHelper sqLiteHelper;
     AlertDialog.Builder builder;
+    ScenarioData scenarioData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,47 +46,10 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         //Set screen orientation to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        //BEGIN SQLITEHELPER
-        //Get SQLiteHelper for databse setup/resume
-        sqLiteHelper = new MySQLiteHelper(this);
+        List<Scenario> scenarios = new LinkedList<Scenario>();
+        scenarios = scenarioData.getScenarios();
+        
 
-        try{
-            sqLiteHelper.createDatabase();
-        }catch (IOException e){
-            //Display error if Database Failed to create
-            new AlertDialog.Builder(this)
-                    .setTitle("Database Failed")
-                    .setMessage("Database Failed to Create")
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // continue with delete
-                        }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
-
-            throw new Error("Unable to create database");
-        }
-
-
-        try{
-            sqLiteHelper.openDatabase();
-        }catch(SQLException e){
-            new AlertDialog.Builder(this)
-                    .setTitle("Database Failed")
-                    .setMessage("Database Failed to Open!")
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // continue with delete
-                        }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
-
-            throw new Error("Unable to open database");
-        }
-
-        //END SQLITEHELPER
 
         //SetButtons for image buttons based on UI
         girl5_8 = (ImageButton)findViewById(R.id.girl5_8);

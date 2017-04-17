@@ -1,10 +1,13 @@
 package millionkids.millionkidseducation.SQLite;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -43,7 +46,35 @@ public class ScenarioData{
         myContext = context;
     }
 
+    //Get Scenarios
     public List<Scenario> getScenarios(){
-        return null;
+        //Scenarios List
+        List<Scenario> scenarios = new LinkedList<Scenario>();
+
+        //Build Query to get Scenarios
+        String query = "SELECT * FROM " + TABLE_SCENARIOS;
+
+        //Prepare Query for processing
+        Cursor cursor = database.rawQuery(query, null);
+
+        //Declare scenarios
+        Scenario scenario = null;
+
+        //Get data from database
+        if(cursor.moveToNext()){
+            do{
+                scenario = new Scenario();
+                scenario.setScenarioid(Integer.parseInt(cursor.getString(0)));
+                scenario.setAgeid(Integer.parseInt(cursor.getString(1)));
+                scenario.setLocation(cursor.getString(2));
+                scenario.setImage(cursor.getString(3));
+            } while (cursor.moveToNext());
+        }
+
+        //Log results of getAllScenarios
+        Log.d("getAllScenarios", scenario.toString());
+
+        //Return scenarios
+        return scenarios;
     }
 }
