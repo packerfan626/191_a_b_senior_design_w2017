@@ -20,7 +20,7 @@ public class AgeGroups {
     public AgeGroups(){}
 
     //Generated constructor
-    public AgeGroups(int ageId, String ageGroup){
+    public AgeGroups(int ageId, String ageGroup, String image){
         super();
         this.ageId = ageId;
         this.ageGroup = ageGroup;
