@@ -34,7 +34,7 @@ public class ScenarioData{
 
     // Scenarios Table Columns names
     private static final String KEY_ID = "scenarioid";
-    private static final String KEY_AGEID = "ageid";
+    private static final String KEY_AGEID = "ageId";
     private static final String KEY_LOCATION = "location";
     private static final String KEY_IMAGE = "image";
 
@@ -68,6 +68,8 @@ public class ScenarioData{
                 scenario.setAgeid(Integer.parseInt(cursor.getString(1)));
                 scenario.setLocation(cursor.getString(2));
                 scenario.setImage(cursor.getString(3));
+
+                scenarios.add(scenario);
             } while (cursor.moveToNext());
         }
 

@@ -46,10 +46,11 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         //Set screen orientation to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        //Declaring a list of the scenarios
         List<Scenario> scenarios = new LinkedList<Scenario>();
-        scenarios = scenarioData.getScenarios();
-        
 
+        //Populate the list with the scenariosfrom the database
+        scenarios = scenarioData.getScenarios();
 
         //SetButtons for image buttons based on UI
         girl5_8 = (ImageButton)findViewById(R.id.girl5_8);
