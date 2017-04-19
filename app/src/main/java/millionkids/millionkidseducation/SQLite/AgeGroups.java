@@ -29,11 +29,11 @@ public class AgeGroups {
 
     //Generates data to be returned as a string
     public String toString(){
-        return "AgeGroups [ageId=" + ageId + ", ageGroup=" + ageGroup + "image=" + image+ "]";
+        return "AgeGroups [ageId=" + ageId + ", ageGroup=" + ageGroup + "image=" + image + "]";
     }
 
     //Setter: ageId
-    public void setAgeid(int ageid){
+    public void setAgeid(int ageId){
         this.ageId = ageId;
     }
 

@@ -13,16 +13,6 @@ import java.util.List;
  */
 
 public class AgeGroupsData {
-
-    //Select_Sql: Variable query that will select the data for a specific scenario
-    private static final String SELECT_SQL = "SELECT * FROM Scenarios WHERE ";
-
-    //To access MySQLiteHelper methods for use within this file
-    MySQLiteHelper sqLiteHelper;
-
-    //SQLiteDatabase variable declaration to access database
-    private SQLiteDatabase database = sqLiteHelper.getReadableDatabase();
-
     Context myContext;
 
     //BEGIN SQLITE DATA
@@ -50,8 +40,11 @@ public class AgeGroupsData {
         //Build Query to get AgeGroups
         String query = "SELECT * FROM " + TABLE_AGE_GROUPS;
 
+        MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(myContext);
+        SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
+
         //Prepare Query for processing
-        Cursor cursor = database.rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, null);
 
         //Declare single AgeGroup to read in
         AgeGroups ageGroup = null;
@@ -69,7 +62,7 @@ public class AgeGroupsData {
         }
 
         //Log results of getAllScenarios
-        Log.d("getAgeGroups", ageGroup.toString());
+        Log.d("getAgeGroups", ageGroups.toString());
 
         //Return scenarios
         return ageGroups;

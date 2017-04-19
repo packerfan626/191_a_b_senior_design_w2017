@@ -22,6 +22,8 @@ import java.util.List;
 
 import io.realm.Realm;
 import millionkids.millionkidseducation.R;
+import millionkids.millionkidseducation.SQLite.AgeGroups;
+import millionkids.millionkidseducation.SQLite.AgeGroupsData;
 import millionkids.millionkidseducation.SQLite.MySQLiteHelper;
 import millionkids.millionkidseducation.SQLite.Scenario;
 import millionkids.millionkidseducation.SQLite.ScenarioData;
@@ -34,23 +36,22 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
 
     //ImageButton declarations
     ImageButton girl5_8, boy5_8, girl9_12, boy9_12, girl13_17, boy13_17;
-    MySQLiteHelper sqLiteHelper;
+
     AlertDialog.Builder builder;
-    ScenarioData scenarioData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_children_home);
 
+        AgeGroupsData ageGroupsData = new AgeGroupsData(this);
+
         //Set screen orientation to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        //Declaring a list of the scenarios
-        List<Scenario> scenarios = new LinkedList<Scenario>();
-
-        //Populate the list with the scenariosfrom the database
-        scenarios = scenarioData.getScenarios();
+        //Declaring a list of age groups
+        List<AgeGroups> ageGroups = ageGroupsData.getAgeGroups();
 
         //SetButtons for image buttons based on UI
         girl5_8 = (ImageButton)findViewById(R.id.girl5_8);

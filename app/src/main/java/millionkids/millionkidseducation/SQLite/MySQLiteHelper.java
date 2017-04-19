@@ -22,35 +22,41 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     //Variable for Database name
     private static final String DB_NAME = "MillionKids.db";
-    private static final int DB_VERSION = 1;
-    private SQLiteDatabase database = null;
+    private static final int DB_VERSION = 3;
+    private SQLiteDatabase database;
 
     //Constructor for MySQLiteHelper
     public MySQLiteHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         myContext = context;
+        this.createDatabase();
     }
 
-    public void createDatabase() throws IOException{
-        boolean dbExists = checkDataBase();
+    public void createDatabase(){
+        try {
+            boolean dbExists = checkDataBase();
 
-        if(dbExists){
-            //Do nothing
-        }else{
-            //Open database MillionKids.db SQLite file from assets directory and import into database.
-            this.getReadableDatabase();
-            try{
-                importDatabase();
-            }catch (IOException e){
-                throw new Error("Error copying database");
+            if (dbExists) {
+                //Do nothing
+            } else {
+                //Open database MillionKids.db SQLite file from assets directory and import into database.
+                this.getReadableDatabase();
+                try {
+                    importDatabase();
+                } catch (Exception e) {
+                    throw new Error("Error copying database");
+                }
             }
+        }catch (Exception e){
+
         }
     }
 
-    //Open the SQLiteDatabase
-    public void openDatabase() throws SQLException{
+    public SQLiteDatabase openDataBase() throws SQLException{
+        //Open the database
         String myPath = DB_PATH + DB_NAME;
-        database = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        database = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
+        return database;
     }
 
     //Close the database (If needed)
@@ -67,7 +73,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        //Drop all tables
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS AgeGroups");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Scenarios");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Questions");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Answers");
+
+        this.createDatabase();
 
     }
 
@@ -91,23 +104,27 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     //Import pre-made database from SQLite file
-    private void importDatabase() throws IOException {
-        InputStream inputStream = myContext.getAssets().open(DB_NAME);
+    private void importDatabase(){
+        try {
+            InputStream inputStream = myContext.getAssets().open(DB_NAME);
 
-        String fileName = DB_PATH + DB_NAME;
+            String fileName = DB_PATH + DB_NAME;
 
-        OutputStream outputStream = new FileOutputStream(fileName);
+            OutputStream outputStream = new FileOutputStream(fileName);
 
-        byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[1024];
 
-        int length;
+            int length;
 
-        while ((length = inputStream.read(buffer)) > 0){
-            outputStream.write(buffer, 0, length);
+            while ((length = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, length);
+            }
+
+            outputStream.flush();
+            outputStream.close();
+            inputStream.close();
+        }catch (Exception e){
+
         }
-
-        outputStream.flush();
-        outputStream.close();
-        inputStream.close();
     }
 }
