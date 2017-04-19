@@ -46,13 +46,19 @@ public class ScenarioData{
         List<Scenario> scenarios = new LinkedList<Scenario>();
 
         //Build Query to get Scenarios
-        String query = "SELECT * FROM " + TABLE_SCENARIOS + " WHERE " + KEY_AGEID + " = " + ageId;
+        String query = "SELECT * FROM SCENARIOS " +
+                "WHERE ageId = ?";
+
+        //Set query arguments
+        String []queryArgs = new String[]{
+                String.valueOf(ageId)
+        };
 
         MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(myContext);
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         //Prepare Query for processing
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, queryArgs);
 
         //Declare scenarios
         Scenario scenario = null;

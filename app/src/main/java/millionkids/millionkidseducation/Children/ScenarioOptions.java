@@ -55,9 +55,13 @@ public class ScenarioOptions extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         for(int i = 0; i < scenarios.size(); i++){
-            //Testing Dynamic ImageViews in ScenarioOptions UI
+            //Setting button to new ImageButton
             imageButtons[i] = new ImageButton(this);
+
+            //Setting Image Resource
             imageButtons[i].setImageResource(R.drawable.boy5_8);
+
+            //OnClick options for button
             imageButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -65,27 +69,19 @@ public class ScenarioOptions extends AppCompatActivity {
                 }
             });
 
-            imageButtons[i].setBackgroundColor(Color.TRANSPARENT);
+            //Setting Tags and ID for UI ImageButton
             imageButtons[i].setTag(i);
             imageButtons[i].setId(i);
 
+            //Formatting
+            imageButtons[i].setLayoutParams(lp);
+            imageButtons[i].setBackgroundColor(Color.TRANSPARENT);
+            imageButtons[i].setMaxHeight(300);
+            imageButtons[i].setMaxWidth(300);
+            imageButtons[i].setAdjustViewBounds(true);
+
+            //Add ImageButton to the view
             linearLayout.addView(imageButtons[i]);
         }
-
-        new AlertDialog.Builder(this)
-                .setTitle("Delete entry")
-                .setMessage("Are you sure you want to delete this entry?" + scenarios.size())
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // continue with delete
-                    }
-                })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // do nothing
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
     }
 }
