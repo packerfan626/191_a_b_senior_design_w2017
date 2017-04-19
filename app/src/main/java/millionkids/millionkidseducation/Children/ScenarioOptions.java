@@ -1,15 +1,25 @@
 package millionkids.millionkidseducation.Children;
 
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.media.Image;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.util.List;
+
 import millionkids.millionkidseducation.R;
+import millionkids.millionkidseducation.SQLite.AgeGroups;
+import millionkids.millionkidseducation.SQLite.Scenario;
+import millionkids.millionkidseducation.SQLite.ScenarioData;
 
 public class ScenarioOptions extends AppCompatActivity {
 
@@ -29,30 +39,53 @@ public class ScenarioOptions extends AppCompatActivity {
 
         //Receive Data from Previous screen (ChildrenHome.java)
         Bundle bundle = getIntent().getExtras();
-        String folder = bundle.getString("ageId");
+        String ageId = bundle.getString("ageId");
+        int age = Integer.parseInt(ageId);
         //End
 
-        //Testing Dynamic ImageViews in ScenarioOptions UI
-        ImageButton image = new ImageButton(this);
+        ScenarioData scenarioData = new ScenarioData(this);
+        //Declaring a list of scenarios
+        List<Scenario> scenarios = scenarioData.getScenarios(age);
 
+        //Create an array of ImageButtons based on scenarios size
+        ImageButton[] imageButtons = new ImageButton[scenarios.size()];
 
+        //LinearLayout Parameters
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        image.setLayoutParams(lp);
-        image.setMaxHeight(300);
-        image.setMaxWidth(300);
-        image.setImageResource(R.drawable.boy5_8);
-        image.setAdjustViewBounds(true);
-        linearLayout.addView(image);
+        for(int i = 0; i < scenarios.size(); i++){
+            //Testing Dynamic ImageViews in ScenarioOptions UI
+            imageButtons[i] = new ImageButton(this);
+            imageButtons[i].setImageResource(R.drawable.boy5_8);
+            imageButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-        ImageButton image2 = new ImageButton(this);
+                }
+            });
 
-        image2.setLayoutParams(lp);
-        image2.setMaxHeight(300);
-        image2.setMaxWidth(300);
-        image2.setImageResource(R.drawable.boy9_12);
-        image2.setAdjustViewBounds(true);
-        linearLayout.addView(image2);
+            imageButtons[i].setBackgroundColor(Color.TRANSPARENT);
+            imageButtons[i].setTag(i);
+            imageButtons[i].setId(i);
+
+            linearLayout.addView(imageButtons[i]);
+        }
+
+        new AlertDialog.Builder(this)
+                .setTitle("Delete entry")
+                .setMessage("Are you sure you want to delete this entry?" + scenarios.size())
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }

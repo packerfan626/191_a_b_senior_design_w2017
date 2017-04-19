@@ -37,9 +37,6 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
     //ImageButton declarations
     ImageButton girl5_8, boy5_8, girl9_12, boy9_12, girl13_17, boy13_17;
 
-    AlertDialog.Builder builder;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

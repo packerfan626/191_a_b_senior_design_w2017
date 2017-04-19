@@ -20,12 +20,6 @@ public class ScenarioData{
     //Select_Sql: Variable query that will select the data for a specific scenario
     private static final String SELECT_SQL = "SELECT * FROM Scenarios WHERE ";
 
-    //To access MySQLiteHelper methods for use within this file
-    MySQLiteHelper sqLiteHelper;
-
-    //SQLiteDatabase variable declaration to access database
-    private SQLiteDatabase database = sqLiteHelper.getReadableDatabase();
-
     Context myContext;
 
     //BEGIN SQLITE DATA
@@ -33,7 +27,7 @@ public class ScenarioData{
     private static final String TABLE_SCENARIOS = "Scenarios";
 
     // Scenarios Table Columns names
-    private static final String KEY_ID = "scenarioid";
+    private static final String KEY_ID = "scenarioId";
     private static final String KEY_AGEID = "ageId";
     private static final String KEY_LOCATION = "location";
     private static final String KEY_IMAGE = "image";
@@ -47,15 +41,18 @@ public class ScenarioData{
     }
 
     //Get Scenarios
-    public List<Scenario> getScenarios(){
+    public List<Scenario> getScenarios(int ageId){
         //Scenarios List
         List<Scenario> scenarios = new LinkedList<Scenario>();
 
         //Build Query to get Scenarios
-        String query = "SELECT * FROM " + TABLE_SCENARIOS;
+        String query = "SELECT * FROM " + TABLE_SCENARIOS + " WHERE " + KEY_AGEID + " = " + ageId;
+
+        MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(myContext);
+        SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         //Prepare Query for processing
-        Cursor cursor = database.rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, null);
 
         //Declare scenarios
         Scenario scenario = null;
@@ -74,7 +71,7 @@ public class ScenarioData{
         }
 
         //Log results of getAllScenarios
-        Log.d("getAllScenarios", scenario.toString());
+        Log.d("getAllScenarios", scenarios.toString());
 
         //Return scenarios
         return scenarios;
