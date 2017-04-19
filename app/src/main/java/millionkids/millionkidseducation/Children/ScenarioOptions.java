@@ -29,12 +29,7 @@ public class ScenarioOptions extends AppCompatActivity {
 
         //Receive Data from Previous screen (ChildrenHome.java)
         Bundle bundle = getIntent().getExtras();
-        String folder = bundle.getString("folder");
-
-
-        //Open Folder and read contents
-
-
+        String folder = bundle.getString("ageId");
         //End
 
         //Testing Dynamic ImageViews in ScenarioOptions UI
