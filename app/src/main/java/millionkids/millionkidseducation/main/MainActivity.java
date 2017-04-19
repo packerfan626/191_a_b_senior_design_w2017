@@ -15,13 +15,18 @@ public class MainActivity extends AppCompatActivity {
     private int progress = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {            //jac test comment
+    protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Declaring Variables
         final ProgressBar progressBar;
         CountDownTimer countDownTimer;
+        //attempting smooth animation of progressbar
+
+
 
         //Setting progressBar to the UI ProgressBar
         progressBar = (ProgressBar)findViewById(R.id.pgMain);

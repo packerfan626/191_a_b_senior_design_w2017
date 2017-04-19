@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import millionkids.millionkidseducation.Children.ChildrenHome;
 import millionkids.millionkidseducation.Parent.ParentHome;
@@ -20,6 +21,7 @@ import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
 import millionkids.millionkidseducation.menuUI.Settings;
+
 
 public class MainHomePage extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
 
@@ -31,8 +33,8 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_page);
 
-        final Button bParent = (Button) findViewById(R.id.bParent);
-        final Button bChild = (Button) findViewById(R.id.bChild);
+        final ImageButton bParent = (ImageButton) findViewById(R.id.bParent);
+        final ImageButton bChild = (ImageButton) findViewById(R.id.bChild);
         bParent.setOnClickListener(this);
         bChild.setOnClickListener(this);
 
