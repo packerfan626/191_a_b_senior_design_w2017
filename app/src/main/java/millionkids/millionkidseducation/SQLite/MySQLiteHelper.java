@@ -81,7 +81,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Answers");
 
         this.createDatabase();
-
     }
 
     //Checks if database exists
