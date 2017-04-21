@@ -74,10 +74,9 @@ public class GameData {
                 game.setAnswer2(cursor.getString(7));
                 game.setAnswer3(cursor.getString(8));
                 game.setCorrectAnswer(Integer.parseInt(cursor.getString(9)));
-                game.setAnswer1screen(Integer.parseInt(cursor.getString(10)));
-                game.setAnswer2screen(Integer.parseInt(cursor.getString(11)));
-                game.setAnswer3screen(Integer.parseInt(cursor.getString(12)));
-
+                game.setAnswer1text(cursor.getString(10));
+                game.setAnswer2text(cursor.getString(11));
+                game.setAnswer3text(cursor.getString(12));
             }while(cursor.moveToNext());
         }
         return gameData;

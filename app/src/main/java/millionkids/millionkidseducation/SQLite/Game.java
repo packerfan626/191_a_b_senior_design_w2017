@@ -17,9 +17,13 @@ public class Game {
     private String answer2;
     private String answer3;
     private int correctAnswer;
-    private int answer1screen;
-    private int answer2screen;
-    private int answer3screen;
+//    private int answer1screen;
+//    private int answer2screen;
+//    private int answer3screen;
+
+    private String answer1text;
+    private String answer2text;
+    private String answer3text;
 
     //Default Constructor
     public Game(){}
@@ -29,8 +33,8 @@ public class Game {
         return "GameData [questionId=" + questionId + ", scenarioId=" + scenarioId + ", questionText="
                 + questionText + ", showChild=" + showChild + ", backgroundImage=" + backgroundImage
                 + ", answer1=" + answer1 + ", answer2=" + answer2 + ", answer3" + answer3 +
-                ", correctAnswer="+ correctAnswer + ", answer1screen=" + answer1screen +
-                ", answer2screen="+ answer2screen + ", answer3screen=" + answer3screen + "]";
+                ", correctAnswer="+ correctAnswer + ", answer1text=" + answer1text +
+                ", answer2text="+ answer2text + ", answer3text=" + answer3text + "]";
     }
 
     public void setQuestionId(int questionId){
@@ -49,9 +53,7 @@ public class Game {
         this.showChild = showChild;
     }
 
-    public void setBackgroundImage(String backgroundImage){
-        this.backgroundImage = backgroundImage;
-    }
+    public void setBackgroundImage(String backgroundImage){ this.backgroundImage = backgroundImage; }
 
     public void setAnswer1(String answer1){
         this.answer1 = answer1;
@@ -69,15 +71,15 @@ public class Game {
         this.correctAnswer = correctAnswer;
     }
 
-    public void setAnswer1screen(int answer1screen){
-        this.answer1screen = answer1screen;
+    public void setAnswer1text(String answer1text){
+        this.answer1text = answer1text;
     }
 
-    public void setAnswer2screen(int answer2screen){
-        this.answer2screen = answer2screen;
+    public void setAnswer2text(String answer2text){
+        this.answer2text = answer2text;
     }
 
-    public void setAnswer3screen(int answer3screen){
-        this.answer3screen = answer3screen;
+    public void setAnswer3text(String answer3text){
+        this.answer3text = answer3text;
     }
 }
