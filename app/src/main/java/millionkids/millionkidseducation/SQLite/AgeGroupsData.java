@@ -16,7 +16,7 @@ public class AgeGroupsData {
     Context myContext;
 
     //BEGIN SQLITE DATA
-    // Scenarios table name
+    //Scenarios table name
     private static final String TABLE_AGE_GROUPS = "AgeGroups";
 
     // AgeGroup Table Columns names
