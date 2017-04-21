@@ -44,28 +44,42 @@ public class GameData {
         List<Game> gameData = new LinkedList<Game>();
 
         //Build Query to get GameData
-        String query = "SELECT * FROM " + TABLE_GAME_DATA + " WHERE  scenarioId = " + scenarioId;
+        String query = "SELECT * FROM " + TABLE_GAME_DATA +
+                " WHERE  scenarioId = ?";
+
+        //Set query arguments
+        String []queryArgs = new String[]{
+                String.valueOf(scenarioId)
+        };
 
         //MySQLiteHelper declaration
         MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(myContext);
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         //Prepare Query for Processing
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, queryArgs);
 
         Game game = null;
 
         if(cursor.moveToNext()){
             do{
                 game = new Game();
+                game.setQuestionId(Integer.parseInt(cursor.getString(0)));
+                game.setScenarioId(Integer.parseInt(cursor.getString(1)));
+                game.setQuestionId(Integer.parseInt(cursor.getString(2)));
+                game.setQuestionText(cursor.getString(3));
+                game.setShowChild(Integer.parseInt(cursor.getString(4)));
+                game.setBackgroundImage(cursor.getString(5));
+                game.setAnswer1(cursor.getString(6));
+                game.setAnswer2(cursor.getString(7));
+                game.setAnswer3(cursor.getString(8));
+                game.setCorrectAnswer(Integer.parseInt(cursor.getString(9)));
+                game.setAnswer1screen(Integer.parseInt(cursor.getString(10)));
+                game.setAnswer2screen(Integer.parseInt(cursor.getString(11)));
+                game.setAnswer3screen(Integer.parseInt(cursor.getString(12)));
 
             }while(cursor.moveToNext());
         }
-
-
         return gameData;
     }
-
-
-
 }

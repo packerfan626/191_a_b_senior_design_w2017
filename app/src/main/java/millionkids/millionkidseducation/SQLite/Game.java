@@ -76,7 +76,7 @@ public class Game {
     public void setAnswer2screen(int answer2screen){
         this.answer2screen = answer2screen;
     }
-    
+
     public void setAnswer3screen(int answer3screen){
         this.answer3screen = answer3screen;
     }
