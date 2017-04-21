@@ -58,8 +58,8 @@ public class GameData {
         if(cursor.moveToNext()){
             do{
                 game = new Game();
-                
-            }
+
+            }while(cursor.moveToNext());
         }
 
 
