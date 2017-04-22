@@ -82,4 +82,28 @@ public class Game {
     public void setAnswer3text(String answer3text){
         this.answer3text = answer3text;
     }
+
+    public int getQuestionId(){return questionId;}
+
+    public int getScenarioId(){return scenarioId;}
+
+    public String getQuestionText(){return questionText;}
+
+    public int getShowChild(){return showChild;}
+
+    public String getBackgroundImage(){return backgroundImage;}
+
+    public String getAnswer1(){return answer1;}
+
+    public String getAnswer2(){return answer2;}
+
+    public String getAnswer3(){return answer3;}
+
+    public int getCorrectAnswer(){return correctAnswer;}
+
+    public String getAnswer1text(){return answer1text;}
+
+    public String getAnswer2text(){return answer2text;}
+
+    public String getAnswer3text(){return answer3text;}
 }

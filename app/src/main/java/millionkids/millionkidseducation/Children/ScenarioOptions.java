@@ -26,7 +26,6 @@ public class ScenarioOptions extends AppCompatActivity {
 
     //LinearLayout declaration
     LinearLayout linearLayout;
-    String scenarioId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
