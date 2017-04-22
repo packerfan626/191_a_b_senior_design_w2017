@@ -1,6 +1,7 @@
 package millionkids.millionkidseducation.Children;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.media.Image;
@@ -25,6 +26,7 @@ public class ScenarioOptions extends AppCompatActivity {
 
     //LinearLayout declaration
     LinearLayout linearLayout;
+    String scenarioId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class ScenarioOptions extends AppCompatActivity {
         List<Scenario> scenarios = scenarioData.getScenarios(age);
 
         //Create an array of ImageButtons based on scenarios size
-        ImageButton[] imageButtons = new ImageButton[scenarios.size()];
+        final ImageButton[] imageButtons = new ImageButton[scenarios.size()];
 
         //LinearLayout Parameters
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -61,14 +63,6 @@ public class ScenarioOptions extends AppCompatActivity {
             //Setting Image Resource
             imageButtons[i].setImageResource(R.drawable.boy5_8);
 
-            //OnClick options for button
-            imageButtons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
-
             //Setting Tags and ID for UI ImageButton
             imageButtons[i].setTag(i);
             imageButtons[i].setId(i);
@@ -79,6 +73,24 @@ public class ScenarioOptions extends AppCompatActivity {
             imageButtons[i].setMaxHeight(300);
             imageButtons[i].setMaxWidth(300);
             imageButtons[i].setAdjustViewBounds(true);
+
+            //OnClick options for button
+            imageButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(ScenarioOptions.this, GameActivity.class);
+                    Bundle bundle = new Bundle();
+
+                    ImageButton imageButton = (ImageButton) view;
+                    int id = imageButton.getId() + 1;
+
+                    bundle.putInt("scenarioId", id);
+                    intent.putExtras(bundle);
+
+                    startActivity(intent);
+                }
+            });
+
 
             //Add ImageButton to the view
             linearLayout.addView(imageButtons[i]);
