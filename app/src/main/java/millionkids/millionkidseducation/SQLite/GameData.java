@@ -66,17 +66,16 @@ public class GameData {
                 game = new Game();
                 game.setQuestionId(Integer.parseInt(cursor.getString(0)));
                 game.setScenarioId(Integer.parseInt(cursor.getString(1)));
-                game.setQuestionId(Integer.parseInt(cursor.getString(2)));
-                game.setQuestionText(cursor.getString(3));
-                game.setShowChild(Integer.parseInt(cursor.getString(4)));
-                game.setBackgroundImage(cursor.getString(5));
-                game.setAnswer1(cursor.getString(6));
-                game.setAnswer2(cursor.getString(7));
-                game.setAnswer3(cursor.getString(8));
-                game.setCorrectAnswer(Integer.parseInt(cursor.getString(9)));
-                game.setAnswer1text(cursor.getString(10));
-                game.setAnswer2text(cursor.getString(11));
-                game.setAnswer3text(cursor.getString(12));
+                game.setQuestionText(cursor.getString(2));
+                game.setShowChild(Integer.parseInt(cursor.getString(3)));
+                game.setBackgroundImage(cursor.getString(4));
+                game.setAnswer1(cursor.getString(5));
+                game.setAnswer2(cursor.getString(6));
+                game.setAnswer3(cursor.getString(7));
+                game.setCorrectAnswer(Integer.parseInt(cursor.getString(8)));
+                game.setAnswer1text(cursor.getString(9));
+                game.setAnswer2text(cursor.getString(10));
+                game.setAnswer3text(cursor.getString(11));
             }while(cursor.moveToNext());
         }
         return gameData;

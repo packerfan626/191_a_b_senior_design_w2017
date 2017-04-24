@@ -83,7 +83,24 @@ public class ScenarioOptions extends AppCompatActivity {
                     ImageButton imageButton = (ImageButton) view;
                     int id = imageButton.getId() + 1;
 
+                    new AlertDialog.Builder(ScenarioOptions.this)
+                            .setTitle("Delete entry")
+                            .setMessage("Are you sure you want to delete this entry?" + id)
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // continue with delete
+                                }
+                            })
+                            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // do nothing
+                                }
+                            })
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+
                     bundle.putInt("scenarioId", id);
+
                     intent.putExtras(bundle);
 
                     startActivity(intent);
