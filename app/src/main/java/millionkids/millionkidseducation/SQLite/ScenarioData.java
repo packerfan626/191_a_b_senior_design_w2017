@@ -76,9 +76,6 @@ public class ScenarioData{
             } while (cursor.moveToNext());
         }
 
-        //Log results of getAllScenarios
-        Log.d("getAllScenarios", scenarios.toString());
-
         //Return scenarios
         return scenarios;
     }

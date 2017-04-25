@@ -15,9 +15,6 @@ import java.util.List;
 public class GameData {
     Context myContext;
 
-    //BEGIN SQLITE DATA
-    private static final String TABLE_GAME_DATA = "GameData";
-
     //GameData Table Column Names
     private static final String QUESTIONID = "questionId";
     private static final String SCENARIOID = "scenarioId";
@@ -44,8 +41,8 @@ public class GameData {
         List<Game> gameData = new LinkedList<Game>();
 
         //Build Query to get GameData
-        String query = "SELECT * FROM " + TABLE_GAME_DATA +
-                " WHERE  scenarioId = ?";
+        String query = "SELECT * FROM GAMEDATA" +
+                " WHERE scenarioId = ?";
 
         //Set query arguments
         String []queryArgs = new String[]{
@@ -76,6 +73,9 @@ public class GameData {
                 game.setAnswer1text(cursor.getString(9));
                 game.setAnswer2text(cursor.getString(10));
                 game.setAnswer3text(cursor.getString(11));
+
+                //Add gameData
+                gameData.add(game);
             }while(cursor.moveToNext());
         }
         return gameData;

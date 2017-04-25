@@ -1,7 +1,9 @@
 package millionkids.millionkidseducation.Children;
 
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.media.Image;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -12,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import millionkids.millionkidseducation.R;
@@ -35,7 +38,6 @@ public class GameActivity extends AppCompatActivity {
     //Submit Option
     ImageButton submit;
 
-
     //Declaration of GameData
     GameData gameData = new GameData(this);
 
@@ -57,6 +59,24 @@ public class GameActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int scenarioId = bundle.getInt("scenarioId");
 
+        index = 0;
+
+        new AlertDialog.Builder(this)
+                .setTitle("Delete entry")
+                .setMessage("Are you sure you want to delete this entry?" + scenarioId + index)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
         //Link Variables to UI content
         gameText = (TextView)findViewById(R.id.gameText);
         background = (ImageView)findViewById(R.id.bgImage);
@@ -65,6 +85,8 @@ public class GameActivity extends AppCompatActivity {
         option3 = (RadioButton)findViewById(R.id.option3);
         submit = (ImageButton)findViewById(R.id.submitButton);
 
+        //Game declaration
+        games = new LinkedList<Game>();
 
         //Setting scrollable for GameText TextView
         gameText.setMovementMethod(new ScrollingMovementMethod());
@@ -73,7 +95,7 @@ public class GameActivity extends AppCompatActivity {
         games = gameData.getGameData(scenarioId);
 
         //Display Data onto UI
-        displayData();
+        displayData(games);
 
         //Add Listener for radio buttons
         addListenerButton();
@@ -108,36 +130,82 @@ public class GameActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                selectedId = selectedId + 1;
+                //Recognize which radioButton is selected
+                int radioButtonId = radioGroup.getCheckedRadioButtonId();
+                View radioButton = radioGroup.findViewById(radioButtonId);
+                int selectedId = radioGroup.indexOfChild(radioButton);
+
+                //Get feedback from selectedID.
+                String message = "";
+                if(selectedId == 0){
+                    message = games.get(index).getAnswer1text();
+                }else if (selectedId == 1){
+                    message = games.get(index).getAnswer2text();
+                }else{
+                    message = games.get(index).getAnswer3text();
+                }
+
+                //Check if answer is correct or not, and provide the feedback in the dialog
+                if(games.get(index).getCorrectAnswer() == selectedId) {
+                    new AlertDialog.Builder(GameActivity.this)
+                            .setTitle("Correct")
+                            .setMessage("This is the correct answer: " + message)
+                            .setPositiveButton("Next!", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //Increment index by 1
+                                    index++;
+
+                                    //Check if Index is equal to the size of games list
+                                    if(index == games.size()){
+
+                                    }else{
+                                        displayData(games);
+                                    }
+                                }
+                            })
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }else{
+                    new AlertDialog.Builder(GameActivity.this)
+                            .setTitle("Wrong Answer")
+                            .setMessage("This answer is incorrect: " + message)
+                            .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // continue with delete
+                                }
+                            })
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
+
             }
         });
     }
 
-    public void displayData(){
+    public void displayData(List<Game> games){
         //Stores currentIndex of game
         Game currentIndex = games.get(index);
 
         //Sets Text for Scenario/Question
         if(!currentIndex.getQuestionText().isEmpty())
-            gameText.setText(currentIndex.getQuestionText());
+            gameText.setText(games.get(index).getQuestionText());
         else
             gameText.setVisibility(View.INVISIBLE);
 
         //BEGIN--Sets up text for radio buttons--------------
-        if(!currentIndex.getAnswer1().isEmpty())
-            option1.setText(currentIndex.getAnswer1());
+        if(!currentIndex.getAnswer1().equals("null"))
+            option1.setText(games.get(index).getAnswer1());
         else
             option1.setVisibility(View.INVISIBLE);
 
 
-        if(!currentIndex.getAnswer2().isEmpty())
-            option2.setText(currentIndex.getAnswer2());
+        if(!currentIndex.getAnswer2().equals("null"))
+            option2.setText(games.get(index).getAnswer2());
         else
             option2.setVisibility(View.INVISIBLE);
 
-        if(!currentIndex.getAnswer3().isEmpty())
-            option3.setText(currentIndex.getAnswer3());
+        if(!currentIndex.getAnswer3().equals("null"))
+            option3.setText(games.get(index).getAnswer3());
         else
             option3.setVisibility(View.INVISIBLE);
         //END------------------------------------------------
