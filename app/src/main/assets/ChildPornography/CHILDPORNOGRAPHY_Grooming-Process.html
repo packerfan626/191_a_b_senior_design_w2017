@@ -1,33 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/childPornGroom.css">
+     
+    <script>
+    window.onload = function()
+    {
+    	var open = false;
+    	
+    	document.getElementById('topic1').onclick = function()
+    	{
+    		if (open == false){
+    			document.getElementById('p1').style.height = "100%"
+    			open = true;
+    		}
+    		else{
+    			document.getElementById('p1').style.height = "0px";
+    			open = false;
+    		}
+    	}
+    	document.getElementById('topic2').onclick = function()
+    	{
+    		if (open == false){
+    			document.getElementById('p2').style.height = "100%";
+    			open = true;
+    		}
+    		else{
+    			document.getElementById('p2').style.height = "0px";
+    			open = false;
+    		}
+    	}
+    	document.getElementById('topic3').onclick = function()
+    	{
+    		if (open == false){
+    			document.getElementById('p3').style.height = "100%";
+    			open = true;
+    		}
+    		else{
+    			document.getElementById('p3').style.height = "0px";
+    			open = false;
+    		}
+    	}
+    	document.getElementById('topic4').onclick = function()
+    	{
+    		if (open == false){
+    			document.getElementById('p4').style.height = "100%";
+    			open = true;
+    		}
+    		else{
+    			document.getElementById('p4').style.height = "0px";
+    			open = false;
+    		}
+    	}
+    	document.getElementById('topic5').onclick = function()
+    	{
+    		if (open == false){
+    			document.getElementById('p5').style.height = "100%";
+    			open = true;
+    		}
+    		else{
+    			document.getElementById('p5').style.height = "0px";
+    			open = false;
+    		}
+    	}
+
+    }
+    </script>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
 </head>
 
 <body>
     <h1 id = "title">Grooming Process</h1> <br>
 
-    <div class = "intro">
-	    <p id ="summary">
-	        Child pornography - Grooming Process<br><br>
-        </p>
+    <div class = "content-box">
+	
+    <p id = "intro">
+    	Predators target vulernable children and execute a physiological grooming process aimed to make their targets dependent upon them.  Predators are skilled at physical and psychological manipulation in order to gain their victim's trust.<br>
+    </p>
 
-	    <div id = "content">
-	        <p class="bullets">
-	            <ul>
-	                <li> list element one </li>
-	                <li> <big> <b>an <large>important </large></b></big> list element </li>
+    <div id = "dropdown">
+    The stages of the grooming process are as follows (expand each to see details):<br>
 
-	            </ul>
-            </p>
-        </div>
+    <button id = "topic1">Targeting a Victim</button>
 
-        <div class = "content">
-	        <p>
-		        More content here
-	        </p>
-        </div>
+    <p id = "p1">
+    Social media is a growing emotional outlet that that people use to express themselves to their peers. Predators understand this and target these vulnerable children and high school-aged kids who may be susceptible to their process. 
+    </p>
+    <button id = "topic2">Gaining Their Trust</button>
+    <p id = "p2">
+   	Online predators will attempt to gain their victim’s trust through casual conversations. Often times, they will pose as other children their age to gather information. Over time, the victim will believe they have made a trustworthy online “friend” - without even meeting them in person.
+    </p>
+    <button id = "topic3">Filling a Need</button>
+    <p id = "p3">
+   	The trafficker now has sensitive information about the victim’s life. They will attempt to make their victim’s fall dependent upon them by giving them gifts, being a friend, or being in a love relationship.
+    </p>
+    <button id = "topic4">Isolation</button>
+    <p id = "p4">
+   	Once an online predator has gained their victim’s trust and dependency, they begin to isolate their victim from their friends and family. 
+    </p>
+    <button id = "topic5">Abuse Begins</button>
+    <p id = "p5">
+   	The predator now will express that their services of charming love and friendship need to be repaid. This is typically in the form of sexual services. 
+    </p>
+    </div>
+    <br>
+<!--     INSERT IMAGE HERE
+ -->    <h1> Tactics </h1>
+
+   	The grooming process involving sextortion, sex trafficking, and child pornography all use different manipulation tactics, often in combination. The most common tactic that reports indicated were that the offender <b>threatened</b> to post previously acquired sexual content online or post it in a place where family and friends would be able to see (if the child did not comply).
+   	Other tactics used by offenders include:<br>
+<!--    	PUT INTO an accordion list thingy -->
+    		<dl>
+    			<dt>>Reciprocation</dt>
+    				<dd>whereby the offender coerced the child into providing sexual content by promising reciprocity.</dd>
+    			<dt>>Developing a Bond</dt>
+    				<dd>by establishing a friendship/romantic relationship</dd>
+    			<dt>>Pretending to Be someone they are not</dt>
+    				<dd>Some examples include offenders posing as a modeling agency, or someone who is younger and/or female</dd>
+    			<dt>>Threatening</dt>
+    				<dd>-To create sexual content of the child using digital-editing tools.<br>
+					-To create a fake profile as the child and post sexual content of the child</dd>
+
+
+
+
+    		</dl>
     </div>
 </body>
 

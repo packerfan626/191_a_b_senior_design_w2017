@@ -4,7 +4,7 @@ body{
 }
 
 h1{
-	font-family: helvetica;
+	
 
 }
 .emphasisText
@@ -21,23 +21,29 @@ h1{
 	font-size:25px;
 }
 
-.intro{
+#topic1,#topic2, #topic3, #topic4, #topic5
+{
+	background-color: white;
+	width: 100%;
+	height: 30px;
+	color:black;
+	border-radius:15px;
+	font-size:15px;
+}
+
+#p1,#p2, #p3, #p4, #p5
+{
+	height:0px;
+	overflow:hidden;
+	-moz-transition:all .5 linear;
+	-webkit-transition: all .5 linear;
+	-o-transition: all .5 linear;
+	transition:all .5 linear;
+}
+
+.content-box{
     font-family:Georgia;
     margin:auto;
     padding:10px;
     line-height: 30px;
-}
-
-.bullets{
-    background-color:white;
-}
-
-
-big{
-    font-family:Arial
-    text-size:30dp
-}
-
-#summary{
-	display:inline;
 }
