@@ -9,10 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
 
-    android:background="@drawable/earth_black_screen"
+    android:background="@drawable/ui_globe"
     tools:context="millionkids.millionkidseducation.main.MainHomePage"
     android:id="@+id/drawerLayoutMain">
-
+    <!--android:background="@drawable/earth_black_screen"-->
 
 
 
@@ -24,69 +24,97 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/welcome_to_text"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/imageView2"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView2"
-                app:layout_constraintVertical_bias="0.854" />
+            <!--<ImageView-->
+                <!--android:id="@+id/imageView"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:srcCompat="@drawable/welcome_to_text"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignStart="@+id/imageView2"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--app:layout_constraintBottom_toTopOf="@+id/imageView2"-->
+                <!--app:layout_constraintVertical_bias="0.854" />-->
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/mk_text_home"
-                android:layout_below="@+id/imageView"
-                android:layout_centerHorizontal="true"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginBottom="66dp"
-                app:layout_constraintBottom_toTopOf="@+id/bParent" />
+            <!--<ImageView-->
+                <!--android:id="@+id/imageView2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:srcCompat="@drawable/mk_text_home"-->
+                <!--android:layout_below="@+id/imageView"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--android:layout_marginBottom="66dp"-->
+                <!--app:layout_constraintBottom_toTopOf="@+id/bParent" />-->
+
+            <!--android:layout_below="@+id/imageView2"-->
+                <!--app:srcCompat="@drawable/parent_button"-->
 
             <ImageButton
                 android:id="@+id/bParent"
-                android:layout_width="247dp"
-                android:layout_height="66dp"
-                app:srcCompat="@drawable/parent_button"
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_below="@+id/imageView2"
+                android:layout_width="309dp"
+
+                android:layout_height="120dp"
                 android:layout_alignStart="@+id/bChild"
                 android:layout_marginBottom="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/bChild"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toTopOf="@+id/bChild"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
-                tools:layout_editor_absoluteY="404dp" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/adult_button_"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="225dp" />
 
             <ImageButton
                 android:id="@+id/bChild"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/kids_button"
                 style="?android:attr/borderlessButtonStyle"
+                android:layout_width="310dp"
+
+                android:layout_height="128dp"
                 android:layout_below="@+id/bParent"
                 android:layout_centerHorizontal="true"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="72dp"
                 android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                android:scaleType="fitStart"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="50dp"
-                app:layout_constraintHorizontal_bias="0.496" />
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/kid_button_"
+                tools:layout_editor_absoluteX="34dp" />
+
+            <!--app:srcCompat="@drawable/kids_button"-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/bParent"-->
+                <!--android:layout_width="358dp"-->
+                <!--android:layout_height="76dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--app:srcCompat="@drawable/adult_button_"-->
+                <!--tools:layout_editor_absoluteX="13dp"-->
+                <!--tools:layout_editor_absoluteY="396dp" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButton2"-->
+                <!--android:layout_width="354dp"-->
+                <!--android:layout_height="71dp"-->
+                <!--android:scaleType="centerInside"-->
+                <!--app:srcCompat="@drawable/kid_button_"-->
+                <!--tools:layout_editor_absoluteX="16dp"-->
+                <!--tools:layout_editor_absoluteY="228dp" />-->
+
 
         </android.support.constraint.ConstraintLayout>
         />

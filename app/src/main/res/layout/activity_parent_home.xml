@@ -43,10 +43,10 @@
                     android:layout_height="58dp"
                     android:layout_marginLeft="2dp"
                     android:background="#a7afbc"
-                    android:text="Summary"
-                    android:textSize="14dp"
+                    android:text="Overview"
+                    android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textAllCaps="false"/>
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/bGroomingProcess"
