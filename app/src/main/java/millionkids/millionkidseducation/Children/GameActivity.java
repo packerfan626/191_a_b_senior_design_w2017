@@ -57,25 +57,12 @@ public class GameActivity extends AppCompatActivity {
 
         //Recieve data from previous screen
         Bundle bundle = getIntent().getExtras();
+
+        //Store recieved (from previous screen) scenarioId into int scenarioId
         int scenarioId = bundle.getInt("scenarioId");
 
+        //Initial index; set to zero
         index = 0;
-
-        new AlertDialog.Builder(this)
-                .setTitle("Delete entry")
-                .setMessage("Are you sure you want to delete this entry?" + scenarioId + index)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // continue with delete
-                    }
-                })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // do nothing
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
 
         //Link Variables to UI content
         gameText = (TextView)findViewById(R.id.gameText);
@@ -125,8 +112,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void addListenerButton(){
+        //Link RadioGroup to the RadioGroupXML
         radioGroup = (RadioGroup)findViewById(R.id.radio);
 
+        //Checks the imageButton "Submit" when OnClick
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,6 +136,8 @@ public class GameActivity extends AppCompatActivity {
 
                 //Check if answer is correct or not, and provide the feedback in the dialog
                 if(games.get(index).getCorrectAnswer() == selectedId) {
+
+                    //Display if the user selected the correct answer.
                     new AlertDialog.Builder(GameActivity.this)
                             .setTitle("Correct")
                             .setMessage("This is the correct answer: " + message)
@@ -159,6 +150,9 @@ public class GameActivity extends AppCompatActivity {
                                     if(index == games.size()){
 
                                     }else{
+                                        /*If there are still questions within the scenario and then
+                                        continue*/
+
                                         displayData(games);
                                     }
                                 }
@@ -166,6 +160,8 @@ public class GameActivity extends AppCompatActivity {
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
                 }else{
+
+                    //Display if the user selected the incorrect answer
                     new AlertDialog.Builder(GameActivity.this)
                             .setTitle("Wrong Answer")
                             .setMessage("This answer is incorrect: " + message)
@@ -209,6 +205,5 @@ public class GameActivity extends AppCompatActivity {
         else
             option3.setVisibility(View.INVISIBLE);
         //END------------------------------------------------
-
     }
 }
