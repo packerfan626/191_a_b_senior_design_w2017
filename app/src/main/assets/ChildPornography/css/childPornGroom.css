@@ -1,5 +1,5 @@
 body{
-	background-color: #333333;
+	background-color:#036c96;
 	color: white;
 	font-family:"Helvetica";
 }
@@ -41,8 +41,8 @@ h1{
 	width:80%;
 	letter-spacing:1px;
 	height:30px;
-	background-color: #446600;
-	color:white;
+	background-color: white;
+	color:gray;
 	margin-bottom: 5px;	
 	margin-top: 5px;
 

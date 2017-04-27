@@ -57,8 +57,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         setTitle("Sex Trafficking - Minor");
 
         //set initial load
-        int darkG = Color.parseColor("#333333");
-        bSummary.setBackgroundColor(darkG);
+        bSummary.setBackgroundColor(getResources().getColor(R.color.turquoise));
         //webview for html
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -192,10 +191,8 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     {
 //        tvCurrentContent.setText(currentContext);
         mWebView.loadUrl(currentContext);
-        int lightGray = Color.parseColor("#a7afbc");
-        gray.setBackgroundColor(lightGray);
-        int darkG = Color.parseColor("#333333");
-        clicked.setBackgroundColor(darkG);
+        gray.setBackgroundColor(getResources().getColor(R.color.lightgray));
+        clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
         prevButton = clicked;
     }
 }
