@@ -31,8 +31,10 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        StartAnimations();
+        StartAnimations();
+    }
 
+    private void StartAnimations() {
         final Animation animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         ImageView iv = (ImageView) findViewById(R.id.splash);
         iv.startAnimation(animationFadeIn);
@@ -61,60 +63,11 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         splashTread.start();
-
-        //Declaring Variables
-//        final ProgressBar progressBar;
-//        CountDownTimer countDownTimer;
-//        //attempting smooth animation of progressbar
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                startActivity(new Intent(MainActivity.this, MainHomePage.class));
-//                overridePendingTransition(R.anim.fade_in, R.anim.fade_in);
-//                finish();
-//            }
-//        }, WELCOME_TIMEOUT);
     }
-
-    private void StartAnimations() {
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
-        anim.reset();
-        LinearLayout l=(LinearLayout) findViewById(R.id.lin_lay);
-        l.clearAnimation();
-        l.startAnimation(anim);
-
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
-        anim.reset();
-        ImageView iv = (ImageView) findViewById(R.id.splash);
-        iv.clearAnimation();
-        iv.startAnimation(anim);
-
-        splashTread = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    int waited = 0;
-                    // Splash screen pause time
-                    while (waited < 3500) {
-                        sleep(100);
-                        waited += 100;
-                    }
-                    Intent intent = new Intent(MainActivity.this,
-                            MainHomePage.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
-                    MainActivity.this.finish();
-                } catch (InterruptedException e) {
-                    // do nothing
-                } finally {
-                    MainActivity.this.finish();
-                }
-
-            }
-        };
-        splashTread.start();
-
+    @Override
+    public void onBackPressed(){
     }
+}
 
     //Set progress integer to input within progressBar
 //    private int progress = 0;
@@ -166,7 +119,3 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     //Disables back button from doing anything
-    @Override
-    public void onBackPressed(){
-    }
-}
