@@ -1,6 +1,7 @@
 package millionkids.millionkidseducation.Children;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.Image;
 import android.support.v7.app.AlertDialog;
@@ -169,8 +170,9 @@ public class GameActivity extends AppCompatActivity {
                                                 })
                                                 .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int which) {
-                                                        // continue with try again
-
+                                                        //Game jumps back to Game--MainMenu
+                                                        Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
+                                                        startActivity(intent);
                                                     }
                                                 })
                                                 .setIcon(android.R.drawable.ic_dialog_alert)
