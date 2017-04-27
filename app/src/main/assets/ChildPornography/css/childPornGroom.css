@@ -36,16 +36,18 @@ h1{
 
 }
 
+
 #more-button2
 {
-	width:80%;
+	width:100%;
 	letter-spacing:1px;
 	height:30px;
-	background-color: white;
-	color:gray;
-	margin-bottom: 5px;	
-	margin-top: 5px;
-
+	background-color: transparent;
+	border-color: transparent;
+	color:white;
+	
+	text-decoration: underline;
+	text-align:left;
 }
 
 .growingDiv
@@ -57,10 +59,10 @@ h1{
 	transition: height .5s;
 	height: 0;
 	overflow:hidden;
-	margin: all 10px;
+	
 }
 
 .wrapper
 {
-	text-align:center;
+	text-align:left;
 }
