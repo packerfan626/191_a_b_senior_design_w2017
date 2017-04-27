@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="58dp"
                     android:layout_marginLeft="2dp"
-                    android:background="@color/lightgray"
+                    android:background="@color/actionBar"
                     android:text="Overview"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
@@ -52,24 +52,24 @@
                     android:id="@+id/bGroomingProcess"
                     android:layout_width="86dp"
                     android:layout_height="58dp"
-                    android:background="@color/lightgray"
-                    android:text="Grooming Process"
                     android:layout_marginLeft="2dp"
-                    android:textSize="14dp"
+                    android:background="@color/actionBar"
+                    android:text="Grooming Process"
+                    android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textAllCaps="false"/>
+                    android:textSize="14dp" />
 
 
                 <Button
                     android:id="@+id/bWarrningSigns"
                     android:layout_width="79dp"
                     android:layout_height="58dp"
-                    android:background="@color/lightgray"
-                    android:text="Warning Signs"
                     android:layout_marginLeft="2dp"
-                    android:textSize="14dp"
+                    android:background="@color/actionBar"
+                    android:text="Warning Signs"
+                    android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textAllCaps="false"/>
+                    android:textSize="14dp" />
 
 
                 <Button
@@ -78,11 +78,11 @@
                     android:layout_height="58dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
-                    android:background="@color/lightgray"
+                    android:background="@color/actionBar"
                     android:text="Preventative Measure"
-                    android:textSize="14dp"
+                    android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textAllCaps="false"/>
+                    android:textSize="14dp" />
 
 
             </LinearLayout>

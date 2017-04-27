@@ -191,7 +191,8 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     {
 //        tvCurrentContent.setText(currentContext);
         mWebView.loadUrl(currentContext);
-        gray.setBackgroundColor(getResources().getColor(R.color.lightgray));
+        int actionBarColor = Color.parseColor("#00081d");
+        gray.setBackgroundColor(actionBarColor);
         clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
         prevButton = clicked;
     }
