@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="millionkids.millionkidseducation.Parent.ParentHome"
     android:id="@+id/drawerLayout"
-    android:background="@color/turquoise">
+    android:background="@color/globeBlue">
 
     <LinearLayout
         android:layout_width="match_parent"

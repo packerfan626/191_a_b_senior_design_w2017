@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="millionkids.millionkidseducation.menuUI.Settings"
-    android:background="@color/turquoise">
+    android:background="@color/globeBlue">
 
     <RelativeLayout
         android:layout_width="match_parent"

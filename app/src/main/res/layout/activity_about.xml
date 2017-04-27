@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="millionkids.millionkidseducation.menuUI.About"
     android:id="@+id/drawerLayoutAbout"
-    android:background="@color/turquoise">
+    android:background="@color/globeBlue">
 
     <LinearLayout
         android:orientation="vertical"
