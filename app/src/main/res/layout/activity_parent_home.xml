@@ -86,18 +86,7 @@
 
 
             </LinearLayout>
-
-            <!--<TextView-->
-                <!--android:id="@+id/tvSectionName"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="33dp"-->
-                <!--android:text="Sex Trafficking - Minor"-->
-                <!--android:textAlignment="center"-->
-                <!--android:textColor="@android:color/black"-->
-                <!--android:textSize="24sp"-->
-                <!--android:textStyle="bold" />-->
         </RelativeLayout>
-
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -107,12 +96,5 @@
         android:layout_gravity = "start"
         app:headerLayout="@layout/parent_navigation_header"
         app:menu ="@menu/navigation_menu">
-
-        <!--<ExpandableListView-->
-            <!--android:id="@+id/elvParentMenu"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent">-->
-
-        <!--</ExpandableListView>-->
     </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

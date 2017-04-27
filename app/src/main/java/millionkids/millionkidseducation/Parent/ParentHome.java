@@ -189,11 +189,13 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     //change the buttons color
     private void changeButtonColors(Button clicked, Button gray, String currentContext)
     {
-//        tvCurrentContent.setText(currentContext);
         mWebView.loadUrl(currentContext);
         int actionBarColor = Color.parseColor("#00081d");
         gray.setBackgroundColor(actionBarColor);
-        clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
+        int currentSelectionColor = Color.parseColor("#036c96");
+        clicked.setBackgroundColor(currentSelectionColor);
+//        clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
+
         prevButton = clicked;
     }
 }

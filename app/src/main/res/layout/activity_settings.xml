@@ -5,7 +5,8 @@
     android:id="@+id/drawerLayoutSettings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="millionkids.millionkidseducation.menuUI.Settings">
+    tools:context="millionkids.millionkidseducation.menuUI.Settings"
+    android:background="@color/turquoise">
 
     <RelativeLayout
         android:layout_width="match_parent"
