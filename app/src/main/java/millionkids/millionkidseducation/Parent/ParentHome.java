@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,7 +56,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         setTitle("Sex Trafficking - Minor");
 
         //set initial load
-        bSummary.setBackgroundColor(getResources().getColor(R.color.turquoise));
+        bSummary.setBackgroundColor(getResources().getColor(R.color.globeBlue));
         //webview for html
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -189,10 +188,13 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     //change the buttons color
     private void changeButtonColors(Button clicked, Button gray, String currentContext)
     {
-//        tvCurrentContent.setText(currentContext);
         mWebView.loadUrl(currentContext);
-        gray.setBackgroundColor(getResources().getColor(R.color.lightgray));
-        clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
+        int actionBarColor = Color.parseColor("#00081d");
+        gray.setBackgroundColor(actionBarColor);
+        int currentSelectionColor = Color.parseColor("#203469");
+        clicked.setBackgroundColor(currentSelectionColor);
+//        clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
+
         prevButton = clicked;
     }
 }

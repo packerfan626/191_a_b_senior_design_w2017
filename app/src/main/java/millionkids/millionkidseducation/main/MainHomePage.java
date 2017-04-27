@@ -1,6 +1,7 @@
 package millionkids.millionkidseducation.main;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -32,7 +33,7 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_page);
-
+        setTitle("Home");
         final ImageButton bParent = (ImageButton) findViewById(R.id.bParent);
         final ImageButton bChild = (ImageButton) findViewById(R.id.bChild);
         bParent.setOnClickListener(this);
@@ -107,6 +108,28 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed(){
     }
 
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem menuItem) {
+//        new Handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                switch(menuItem.getItemId()) {
+//                    case R.id.mAbout:
+//                        MainHomePage.this.startActivity(new Intent(MainHomePage.this, About.class));
+//                        break;
+//                    case R.id.mLearnMore:
+//                        MainHomePage. this.startActivity(new Intent(MainHomePage.this, LearnMore.class));
+//                        break;
+//                    case R.id.mSetting:
+//                        MainHomePage.this.startActivity(new Intent(MainHomePage.this, Settings.class));
+//                        break;
+//                    }
+//
+//
+//            }, 200);
+//            drawer
+//        return false;
+//    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch(menuItem.getItemId()) {
