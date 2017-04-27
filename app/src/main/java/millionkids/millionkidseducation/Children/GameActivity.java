@@ -44,6 +44,9 @@ public class GameActivity extends AppCompatActivity {
     //List of GameData
     List <Game> games;
 
+    //Checks if options are available
+    boolean optionsAvail = false;
+
     //Current index
     int index = 0;
 
@@ -121,17 +124,23 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Recognize which radioButton is selected
                 int radioButtonId = radioGroup.getCheckedRadioButtonId();
-                View radioButton = radioGroup.findViewById(radioButtonId);
-                int selectedId = radioGroup.indexOfChild(radioButton);
+                final View radioButton = radioGroup.findViewById(radioButtonId);
+                final int selectedId = radioGroup.indexOfChild(radioButton);
+                boolean validSelection = false;
 
                 //Get feedback from selectedID.
                 String message = "";
                 if(selectedId == 0){
                     message = games.get(index).getAnswer1text();
+                    validSelection = true;
                 }else if (selectedId == 1){
                     message = games.get(index).getAnswer2text();
-                }else{
+                    validSelection = true;
+                }else if (selectedId == 2){
                     message = games.get(index).getAnswer3text();
+                    validSelection = true;
+                }else{
+                    validSelection = false;
                 }
 
                 //Check if answer is correct or not, and provide the feedback in the dialog
@@ -152,14 +161,14 @@ public class GameActivity extends AppCompatActivity {
                                     }else{
                                         /*If there are still questions within the scenario and then
                                         continue*/
-
+                                        radioGroup.clearCheck();
                                         displayData(games);
                                     }
                                 }
                             })
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
-                }else{
+                }else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
 
                     //Display if the user selected the incorrect answer
                     new AlertDialog.Builder(GameActivity.this)
@@ -167,41 +176,71 @@ public class GameActivity extends AppCompatActivity {
                             .setMessage("This answer is incorrect: " + message)
                             .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
-                                    // continue with delete
+                                    // continue with try again
+                                    radioButton.setVisibility(View.INVISIBLE);
+                                    radioGroup.clearCheck();
                                 }
                             })
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
+                }
+                else if (!validSelection){
+                    //Check if options are available, if yes display an error dialog
+                    if(optionsAvail) {
+                        new AlertDialog.Builder(GameActivity.this)
+                                .setTitle("Make a Selection")
+                                .setMessage("You must make a selection!")
+                                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // continue with try again
+                                    }
+                                })
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .show();
+                    //If no options available allow them to proceed by simply clicking select
+                    }else{
+                        index++;
+                        displayData(games);
+                    }
                 }
 
             }
         });
     }
 
+    //Display the data onto the UI that is taken in from the Database
     public void displayData(List<Game> games){
         //Stores currentIndex of game
         Game currentIndex = games.get(index);
 
         //Sets Text for Scenario/Question
-        if(!currentIndex.getQuestionText().isEmpty())
+        if(!currentIndex.getQuestionText().isEmpty()) {
             gameText.setText(games.get(index).getQuestionText());
+        }
         else
             gameText.setVisibility(View.INVISIBLE);
 
         //BEGIN--Sets up text for radio buttons--------------
-        if(!currentIndex.getAnswer1().equals("null"))
+        if(!currentIndex.getAnswer1().equals("null")) {
             option1.setText(games.get(index).getAnswer1());
+            option1.setVisibility(View.VISIBLE);
+            optionsAvail = true;
+        }
         else
             option1.setVisibility(View.INVISIBLE);
 
 
-        if(!currentIndex.getAnswer2().equals("null"))
+        if(!currentIndex.getAnswer2().equals("null")) {
             option2.setText(games.get(index).getAnswer2());
+            option2.setVisibility(View.VISIBLE);
+        }
         else
             option2.setVisibility(View.INVISIBLE);
 
-        if(!currentIndex.getAnswer3().equals("null"))
+        if(!currentIndex.getAnswer3().equals("null")) {
             option3.setText(games.get(index).getAnswer3());
+            option3.setVisibility(View.VISIBLE);
+        }
         else
             option3.setVisibility(View.INVISIBLE);
         //END------------------------------------------------
