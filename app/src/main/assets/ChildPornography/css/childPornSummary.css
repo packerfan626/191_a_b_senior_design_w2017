@@ -1,15 +1,11 @@
 body{
-	background-color: #036c96;;
+	background-color:  #203469;
 	color: white;
 	font-family:"Helvetica";
 }
 #test
 {
 	position:relative;
-	width:100%;
-}
-img
-{
 	width:100%;
 }
 
