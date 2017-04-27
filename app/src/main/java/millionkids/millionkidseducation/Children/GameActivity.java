@@ -145,7 +145,6 @@ public class GameActivity extends AppCompatActivity {
 
                 //Check if answer is correct or not, and provide the feedback in the dialog
                 if(games.get(index).getCorrectAnswer() == selectedId) {
-
                     //Display if the user selected the correct answer.
                     new AlertDialog.Builder(GameActivity.this)
                             .setTitle("Correct")
@@ -157,7 +156,25 @@ public class GameActivity extends AppCompatActivity {
 
                                     //Check if Index is equal to the size of games list
                                     if(index == games.size()){
+                                        new AlertDialog.Builder(GameActivity.this)
+                                                .setTitle("Game Over!")
+                                                .setMessage("Thank you for playing! We hope you " +
+                                                        "learned a lot!")
+                                                .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        //Reset index and redisplay data
+                                                        index = 0;
+                                                        displayData(games);
+                                                    }
+                                                })
+                                                .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        // continue with try again
 
+                                                    }
+                                                })
+                                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                                .show();
                                     }else{
                                         /*If there are still questions within the scenario and then
                                         continue*/
@@ -169,7 +186,6 @@ public class GameActivity extends AppCompatActivity {
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
                 }else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
-
                     //Display if the user selected the incorrect answer
                     new AlertDialog.Builder(GameActivity.this)
                             .setTitle("Wrong Answer")
