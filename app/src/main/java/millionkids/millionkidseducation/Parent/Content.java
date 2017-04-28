@@ -90,7 +90,7 @@ public class Content
 
     private void setChildPornography()
     {
-        returnSummaryContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Summary.html";
+        returnSummaryContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Summary - Copy.html";
         returnGroomingContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html";
         returnWarningSignsContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html";
         returnPreventativeMeasure = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Preventative-Measure.html";
