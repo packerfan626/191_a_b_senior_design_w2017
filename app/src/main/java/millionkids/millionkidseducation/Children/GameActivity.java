@@ -281,18 +281,5 @@ public class GameActivity extends AppCompatActivity {
         }catch(Exception e){
             e.printStackTrace();
         }
-
-        new AlertDialog.Builder(GameActivity.this)
-                .setTitle("Make a Selection" + directory.isDirectory())
-                .setMessage("You must make a selection!")
-                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // continue with try again
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
-
-
     }
 }
