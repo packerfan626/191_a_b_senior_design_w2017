@@ -1,141 +1,210 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/childPornGroom.css">
-     
-    <script>
-   
-    function growDiv(element)
+<html><head><title>The Grooming Process</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+
+
+
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+
+<script>
+
+ function growDiv(element)
     {
-    	var growDiv = document.getElementById(element);
-    	if (growDiv.clientHeight)
-    	{
-    		growDiv.style.height = 0;
-    	}else{
-    		var wrapper = document.querySelector('.measuringWrapper');
-    		growDiv.style.height = wrapper.clientHeight + "px";
-    	}
+        var growDiv = document.getElementById(element);
+        if (growDiv.clientHeight)
+        {
+            growDiv.style.height = 0;
+        }else{
+            var wrapper = document.querySelector('.measuringWrapper');
+            growDiv.style.height = wrapper.clientHeight + "px";
+
+            //attempting "read less"...
+            // var button = document.getElementById('readMore');
+            // button.text = "Read Less";
+        }
     }
+</script>
 
 
 
-    </script>
+</head><body class="w3-light-grey">
 
-    
-  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
 
-</head>
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-16"> 
+  <h1 style = "color:white"><b>How Predator's "Groom"</b></h1>
+<!--   <p>Welcome to the blog of <span class="w3-tag">unknown</span></p>
+ --></header>
 
-<body>
-    <h1>How Predators "Groom"</h1> 
+<!-- Grid -->
+<div class="w3-row">
 
-
-    <p id = "intro">
-    	Predators target vulernable children and execute a physiological grooming process aimed to make their targets dependent upon them.  Predators are skilled at physical and psychological manipulation in order to gain their victim's trust.<br>
-    	The stages of the grooming process are as follows (expand each to see details):<br>
-
-    </p>
-
-    <input type = "button" onclick = "growDiv('grow1')" value = "Targeting a Victim" id = "more-button">
-    <div id = 'grow1' class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    		Social media is a growing emotional outlet that that people use to express themselves to their peers. Predators understand this and target these vulnerable children and high school-aged kids who may be susceptible to their process. 
-    		</div>
-    	</div>
-    </div>
-    <input type = "button" onclick = "growDiv('grow2')" value = "Gaining Their Trust" id = "more-button">
-
-     <div id = 'grow2'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    			Online predators will attempt to gain their victim’s trust through casual conversations. Often times, they will pose as other children their age to gather information. Over time, the victim will believe they have made a trustworthy online “friend” - without even meeting them in person. 
-    		</div>
-    	</div>
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/ST-adults.jpg" alt="" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Overview</b></h3>
+      <h5> <span class="w3-opacity"></span></h5>
     </div>
 
-    <input type = "button" onclick = "growDiv('grow3')" value = "Filling a Need" id = "more-button">
+    <div class="w3-container">
+      <p style = "text-align:justify">Predators target vulnerable children and execute a physiological grooming process aimed to make their targets dependent upon them. Predators are skilled at physical and psychological manipulation in order to gain their victim’s trust. 
+        </p>
 
-     <div id = 'grow3'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				The trafficker now has sensitive information about the victim’s life. They will attempt to make their victim’s fall dependent upon them by giving them gifts, being a friend, or being in a love relationship.
-    		</div>
-    	</div>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" onclick = "growDiv('grow1')" id = "readMore">
+
+          <b>1. Targeting a Victim »</b></button></p>
+
+
+          <div id = 'grow1' class = "growingDiv">
+            <div class = 'measuringWrapper'>
+                <div class = "text" style = "text-align:justify">
+                Social media is a growing emotional outlet that minors use to express themselves to their peers. Predators understand this and target these vulnerable children and high school-aged kids who may be susceptible to their process
+
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" onclick = "growDiv('grow2')" id = "readMore">
+
+          <b>2. Gaining Their Trust »</b></button></p>
+
+
+          <div id = 'grow2' class = "growingDiv">
+            <div class = 'measuringWrapper'>
+                <div class = "text" style = "text-align:justify">
+                Online predators will attempt to gain their victim’s trust through casual conversations. Often times, they will pose as other children their age to gather information. Over time, the victim will believe they have made a trustworthy online “friend” - without even meeting them in person.
+
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">0</span></span></p>
+        </div> -->
+      </div>
     </div>
+  </div>
+  <hr>
 
-
-    <input type = "button" onclick = "growDiv('grow4')" value = "Isolation" id = "more-button">
-
-     <div id = 'grow4'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				Once an online predator has gained their victim’s trust and dependency, they begin to isolate their victim from their friends and family. 
-    		</div>
-    	</div>
+  <!-- Blog entry -->
+<!--   <div class="w3-card-4 w3-margin w3-white">
+ -->  <!-- <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%"> -->
+    <!-- <div class="w3-container">
+      <h3><b>"The Selfie"</b></h3> -->
+      <!-- <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5> -->
+<!--     </div>
+ -->
+   <!--  <div class="w3-container">
+      <p>
+      The “Selfie” quickly became part of the mainstream lexicon in 2013. A “selfie” is a self-portrait photograph that’s often taken with a camera phone, webcam, or digital camera. The explosion of social media networks and the rise of the camera phone have created endless opportunities for anyone to share their self-portraits with the world. 
+      This emerging technology is a natural fit for most teens, and, generally, the worst offense they might commit is sharing too frequently.As asforementioned, minors themselves can be prosecuted under child pornography statutes when selfies involve underage nudity or sexual situations. </p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
     </div>
-
-    <input type = "button" onclick = "growDiv('grow5')" value = "Abuse Begins" id = "more-button">
-
-     <div id = 'grow5'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				The predator now will express that their services of charming love and friendship need to be repaid. This is typically in the form of sexual services. 
-    		</div>
-    	</div>
-    </div>
-
-
-<!--     INSERT IMAGE HERE
- -->    <h1> Tactics </h1>
-
-   	The grooming process involving sextortion, sex trafficking, and child pornography all use different manipulation tactics, often in combination. The most common tactic that reports indicated were that the offender <b>threatened</b> to post previously acquired sexual content online or post it in a place where family and friends would be able to see (if the child did not comply).
-   	Other tactics used by offenders include:<br>
-<!--    	PUT INTO an accordion list thingy -->
-
-<div class = "wrapper">
-<input type = "button" onclick = "growDiv('grow6')" value = "Reciprocation " id = "more-button2">
-
-     <div id = 'grow6'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				Reciprocation whereby the offender coerces the child into providing sexual content by promising reciprocity.
-    		</div>
-    	</div>
-    </div>
-<input type = "button" onclick = "growDiv('grow7')" value = "Developing a Bond " id = "more-button2">
-
-     <div id = 'grow7'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				Developing a bond by establishing a friendship/romantic relationship
-    		</div>
-    	</div>
-    </div>
-
-    <input type = "button" onclick = "growDiv('grow8')" value = "Pretending " id = "more-button2">
-
-     <div id = 'grow8'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				Pretending to be someone they are not. Some examples include offenders posing as a modeling agency, or someone who is younger and/or female. 
-    		</div>
-    	</div>
-    </div>
-
-     <input type = "button" onclick = "growDiv('grow9')" value = "Threatening " id = "more-button2">
-
-     <div id = 'grow9'  class = "growingDiv">
-    	<div class = 'measuringWrapper'>
-    		<div class = "text"> 
-    				Threatening to create sexual content of the child using digital editing tools, or threatening to create a fake profile posing as the child and post sexual content of the child.  
-    		</div>
-    	</div>
-    </div>
+  </div> -->
+<!-- END BLOG ENTRIES -->
 </div>
 
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+<!--   <div class="w3-card-2 w3-margin w3-margin-top">
+  <img src="/w3images/avatar_g.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>My Name</b></h4>
+      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. </p>
     </div>
-</body>
+  </div> -->
 
-</html>
+  <hr>
+  
+  <!-- Posts -->
+  <!-- <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Popular Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Lorem</span><br>
+        <span>Sed mattis nunc</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Ipsum</span><br>
+        <span>Praes tinci sed</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Dorum</span><br>
+        <span>Ultricies congue</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Mingsum</span><br>
+        <span>Lorem ipsum dipsum</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+  -->
+  <!-- Labels / tags -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4 style = "color:white">Resources</h4>
+    </div>
+    <div class="w3-container w3-light-grey">
+        http://www.missingkids.com/Sextortion<br>
+        http://www.foxnews.com/entertainment/2017/01/24/sextortion-becoming-major-problem-with-minor-children.html<br>
+        https://www.wearethorn.org/sextortion/<br>
+
+        </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  
+</footer>
+
+
+</body></html>

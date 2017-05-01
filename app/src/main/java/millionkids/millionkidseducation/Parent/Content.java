@@ -58,7 +58,7 @@ public class Content
 
     private void setSexTraffickingMinor()
     {
-        returnSummaryContent = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Summary.html";
+        returnSummaryContent = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Summary - Copy.html";
         returnGroomingContent = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html";
         returnWarningSignsContent = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Warning-Signs.html";
         returnPreventativeMeasure = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Preventative-Measure.html";
