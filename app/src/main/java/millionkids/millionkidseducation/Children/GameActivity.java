@@ -1,8 +1,12 @@
 package millionkids.millionkidseducation.Children;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +19,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -50,6 +57,10 @@ public class GameActivity extends AppCompatActivity {
 
     //Current index
     int index = 0;
+
+    //The FileName to open
+    String FILENAME;
+    FileInputStream fileInputStream;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,29 +101,6 @@ public class GameActivity extends AppCompatActivity {
 
         //Add Listener for radio buttons
         addListenerButton();
-    }
-
-    //Might not use
-    public void onRadioButtonClicked(View view){
-        boolean checked = ((RadioButton) view).isChecked();
-
-        switch(view.getId()){
-            case R.id.option1:
-                if(checked){
-
-                }
-                break;
-            case R.id.option2:
-                if(checked){
-
-                }
-                break;
-            case R.id.option3:
-                if(checked){
-
-                }
-                break;
-        }
     }
 
     public void addListenerButton(){
@@ -262,5 +250,49 @@ public class GameActivity extends AppCompatActivity {
         else
             option3.setVisibility(View.INVISIBLE);
         //END------------------------------------------------
+
+        getImage(currentIndex);
+    }
+
+    //Get the Image for the current index. Called within displaydata
+    public void getImage(Game currentIndex){
+        //ContextWrapper for applicationContext
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+
+        //Access Directory containing ScenarioImages
+        int questionNum = index + 1;
+
+        //Something wrong here
+        File directory = cw.getDir("Scenario_" + questionNum, Context.MODE_PRIVATE);
+
+        try {
+            //Image Directory with background image file name
+            File myPath = new File(directory, currentIndex.getBackgroundImage());
+
+            //Create bitmap that is decoded from image file that is passed in
+            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(myPath));
+
+
+
+            //Set image as the background
+            background.setImageBitmap(b);
+
+            //Catch Exception
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        new AlertDialog.Builder(GameActivity.this)
+                .setTitle("Make a Selection" + directory.isDirectory())
+                .setMessage("You must make a selection!")
+                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with try again
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
+
     }
 }
