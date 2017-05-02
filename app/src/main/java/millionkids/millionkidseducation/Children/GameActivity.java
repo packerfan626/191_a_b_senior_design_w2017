@@ -22,6 +22,8 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -30,6 +32,10 @@ import millionkids.millionkidseducation.SQLite.Game;
 import millionkids.millionkidseducation.SQLite.GameData;
 
 public class GameActivity extends AppCompatActivity {
+
+    //Scenario_Images Path
+    String IMAGE_PATH = "";
+
     //Used to set the background image from the SQLite Database
     ImageView background;
 
@@ -257,29 +263,36 @@ public class GameActivity extends AppCompatActivity {
     //Get the Image for the current index. Called within displaydata
     public void getImage(Game currentIndex){
         //ContextWrapper for applicationContext
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-
-        //Access Directory containing ScenarioImages
-        int questionNum = index + 1;
-
-        //Something wrong here
-        File directory = cw.getDir("Scenario_" + questionNum, Context.MODE_PRIVATE);
+        //ContextWrapper cw = new ContextWrapper(getApplicationContext());
 
         try {
-            //Image Directory with background image file name
-            File myPath = new File(directory, currentIndex.getBackgroundImage());
-
-            //Create bitmap that is decoded from image file that is passed in
-            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(myPath));
-
-
-
-            //Set image as the background
+            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(currentIndex.getImageDir()));
             background.setImageBitmap(b);
-
-            //Catch Exception
-        }catch(Exception e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+//        //Something wrong here
+//        File directory = cw.getDir("Scenario_" + questionNum, Context.MODE_PRIVATE);
+//
+//        try {
+//            //Image Directory with background image file name
+//            File myPath = new File(directory, currentIndex.getBackgroundImage());
+//
+//            //Create bitmap that is decoded from image file that is passed in
+//            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(myPath));
+//
+//            //Set image as the background
+//            background.setImageBitmap(b);
+//
+//            //Catch Exception
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+    }
+
+    //Disables back button from doing anything
+    @Override
+    public void onBackPressed(){
     }
 }

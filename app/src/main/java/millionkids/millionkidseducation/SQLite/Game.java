@@ -25,6 +25,8 @@ public class Game {
     private String answer2text;
     private String answer3text;
 
+    private String imageDir;
+
     //Default Constructor
     public Game(){}
 
@@ -83,6 +85,8 @@ public class Game {
         this.answer3text = answer3text;
     }
 
+    public void setImageDir(String imageDir){ this.imageDir = imageDir; }
+
     public int getQuestionId(){return questionId;}
 
     public int getScenarioId(){return scenarioId;}
@@ -106,4 +110,6 @@ public class Game {
     public String getAnswer2text(){return answer2text;}
 
     public String getAnswer3text(){return answer3text;}
+
+    public String getImageDir(){ return imageDir; }
 }

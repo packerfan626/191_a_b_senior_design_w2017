@@ -1,9 +1,15 @@
 package millionkids.millionkidseducation.SQLite;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -30,6 +36,13 @@ public class GameData {
     private static final String ANSWER3SCREEN = "answer3screen";
     private static final String SCORE = "score";
 
+    int index = 0;
+
+    //Scenario_Path
+    //private static String SCENARIO_PATH = "/data/data/millionkids.millionkidseducation/ScenarioImages/";
+    //private static String SCENARIO_PATH = "/data/data/millionkids.millionkidseducation/databases/";
+    private static String SCENARIO_PATH = "/data/data/millionkids.millionkidseducation/databases/Scenario_";
+
     //Constructor Declaration
     public GameData(Context context){
         myContext = context;
@@ -37,6 +50,11 @@ public class GameData {
 
     //GetGameData
     public List<Game> getGameData(int scenarioId){
+
+        File projDir = new File(SCENARIO_PATH);
+        if(!projDir.exists())
+            projDir.mkdir();
+
         //Store temp game data in a List
         List<Game> gameData = new LinkedList<Game>();
 
@@ -73,11 +91,51 @@ public class GameData {
                 game.setAnswer1text(cursor.getString(9));
                 game.setAnswer2text(cursor.getString(10));
                 game.setAnswer3text(cursor.getString(11));
+                index++;
+
+                String path = storeImages(game.getBackgroundImage());
+                game.setImageDir(path);
 
                 //Add gameData
                 gameData.add(game);
             }while(cursor.moveToNext());
         }
         return gameData;
+    }
+
+    //Store images from Assets folder to Android phone
+    public String storeImages(String image){
+        String folderPath = SCENARIO_PATH + index + "/";
+        String imagePath = image; // + "/";
+
+        //String completePath = folderPath + imagePath;
+        String completePath = SCENARIO_PATH + image;
+
+        File projDir = new File(folderPath);
+        if(!projDir.exists())
+            projDir.mkdir();
+
+        try {
+            //InputStream inputStream = myContext.getAssets().open("app/src/main/assets/ScenarioImages/Scenario_" + index
+            //  + "/" + imagePath + ".png");
+
+            InputStream inputStream = myContext.getAssets().open(image);
+
+            OutputStream outputStream = new FileOutputStream(completePath);
+            byte[] buffer = new byte[1024];
+            int length;
+
+            while ((length = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, length);
+            }
+
+            outputStream.flush();
+            outputStream.close();
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return completePath;
     }
 }
