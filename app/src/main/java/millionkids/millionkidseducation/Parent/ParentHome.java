@@ -32,10 +32,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
     private WebView mWebView;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private TextView tvSectionName, tvCurrentContent;
-//    private String currentContent = "SexTraffickingMinor";
     private Button bSummary, bGroomingProcess, bWarrningSigns, bPreventMeasure, prevButton;
-//    private Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     //class that handles all the parent information
     Content con = new Content(SEX_TRAFFICKING_MINOR);
 
@@ -77,7 +74,6 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         //listen for buttons in navigation Menu
         NavigationView nv = (NavigationView) findViewById(R.id.navigationView);
         nv.setNavigationItemSelectedListener(this);
-//        setTitle(con.getCurrentContent());
     }
 
     //Menu option BEGINS
@@ -193,8 +189,6 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         gray.setBackgroundColor(actionBarColor);
         int currentSelectionColor = Color.parseColor("#203469");
         clicked.setBackgroundColor(currentSelectionColor);
-//        clicked.setBackgroundColor(getResources().getColor(R.color.turquoise));
-
         prevButton = clicked;
     }
 }

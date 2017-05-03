@@ -28,61 +28,66 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:weightSum="3"
+                android:layout_weight="1"
                 android:layout_height="59dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:layout_marginTop="2dp">
-                <!--android:layout_below="@+id/tvSectionName"-->
 
                 <Button
                     android:id="@+id/bSummary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Overview"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp" />
 
                 <Button
                     android:id="@+id/bGroomingProcess"
-                    android:layout_width="86dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Grooming Process"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:layout_width="86dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp" />
 
 
                 <Button
                     android:id="@+id/bWarrningSigns"
-                    android:layout_width="79dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Warning Signs"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:layout_width="79dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"/>
 
 
                 <Button
                     android:id="@+id/bPreventMeasure"
-                    android:layout_width="match_parent"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
+                    android:layout_width="133dp"
+                    android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Preventative Measure"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"/>
 
 
             </LinearLayout>

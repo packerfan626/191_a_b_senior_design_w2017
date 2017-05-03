@@ -5,15 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="5dp"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/ui_globe_only_low"
     tools:context="millionkids.millionkidseducation.main.MainHomePage"
     android:id="@+id/drawerLayoutMain">
-    <!--android:background="@drawable/earth_black_screen"-->
-
-
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -100,11 +94,7 @@
                 android:layout_marginRight="8dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintHorizontal_bias="0.509" />
-
         </android.support.constraint.ConstraintLayout>
-        />
-
-
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigationViewDefaultMain"
@@ -113,8 +103,5 @@
         android:layout_gravity = "start"
         app:headerLayout="@layout/parent_navigation_header"
         app:menu ="@menu/default_navigation_menu">
-
-
     </android.support.design.widget.NavigationView>
-
 </android.support.v4.widget.DrawerLayout>
