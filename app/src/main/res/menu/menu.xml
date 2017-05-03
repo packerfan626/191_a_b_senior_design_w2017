@@ -8,10 +8,10 @@
         android:icon="@mipmap/ic_home_white_24dp"
         android:title="Home"
         app:showAsAction="always"/>
-    <item android:title="Help"
-        android:icon="@mipmap/ic_help_white_24dp"
-        android:id="@+id/mHelp"
-        app:showAsAction="always"/>
+    <!--<item android:title="Help"-->
+        <!--android:icon="@mipmap/ic_help_white_24dp"-->
+        <!--android:id="@+id/mHelp"-->
+        <!--app:showAsAction="always"/>-->
 
 </menu>
 

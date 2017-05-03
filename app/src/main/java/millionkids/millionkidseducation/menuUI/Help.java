@@ -55,8 +55,8 @@ public class Help extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.mHome:
                 this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-            case R.id.mHelp:
-                break;
+//            case R.id.mHelp:
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -72,9 +72,9 @@ public class Help extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.mLearnMore:
                 this.startActivity(new Intent(this, LearnMore.class));
                 return true;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
-                return true;
+//            case R.id.mSetting:
+//                this.startActivity(new Intent(this, Settings.class));
+//                return true;
         }
         return false;
     }

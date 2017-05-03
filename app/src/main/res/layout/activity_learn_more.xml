@@ -13,14 +13,25 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Learn More"
+            android:id="@+id/tvLearnMorePage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvLearnMorePAge"
-            android:textSize="30sp"
-            android:textColor="@android:color/black"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:text="Additional Information"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tvLearnMoreContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvLearnMorePage"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="50dp"
+            android:text="Additional resources to be included here"
+            android:textColor="@color/whiteText" />
 
     </RelativeLayout>
 

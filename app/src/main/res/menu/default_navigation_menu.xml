@@ -9,10 +9,11 @@
             android:id="@+id/mAbout"/>
 
         <item android:title="Learn More"
-            android:id="@+id/mLearnMore" />
+            android:id="@+id/mLearnMore"
+            android:icon="@mipmap/ic_help_black_24dp"/>
 
-        <item android:title="Settings"
-            android:icon="@mipmap/ic_settings_black_24dp"
-            android:id="@+id/mSetting" />
+        <!--<item android:title="Settings"-->
+            <!--android:icon="@mipmap/ic_settings_black_24dp"-->
+            <!--android:id="@+id/mSetting" />-->
     </group>
 </menu>

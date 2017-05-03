@@ -54,9 +54,9 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
             case R.id.mHome:
                 this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-            case R.id.mHelp:
-                this.startActivity(new Intent(this, Help.class));
-                break;
+//            case R.id.mHelp:
+//                this.startActivity(new Intent(this, Help.class));
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -72,9 +72,9 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
             case R.id.mLearnMore:
                 this.startActivity(new Intent(this, LearnMore.class));
                 return true;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
-                return true;
+//            case R.id.mSetting:
+//                this.startActivity(new Intent(this, Settings.class));
+//                return true;
         }
         return false;
     }

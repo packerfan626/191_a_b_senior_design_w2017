@@ -33,7 +33,7 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_page);
-        setTitle("Home");
+        setTitle("Welcome");
         final ImageButton bParent = (ImageButton) findViewById(R.id.bParent);
         final ImageButton bChild = (ImageButton) findViewById(R.id.bChild);
         bParent.setOnClickListener(this);
@@ -70,9 +70,9 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId()) {
             case R.id.mHome:
                 break;
-            case R.id.mHelp:
-                this.startActivity(new Intent(this, Help.class));
-                break;
+//            case R.id.mHelp:
+//                this.startActivity(new Intent(this, Help.class));
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -85,13 +85,9 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
         String nextClass = "";
         switch(v.getId()) {
             case R.id.bChild:
-                //intent AGE 5-8
-                //this.startActivity(this, .class);
-//                nextClass = "eightToTen";
+                //intent child
                 intentExtras = new Intent(MainHomePage.this, ChildrenHome.class);
-//                intentExtras.putExtra("whichClass", nextClass);
                 startActivity(intentExtras);
-               // startActivity(new Intent(this, GameStart.class));
                 break;
             case R.id.bParent:
                 //intent Parent
@@ -108,28 +104,6 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed(){
     }
 
-//    @Override
-//    public boolean onNavigationItemSelected(MenuItem menuItem) {
-//        new Handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                switch(menuItem.getItemId()) {
-//                    case R.id.mAbout:
-//                        MainHomePage.this.startActivity(new Intent(MainHomePage.this, About.class));
-//                        break;
-//                    case R.id.mLearnMore:
-//                        MainHomePage. this.startActivity(new Intent(MainHomePage.this, LearnMore.class));
-//                        break;
-//                    case R.id.mSetting:
-//                        MainHomePage.this.startActivity(new Intent(MainHomePage.this, Settings.class));
-//                        break;
-//                    }
-//
-//
-//            }, 200);
-//            drawer
-//        return false;
-//    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch(menuItem.getItemId()) {
@@ -139,9 +113,9 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
             case R.id.mLearnMore:
                 this.startActivity(new Intent(this, LearnMore.class));
                 return true;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
-                return true;
+//            case R.id.mSetting:
+//                this.startActivity(new Intent(this, Settings.class));
+//                return true;
         }
         return false;
     }
