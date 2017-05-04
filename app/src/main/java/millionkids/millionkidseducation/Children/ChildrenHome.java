@@ -27,6 +27,7 @@ import millionkids.millionkidseducation.SQLite.AgeGroupsData;
 import millionkids.millionkidseducation.SQLite.MySQLiteHelper;
 import millionkids.millionkidseducation.SQLite.Scenario;
 import millionkids.millionkidseducation.SQLite.ScenarioData;
+import millionkids.millionkidseducation.main.MainHomePage;
 import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
@@ -131,5 +132,11 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         intent.putExtras(data);
         startActivity(intent);
     }
+    
     //Menu option ENDS
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ChildrenHome.this, MainHomePage.class);
+        startActivity(intent);
+    }
 }

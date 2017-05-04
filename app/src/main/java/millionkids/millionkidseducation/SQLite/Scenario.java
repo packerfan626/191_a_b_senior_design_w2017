@@ -65,4 +65,7 @@ public class Scenario {
 
     //Get id
     public  int getScenarioid(){ return this.scenarioid; }
+
+    //Get Location
+    public String getLocation(){ return this.location; }
 }

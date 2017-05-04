@@ -99,24 +99,45 @@ public class ScenarioOptions extends AppCompatActivity {
             imageButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(ScenarioOptions.this, GameActivity.class);
-                    Bundle bundle = new Bundle();
+                    final ImageButton imageButton = (ImageButton) view;
+                    new AlertDialog.Builder(ScenarioOptions.this)
+                            .setTitle("Ready to Play?")
+                            .setMessage("Would you like to continue and play the scenario located at the " + scenarios.get(imageButton.getId()).getLocation() + "?")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(ScenarioOptions.this, GameActivity.class);
+                                    Bundle bundle = new Bundle();
 
-                    ImageButton imageButton = (ImageButton) view;
+                                    int id = scenarios.get(imageButton.getId()).getScenarioid();
 
-                    int id = scenarios.get(imageButton.getId()).getScenarioid();
+                                    bundle.putInt("scenarioId", id);
+                                    bundle.putString("imageText", imageText);
 
-                    bundle.putInt("scenarioId", id);
-                    bundle.putString("imageText", imageText);
+                                    intent.putExtras(bundle);
 
-                    intent.putExtras(bundle);
+                                    startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
 
-                    startActivity(intent);
                 }
             });
 
             //Add ImageButton to the view
             linearLayout.addView(imageButtons[i]);
         }
+    }
+
+
+    //Send user to ChildrenHome intent
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ScenarioOptions.this, ChildrenHome.class);
+        startActivity(intent);
     }
 }
