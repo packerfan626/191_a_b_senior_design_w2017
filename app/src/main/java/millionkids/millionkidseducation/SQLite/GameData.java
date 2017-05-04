@@ -83,7 +83,7 @@ public class GameData {
                 game.setQuestionId(Integer.parseInt(cursor.getString(0)));
                 game.setScenarioId(Integer.parseInt(cursor.getString(1)));
                 game.setQuestionText(cursor.getString(2));
-                game.setShowChild(Integer.parseInt(cursor.getString(3)));
+                game.setShowChild(cursor.getString(3));
                 game.setBackgroundImage(cursor.getString(4));
                 game.setAnswer1(cursor.getString(5));
                 game.setAnswer2(cursor.getString(6));

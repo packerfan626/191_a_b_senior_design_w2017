@@ -11,7 +11,7 @@ public class Game {
     private int questionId;
     private int scenarioId;
     private String questionText;
-    private int showChild;
+    private String showChild;
     private String backgroundImage;
     private String answer1;
     private String answer2;
@@ -51,7 +51,7 @@ public class Game {
         this.questionText = questionText;
     }
 
-    public void setShowChild(int showChild){
+    public void setShowChild(String showChild){
         this.showChild = showChild;
     }
 
@@ -93,7 +93,7 @@ public class Game {
 
     public String getQuestionText(){return questionText;}
 
-    public int getShowChild(){return showChild;}
+    public String getShowChild(){return showChild;}
 
     public String getBackgroundImage(){return backgroundImage;}
 

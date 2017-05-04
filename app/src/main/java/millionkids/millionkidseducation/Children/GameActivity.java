@@ -266,6 +266,11 @@ public class GameActivity extends AppCompatActivity {
         //Stores currentIndex of game
         Game currentIndex = games.get(index);
 
+        if(currentIndex.getShowChild().equals("n"))
+            character.setVisibility(View.INVISIBLE);
+        else
+            character.setVisibility(View.VISIBLE);
+
         //Sets Text for Scenario/Question
         if(!currentIndex.getQuestionText().equals("null")) {
             gameText.setText(games.get(index).getQuestionText());
