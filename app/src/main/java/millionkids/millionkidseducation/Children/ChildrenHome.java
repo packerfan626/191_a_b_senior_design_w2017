@@ -105,7 +105,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
 
         switch(view.getId()){
             case R.id.girl5_8:
-                ageId = "0";
+                ageId = "1";
                 break;
             case R.id.boy5_8:
                 ageId = "1";
@@ -114,7 +114,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
                 ageId = "2";
                 break;
             case R.id.boy9_12:
-                ageId = "3";
+                ageId = "2";
                 break;
         }
 

@@ -30,6 +30,8 @@ public class ScenarioOptions extends AppCompatActivity {
     //LinearLayout declaration
     LinearLayout linearLayout;
 
+    private List<Scenario> scenarios;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,7 @@ public class ScenarioOptions extends AppCompatActivity {
 
         ScenarioData scenarioData = new ScenarioData(this);
         //Declaring a list of scenarios
-        List<Scenario> scenarios = scenarioData.getScenarios(age);
+        scenarios = scenarioData.getScenarios(age);
 
         //Create an array of ImageButtons based on scenarios size
         final ImageButton[] imageButtons = new ImageButton[scenarios.size()];
@@ -100,7 +102,8 @@ public class ScenarioOptions extends AppCompatActivity {
                     Bundle bundle = new Bundle();
 
                     ImageButton imageButton = (ImageButton) view;
-                    int id = imageButton.getId() + 1;
+
+                    int id = scenarios.get(imageButton.getId()).getScenarioid();
 
                     bundle.putInt("scenarioId", id);
                     intent.putExtras(bundle);
@@ -108,7 +111,6 @@ public class ScenarioOptions extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
 
             //Add ImageButton to the view
             linearLayout.addView(imageButtons[i]);

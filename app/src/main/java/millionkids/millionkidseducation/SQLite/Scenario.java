@@ -62,4 +62,7 @@ public class Scenario {
 
     //Get Image
     public String getImage(){ return this.image; }
+
+    //Get id
+    public  int getScenarioid(){ return this.scenarioid; }
 }
