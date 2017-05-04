@@ -46,6 +46,7 @@ public class ScenarioOptions extends AppCompatActivity {
         //Receive Data from Previous screen (ChildrenHome.java)
         Bundle bundle = getIntent().getExtras();
         String ageId = bundle.getString("ageId");
+        final String imageText = bundle.getString("imageText");
         int age = Integer.parseInt(ageId);
         //End
 
@@ -106,6 +107,8 @@ public class ScenarioOptions extends AppCompatActivity {
                     int id = scenarios.get(imageButton.getId()).getScenarioid();
 
                     bundle.putInt("scenarioId", id);
+                    bundle.putString("imageText", imageText);
+
                     intent.putExtras(bundle);
 
                     startActivity(intent);

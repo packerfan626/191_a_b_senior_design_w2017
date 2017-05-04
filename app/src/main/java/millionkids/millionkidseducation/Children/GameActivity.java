@@ -5,8 +5,10 @@ import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +40,9 @@ public class GameActivity extends AppCompatActivity {
 
     //Used to set the background image from the SQLite Database
     ImageView background;
+
+    //Character imageView
+    ImageView character;
 
     //Game Text that stores background information and questions
     TextView gameText;
@@ -81,6 +86,7 @@ public class GameActivity extends AppCompatActivity {
 
         //Store recieved (from previous screen) scenarioId into int scenarioId
         int scenarioId = bundle.getInt("scenarioId");
+        String imageText = bundle.getString("imageText");
 
         //Initial index; set to zero
         index = 0;
@@ -92,6 +98,7 @@ public class GameActivity extends AppCompatActivity {
         option2 = (RadioButton)findViewById(R.id.option2);
         option3 = (RadioButton)findViewById(R.id.option3);
         submit = (ImageButton)findViewById(R.id.submitButton);
+        character = (ImageView)findViewById(R.id.childImage);
 
         //Game declaration
         games = new LinkedList<Game>();
@@ -101,6 +108,14 @@ public class GameActivity extends AppCompatActivity {
 
         //Get GameData depending on ScenarioID
         games = gameData.getGameData(scenarioId);
+
+
+        //Set Character Image based on resources
+        Resources res = getResources();
+        int resId = res.getIdentifier(imageText, "drawable", getPackageName());
+        Drawable drawable = res.getDrawable(resId, this.getTheme());
+        character.setImageDrawable(drawable);
+
 
         //Display Data onto UI
         displayData(games);

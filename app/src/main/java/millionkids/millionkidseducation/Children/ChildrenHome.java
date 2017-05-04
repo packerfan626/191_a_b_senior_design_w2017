@@ -98,6 +98,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         //Type to pass in to recognize which folder to open
         String ageId = "";
+        String imageText = "";
 
         //Prepare to send data to ScenarioOptions.java
         Intent intent = new Intent(ChildrenHome.this, ScenarioOptions.class);
@@ -106,20 +107,25 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         switch(view.getId()){
             case R.id.girl5_8:
                 ageId = "1";
+                imageText = "girl5_8";
                 break;
             case R.id.boy5_8:
                 ageId = "1";
+                imageText = "boy5_8";
                 break;
             case R.id.girl9_12:
                 ageId = "2";
+                imageText = "girl9_12";
                 break;
             case R.id.boy9_12:
                 ageId = "2";
+                imageText = "boy9_12";
                 break;
         }
 
         //Put data in bundle to send to ScenarioOptions.java
         data.putString("ageId", ageId);
+        data.putString("imageText", imageText);
 
         //Start the new activity w/ send data
         intent.putExtras(data);
