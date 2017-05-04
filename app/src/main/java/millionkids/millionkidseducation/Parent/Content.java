@@ -26,7 +26,7 @@ public class Content
             //sex trafficking minor contents location
             SEX_TRAFFICKING_MINOR_OVERVIEW = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Summary - Copy.html",
             SEX_TRAFFICKING_MINOR_GROOM = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html",
-            SEX_TRAFFICKING_MINOR_WARNING = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Warning-Signs.html",
+            SEX_TRAFFICKING_MINOR_WARNING = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html",
             SEX_TRAFFICKING_MINOR_PREVENT = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Preventative-Measure.html",
             //Sex trafficking adult contents location
             SEX_TRAFFICKING_ADULT_OVERVIEW = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Summary.html",
@@ -40,8 +40,8 @@ public class Content
             LABOR_TRAFFICKING_PREVENT = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Preventative-Measure.html",
             //sextortion contents location
             SEXTORTION_OVERVIEW = "file:///android_asset/Sextortion/SEXTORTION_Summary.html",
-            SEXTORTION_GROOM = "file:///android_asset/Sextortion/SEXTORTION_Grooming-Process.html",
-            SEXTORTION_WARNING = "file:///android_asset/Sextortion/SEXTORTION_Warning-Signs.html",
+            SEXTORTION_GROOM = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html",
+            SEXTORTION_WARNING = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html",
             SEXTORTION_PREVENT = "file:///android_asset/Sextortion/SEXTORTION_Preventative-Measure.html",
             //child porno contents location
             CHILD_PORNOGRAPHY_OVERVIEW = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Summary - Copy.html",
