@@ -17,8 +17,10 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -173,8 +175,8 @@ public class GameActivity extends AppCompatActivity {
                                                 .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int which) {
                                                         //Reset index and redisplay data
-                                                        index = 0;
-                                                        displayData(games);
+                                                        finish();
+                                                        startActivity(getIntent());
                                                     }
                                                 })
                                                 .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
@@ -227,7 +229,31 @@ public class GameActivity extends AppCompatActivity {
                     //If no options available allow them to proceed by simply clicking select
                     }else{
                         index++;
-                        displayData(games);
+                        if(index == games.size()){
+                            new AlertDialog.Builder(GameActivity.this)
+                                    .setTitle("Game Over!")
+                                    .setMessage("Thank you for playing! We hope you " +
+                                            "learned a lot!")
+                                    .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            //Reset index and redisplay data
+                                            finish();
+                                            startActivity(getIntent());
+                                        }
+                                    })
+                                    .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            //Game jumps back to Game--MainMenu
+                                            Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
+                                            startActivity(intent);
+                                        }
+                                    })
+                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                    .show();
+                        }else {
+                            radioGroup.clearCheck();
+                            displayData(games);
+                        }
                     }
                 }
 
@@ -241,11 +267,18 @@ public class GameActivity extends AppCompatActivity {
         Game currentIndex = games.get(index);
 
         //Sets Text for Scenario/Question
-        if(!currentIndex.getQuestionText().isEmpty()) {
+        if(!currentIndex.getQuestionText().equals("null")) {
             gameText.setText(games.get(index).getQuestionText());
         }
-        else
+        else {
             gameText.setVisibility(View.INVISIBLE);
+            //LinearLayout Parameters
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+            background.setLayoutParams(lp);
+            background.setScaleType(ImageView.ScaleType.FIT_XY);
+            optionsAvail = false;
+        }
 
         //BEGIN--Sets up text for radio buttons--------------
         if(!currentIndex.getAnswer1().equals("null")) {
@@ -278,6 +311,8 @@ public class GameActivity extends AppCompatActivity {
     //Get the Image for the current index. Called within displaydata
     public void getImage(Game currentIndex){
         try {
+
+
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(currentIndex.getImageDir()));
             background.setImageBitmap(b);
         } catch (FileNotFoundException e) {

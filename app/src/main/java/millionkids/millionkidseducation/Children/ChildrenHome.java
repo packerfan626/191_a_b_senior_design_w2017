@@ -132,7 +132,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         intent.putExtras(data);
         startActivity(intent);
     }
-    
+
     //Menu option ENDS
     @Override
     public void onBackPressed(){
