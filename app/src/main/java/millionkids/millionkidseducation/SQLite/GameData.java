@@ -36,11 +36,10 @@ public class GameData {
     private static final String ANSWER3SCREEN = "answer3screen";
     private static final String SCORE = "score";
 
+    //int index
     int index = 0;
 
     //Scenario_Path
-    //private static String SCENARIO_PATH = "/data/data/millionkids.millionkidseducation/ScenarioImages/";
-    //private static String SCENARIO_PATH = "/data/data/millionkids.millionkidseducation/databases/";
     private static String SCENARIO_PATH = "/data/data/millionkids.millionkidseducation/databases/Scenario_";
 
     //Constructor Declaration
@@ -51,6 +50,7 @@ public class GameData {
     //GetGameData
     public List<Game> getGameData(int scenarioId){
 
+        //Create file proj directory if it does not exist
         File projDir = new File(SCENARIO_PATH);
         if(!projDir.exists())
             projDir.mkdir();
@@ -74,6 +74,7 @@ public class GameData {
         //Prepare Query for Processing
         Cursor cursor = db.rawQuery(query, queryArgs);
 
+        //Game declaration used to store within the GameData list that will be returned
         Game game = null;
 
         if(cursor.moveToNext()){
@@ -93,6 +94,7 @@ public class GameData {
                 game.setAnswer3text(cursor.getString(11));
                 index++;
 
+                //Store background image into path and set the imageDir from what is pulled
                 String path = storeImages(game.getBackgroundImage());
                 game.setImageDir(path);
 
@@ -116,11 +118,10 @@ public class GameData {
             projDir.mkdir();
 
         try {
-            //InputStream inputStream = myContext.getAssets().open("app/src/main/assets/ScenarioImages/Scenario_" + index
-            //  + "/" + imagePath + ".png");
-
+            //Open image from assets folder
             InputStream inputStream = myContext.getAssets().open(image);
 
+            //Create outputstream with the complete path
             OutputStream outputStream = new FileOutputStream(completePath);
             byte[] buffer = new byte[1024];
             int length;

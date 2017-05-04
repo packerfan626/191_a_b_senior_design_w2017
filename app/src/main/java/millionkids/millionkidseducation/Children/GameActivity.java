@@ -262,33 +262,24 @@ public class GameActivity extends AppCompatActivity {
 
     //Get the Image for the current index. Called within displaydata
     public void getImage(Game currentIndex){
-        //ContextWrapper for applicationContext
-        //ContextWrapper cw = new ContextWrapper(getApplicationContext());
-
         try {
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(currentIndex.getImageDir()));
             background.setImageBitmap(b);
         } catch (FileNotFoundException e) {
+
+            //If the picture did not load successfully, display message
+            new AlertDialog.Builder(GameActivity.this)
+                    .setTitle("Whoops!")
+                    .setMessage("Something went wrong and the picture did not load correctly! Sorry about that! :(")
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // continue with try again
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
             e.printStackTrace();
         }
-
-//        //Something wrong here
-//        File directory = cw.getDir("Scenario_" + questionNum, Context.MODE_PRIVATE);
-//
-//        try {
-//            //Image Directory with background image file name
-//            File myPath = new File(directory, currentIndex.getBackgroundImage());
-//
-//            //Create bitmap that is decoded from image file that is passed in
-//            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(myPath));
-//
-//            //Set image as the background
-//            background.setImageBitmap(b);
-//
-//            //Catch Exception
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }
     }
 
     //Disables back button from doing anything

@@ -9,17 +9,19 @@ public class Scenario {
     private int ageid;
     private String location;
     private String image;
+    private String imagePath;
 
     //Default Constructor
     public Scenario(){}
 
     //Constructor
-    public Scenario(int scenarioid, int ageid, String location, String image){
+    public Scenario(int scenarioid, int ageid, String location, String image, String imagePath){
         super();
         this.scenarioid = scenarioid;
         this.ageid = ageid;
         this.location = location;
         this.image = image;
+        this.imagePath = imagePath;
     }
 
     //Scenario toString to transport data
@@ -47,4 +49,17 @@ public class Scenario {
     public void setImage(String image){
         this.image = image;
     }
+
+    //Set Image Path
+    public void setImagePath(String path){
+        this.imagePath = path;
+    }
+
+    //Set Get Path
+    public String getImagePath(){
+        return this.imagePath;
+    }
+
+    //Get Image
+    public String getImage(){ return this.image; }
 }
