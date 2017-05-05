@@ -8,52 +8,49 @@ public class Content
 {
     //instantiate
     private String
-            returnSummaryContent = "",
+            returnOverviewContent = "",
             returnGroomingContent = "",
             returnWarningSignsContent = "",
             returnPreventativeMeasure = "",
-            currentContent = "";
+            currentContent = "",
     //SET CURRENT CONTENT
-    private final String
-            SEX_TRAFFICKING_MINOR = "sex trafficking minor",
-            SEX_TRAFFICKING_ADULT = "sex trafficking adult",
-            LABOR_TRAFFICKING = "labor trafficking",
-            SEXTORTION = "sextortion",
-            CHILD_PORNOGRAPHY = "child pornography",
-            SOCIAL_MEDIA_EXPLOITATION = "social media exploitation";
+            SEX_TRAFFICKING_MINOR = "Child Sex Trafficking",
+            SEX_TRAFFICKING_ADULT = "Adult Sex Trafficking",
+            LABOR_TRAFFICKING = "Labor Trafficking",
+            SEXTORTION = "Sextortion",
+            CHILD_PORNOGRAPHY = "Child Pornography",
+            SOCIAL_MEDIA_EXPLOITATION = "Social Media Exploitation",
     //links to contents HTML
-    private final String
             //sex trafficking minor contents location
-            SEX_TRAFFICKING_MINOR_OVERVIEW = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Summary - Copy.html",
-            SEX_TRAFFICKING_MINOR_GROOM = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html",
-            SEX_TRAFFICKING_MINOR_WARNING = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html",
-            SEX_TRAFFICKING_MINOR_PREVENT = "file:///android_asset/SexTraffickingMinor/SEXTRAFFICKINGMINOR_Preventative-Measure.html",
+            SEX_TRAFFICKING_MINOR_OVERVIEW = "file:///android_asset/Parent/ChildSexTrafficking/Child_Sex_Trafficking_Overview.html",
+            SEX_TRAFFICKING_MINOR_GROOM = "file:///android_asset/Parent/ChildSexTrafficking/Child_Sex_Trafficking_Grooming-Process.html",
+            SEX_TRAFFICKING_MINOR_WARNING = "file:///android_asset/Parent/ChildSexTrafficking/Child_Sex_Trafficking_Warning-Signs.html",
+            SEX_TRAFFICKING_MINOR_PREVENT = "file:///android_asset/Parent/ChildSexTrafficking/Child_Sex_Trafficking_Preventative-Measure.html",
             //Sex trafficking adult contents location
-            SEX_TRAFFICKING_ADULT_OVERVIEW = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Summary.html",
-            SEX_TRAFFICKING_ADULT_GROOM = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Grooming-Process.html",
-            SEX_TRAFFICKING_ADULT_WARNING = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Warning-Signs.html",
-            SEX_TRAFFICKING_ADULT_PREVENT = "file:///android_asset/SexTraffickingAdult/SEXTRAFFICKINGADULT_Preventative-Measure.html",
+            SEX_TRAFFICKING_ADULT_OVERVIEW = "file:///android_asset/Parent/AdultSexTrafficking/Adult_Sex_Trafficking_Overview.html",
+            SEX_TRAFFICKING_ADULT_GROOM = "file:///android_asset/Parent/AdultSexTrafficking/Adult_Sex_Trafficking_Grooming-Process.html",
+            SEX_TRAFFICKING_ADULT_WARNING = "file:///android_asset/Parent/AdultSexTrafficking/Adult_Sex_Trafficking_Warning-Signs.html",
+            SEX_TRAFFICKING_ADULT_PREVENT = "file:///android_asset/Parent/AdultSexTrafficking/Adult_Sex_Trafficking_Preventative-Measure.html",
             //labor trafficking contents location
-            LABOR_TRAFFICKING_OVERVIEW = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Summary.html",
-            LABOR_TRAFFICKING_GROOM = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Grooming-Process.html",
-            LABOR_TRAFFICKING_WARNING = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Warning-Signs.html",
-            LABOR_TRAFFICKING_PREVENT = "file:///android_asset/LaborTrafficking/LABORTRAFFICKING_Preventative-Measure.html",
+            LABOR_TRAFFICKING_OVERVIEW = "file:///android_asset/Parent/LaborTrafficking/Labor_Trafficking_Overview.html",
+            LABOR_TRAFFICKING_GROOM = "file:///android_asset/Parent/LaborTrafficking/Labor_Trafficking_Grooming-Process.html",
+            LABOR_TRAFFICKING_WARNING = "file:///android_asset/Parent/LaborTrafficking/Labor_Trafficking_Warning-Signs.html",
+            LABOR_TRAFFICKING_PREVENT = "file:///android_asset/Parent/LaborTrafficking/Labor_Trafficking_Preventative-Measure.html",
             //sextortion contents location
-            SEXTORTION_OVERVIEW = "file:///android_asset/Sextortion/SEXTORTION_Summary.html",
-            SEXTORTION_GROOM = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html",
-            SEXTORTION_WARNING = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html",
-            SEXTORTION_PREVENT = "file:///android_asset/Sextortion/SEXTORTION_Preventative-Measure.html",
-            //child porno contents location
-            CHILD_PORNOGRAPHY_OVERVIEW = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Summary - Copy.html",
-            CHILD_PORNOGRAPHY_GROOM = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Grooming-Process.html",
-            CHILD_PORNOGRAPHY_WARNING = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Warning-Signs.html",
-            CHILD_PORNOGRAPHY_PREVENT = "file:///android_asset/ChildPornography/CHILDPORNOGRAPHY_Preventative-Measure.html",
+            SEXTORTION_OVERVIEW = "file:///android_asset/Parent/Sextortion/Sextortion_Overview.html",
+            SEXTORTION_GROOM = "file:///android_asset/Parent/Sextortion/Sextortion_Grooming-Process.html",
+            SEXTORTION_WARNING = "file:///android_asset/Parent/Sextortion/Sextortion_Warning-Signs.html",
+            SEXTORTION_PREVENT = "file:///android_asset/Parent/Sextortion/Sextortion_Preventative-Measure.html",
+            //child pornography contents location
+            CHILD_PORNOGRAPHY_OVERVIEW = "file:///android_asset/Parent/ChildPornography/Child_Pornography_Overview.html",
+            CHILD_PORNOGRAPHY_GROOM = "file:///android_asset/Parent/ChildPornography/Child_Pornography_Grooming-Process.html",
+            CHILD_PORNOGRAPHY_WARNING = "file:///android_asset/Parent/ChildPornography/Child_Pornography_Warning-Signs.html",
+            CHILD_PORNOGRAPHY_PREVENT = "file:///android_asset/Parent/ChildPornography/Child_Pornography_Preventative-Measure.html",
             //social media contents location
-            SOCIAL_MEDIA_EXPLOITATION_OVERVIEW = "file:///android_asset/SocialMediaExploitation/SOCIAL_Summary.html",
-            SOCIAL_MEDIA_EXPLOITATION_GROOM = "file:///android_asset/SocialMediaExploitation/SOCIAL_Grooming-Process.html",
-            SOCIAL_MEDIA_EXPLOITATION_WARNING = "file:///android_asset/SocialMediaExploitation/SOCIAL_Warning-Signs.html",
-            SOCIAL_MEDIA_EXPLOITATION_PREVENT = "file:///android_asset/SocialMediaExploitation/SOCIAL_Preventative-Measure.html";
-
+            SOCIAL_MEDIA_EXPLOITATION_OVERVIEW = "file:///android_asset/Parent/SocialMediaExploitation/Social_Media_Exploitation_Overview.html",
+            SOCIAL_MEDIA_EXPLOITATION_GROOM = "file:///android_asset/Parent/SocialMediaExploitation/Social_Media_Exploitation_Grooming-Process.html",
+            SOCIAL_MEDIA_EXPLOITATION_WARNING = "file:///android_asset/Parent/SocialMediaExploitation/Social_Media_Exploitation_Warning-Signs.html",
+            SOCIAL_MEDIA_EXPLOITATION_PREVENT = "file:///android_asset/Parent/SocialMediaExploitation/Social_Media_Exploitation_Preventative-Measure.html";
 
     //constructor
     public Content(String currentContent)
@@ -62,8 +59,9 @@ public class Content
         setContents(currentContent);
     }
 
+
     //create methods to return information contents
-    public String summaryContent() {return returnSummaryContent; }
+    public String summaryContent() {return returnOverviewContent; }
     public String groomingProcessContent() { return returnGroomingContent; }
     public String warningSignsContent() { return returnWarningSignsContent; }
     public String preventativeMeasureContent() { return returnPreventativeMeasure; }
@@ -94,7 +92,7 @@ public class Content
 
     private void setSexTraffickingMinor()
     {
-        returnSummaryContent = SEX_TRAFFICKING_MINOR_OVERVIEW;
+        returnOverviewContent = SEX_TRAFFICKING_MINOR_OVERVIEW;
         returnGroomingContent = SEX_TRAFFICKING_MINOR_GROOM;
         returnWarningSignsContent = SEX_TRAFFICKING_MINOR_WARNING;
         returnPreventativeMeasure = SEX_TRAFFICKING_MINOR_PREVENT;
@@ -102,7 +100,7 @@ public class Content
 
     private void setSexTraffickingAdult()
     {
-        returnSummaryContent = SEX_TRAFFICKING_ADULT_OVERVIEW;
+        returnOverviewContent = SEX_TRAFFICKING_ADULT_OVERVIEW;
         returnGroomingContent = SEX_TRAFFICKING_ADULT_GROOM;
         returnWarningSignsContent = SEX_TRAFFICKING_ADULT_WARNING;
         returnPreventativeMeasure = SEX_TRAFFICKING_ADULT_PREVENT;
@@ -110,7 +108,7 @@ public class Content
 
     private void setLaborTrafficking()
     {
-        returnSummaryContent = LABOR_TRAFFICKING_OVERVIEW;
+        returnOverviewContent = LABOR_TRAFFICKING_OVERVIEW;
         returnGroomingContent = LABOR_TRAFFICKING_GROOM;
         returnWarningSignsContent = LABOR_TRAFFICKING_WARNING;
         returnPreventativeMeasure = LABOR_TRAFFICKING_PREVENT;
@@ -118,14 +116,14 @@ public class Content
 
     private void setSextortion()
     {
-        returnSummaryContent = SEXTORTION_OVERVIEW;
+        returnOverviewContent = SEXTORTION_OVERVIEW;
         returnGroomingContent = SEXTORTION_GROOM;
         returnWarningSignsContent = SEXTORTION_WARNING;
         returnPreventativeMeasure = SEXTORTION_PREVENT;
     }
 
     private void setChildPornography() {
-        returnSummaryContent = CHILD_PORNOGRAPHY_OVERVIEW;
+        returnOverviewContent = CHILD_PORNOGRAPHY_OVERVIEW;
         returnGroomingContent = CHILD_PORNOGRAPHY_GROOM;
         returnWarningSignsContent = CHILD_PORNOGRAPHY_WARNING;
         returnPreventativeMeasure = CHILD_PORNOGRAPHY_PREVENT;
@@ -133,7 +131,7 @@ public class Content
 
     private void setSocialMediaExploitation()
     {
-        returnSummaryContent = SOCIAL_MEDIA_EXPLOITATION_OVERVIEW;
+        returnOverviewContent = SOCIAL_MEDIA_EXPLOITATION_OVERVIEW;
         returnGroomingContent = SOCIAL_MEDIA_EXPLOITATION_GROOM;
         returnWarningSignsContent = SOCIAL_MEDIA_EXPLOITATION_WARNING;
         returnPreventativeMeasure = SOCIAL_MEDIA_EXPLOITATION_PREVENT;
