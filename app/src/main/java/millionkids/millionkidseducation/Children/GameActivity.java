@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.AlertDialog;
@@ -256,7 +257,6 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                 }
-
             }
         });
     }
@@ -265,6 +265,13 @@ public class GameActivity extends AppCompatActivity {
     public void displayData(List<Game> games){
         //Stores currentIndex of game
         Game currentIndex = games.get(index);
+
+        background.setScaleType(ImageView.ScaleType.FIT_XY);
+        option1.setBackgroundColor(Color.WHITE);
+        option2.setBackgroundColor(Color.WHITE);
+
+        option3.setBackgroundColor(Color.WHITE);
+        gameText.setBackgroundColor(Color.WHITE);
 
         if(currentIndex.getShowChild().equals("n"))
             character.setVisibility(View.INVISIBLE);
@@ -278,10 +285,7 @@ public class GameActivity extends AppCompatActivity {
         else {
             gameText.setVisibility(View.INVISIBLE);
             //LinearLayout Parameters
-            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-            background.setLayoutParams(lp);
-            background.setScaleType(ImageView.ScaleType.FIT_XY);
+
             optionsAvail = false;
         }
 
@@ -316,8 +320,6 @@ public class GameActivity extends AppCompatActivity {
     //Get the Image for the current index. Called within displaydata
     public void getImage(Game currentIndex){
         try {
-
-
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(currentIndex.getImageDir()));
             background.setImageBitmap(b);
         } catch (FileNotFoundException e) {
