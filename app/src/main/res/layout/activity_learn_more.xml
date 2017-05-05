@@ -16,9 +16,9 @@
             android:id="@+id/tvLearnMorePage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/learn_title"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="Additional Information"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="30sp" />
 
@@ -27,11 +27,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tvLearnMorePage"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="50dp"
-            android:text="Additional resources to be included here"
-            android:textColor="@color/whiteText" />
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="30dp"
+            android:autoLink="web"
+            android:textColor="@color/whiteText"
+            android:layout_marginBottom="10dp"/>
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="2dp"-->
 
     </RelativeLayout>
 
