@@ -83,7 +83,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
                 this.startActivity(new Intent(this, About.class));
                 break;
             case R.id.mLearnMore:
-                this.startActivity(new Intent(this, LearnMore.class));
+                this.startActivity(new Intent(this, LearnMore.class) );
                 break;
             case R.id.mHelp:
                 this.startActivity(new Intent(this, Help.class));
