@@ -26,15 +26,15 @@
         android:id="@+id/boy5_8"
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:layout_alignTop="@+id/girl5_8"
         android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/girl5_8"
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:cropToPadding="true"
         android:onClick="onClick"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/boy5_8" />
+        app:srcCompat="@drawable/boy5_8"
+        android:layout_alignTop="@+id/girl5_8"
+        android:layout_toEndOf="@+id/girl5_8" />
 
     <ImageButton
         android:id="@+id/girl9_12"
@@ -63,4 +63,27 @@
         android:onClick="onClick"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/boy9_12" />
+
+    <ImageButton
+        android:id="@+id/girl13_17"
+        android:layout_width="80dp"
+        android:layout_height="150dp"
+        android:layout_alignBottom="@+id/boy9_12"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/boy9_12"
+        android:background="#00000000"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/girl13_17" />
+
+    <ImageButton
+        android:id="@+id/boy13_17"
+        android:layout_width="80dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/girl13_17"
+        android:layout_marginEnd="13dp"
+        android:background="#00000000"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/boy13_17" />
+
 </RelativeLayout>

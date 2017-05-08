@@ -56,12 +56,16 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
         boy5_8 = (ImageButton)findViewById(R.id.boy5_8);
         girl9_12 = (ImageButton)findViewById(R.id.girl9_12);
         boy9_12 = (ImageButton)findViewById(R.id.boy9_12);
+        girl13_17 = (ImageButton)findViewById(R.id.girl13_17);
+        boy13_17 = (ImageButton)findViewById(R.id.boy13_17);
 
         //SetOnClick Listeners
         girl5_8.setOnClickListener(this);
         boy5_8.setOnClickListener(this);
         girl9_12.setOnClickListener(this);
         boy9_12.setOnClickListener(this);
+        girl13_17.setOnClickListener(this);
+        boy13_17.setOnClickListener(this);
     }
 
     //Menu option BEGINS
@@ -121,6 +125,14 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
             case R.id.boy9_12:
                 ageId = "2";
                 imageText = "boy9_12";
+                break;
+            case R.id.girl13_17:
+                ageId = "3";
+                imageText = "girl13_17";
+                break;
+            case R.id.boy13_17:
+                ageId = "3";
+                imageText = "boy13_17";
                 break;
         }
 

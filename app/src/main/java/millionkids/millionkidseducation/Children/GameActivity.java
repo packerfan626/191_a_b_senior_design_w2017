@@ -281,6 +281,7 @@ public class GameActivity extends AppCompatActivity {
         //Sets Text for Scenario/Question
         if(!currentIndex.getQuestionText().equals("null")) {
             gameText.setText(games.get(index).getQuestionText());
+            gameText.setVisibility(View.VISIBLE);
         }
         else {
             gameText.setVisibility(View.INVISIBLE);
