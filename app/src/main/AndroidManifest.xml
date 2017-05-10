@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="millionkids.millionkidseducation">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".menuUI.About"
             android:label="About"/>
         <activity android:name=".menuUI.LearnMore"
@@ -33,6 +36,8 @@
             android:label="Parent Home"
             android:screenOrientation="portrait"/>
         <activity android:name=".Children.ChildrenHome" />
+        <activity android:name=".Children.ScenarioOptions" />
+        <activity android:name=".Children.GameActivity"></activity>
     </application>
 
 </manifest>

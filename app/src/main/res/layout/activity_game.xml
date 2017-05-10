@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="millionkids.millionkidseducation.Children.GameActivity">
+
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@android:color/background_light"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/gameText"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/gameText"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:background="@drawable/textview_border"
+        android:maxLines="9"
+        android:paddingLeft="4dp"
+        android:scrollbars="vertical"
+        android:text="Displays text to the user and optionally allows them to edit it. A TextView is a complete text editor, however the basic class is configured to not allow editing; see EditText for a subclass that configures the text view for editing.  To allow users to copy some or all of the TextView's value and paste it somewhere else, set the XML attribute android:textIsSelectable to &quot;true&quot; or call setTextIsSelectable(true). The textIsSelectable flag allows users to make selection gestures in the TextView, which in turn triggers the system's built-in copy/paste controls."
+        android:textColor="@android:color/black" />
+<RadioGroup
+    android:id="@+id/radio"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/gameText"
+    android:layout_alignStart="@+id/gameText"
+    android:layout_alignEnd="@+id/gameText">
+
+    <RadioButton
+        android:id="@+id/option1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/gameText"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/gameText"
+        android:layout_marginTop="11dp"
+        android:text="RadioButton"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:id="@+id/option2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/option1"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/option1"
+        android:layout_marginTop="19dp"
+        android:text="RadioButton"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:id="@+id/option3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/option2"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/option2"
+        android:layout_marginTop="13dp"
+        android:text="RadioButton"
+        android:textStyle="bold" />
+
+</RadioGroup>
+
+    <ImageButton
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_media_ff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/childImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/boy5_8"
+        android:layout_below="@+id/gameText"
+        android:layout_toStartOf="@+id/submitButton"
+        android:layout_marginEnd="14dp" />
+
+</RelativeLayout>
