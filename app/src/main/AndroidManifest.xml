@@ -7,21 +7,32 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".main.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menuUI.About" />
-        <activity android:name=".menuUI.LearnMore" />
-        <activity android:name=".menuUI.Help" />
-        <activity android:name=".menuUI.Settings" />
-        <activity android:name=".main.MainHomePage" />
-        <activity android:name=".Parent.ParentHome" />
-        <activity android:name=".Children.ChildrenHome"></activity>
+        <activity android:name=".menuUI.About"
+            android:label="About"/>
+        <activity android:name=".menuUI.LearnMore"
+            android:label="Learn More"/>
+        <activity android:name=".menuUI.Help"
+            android:label="Help"/>
+        <activity android:name=".menuUI.Settings"
+            android:label="Settings"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".main.MainHomePage"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Parent.ParentHome"
+            android:label="Parent Home"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Children.ChildrenHome" />
     </application>
 
 </manifest>

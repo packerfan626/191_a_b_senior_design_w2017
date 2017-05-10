@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import millionkids.millionkidseducation.R;
+import millionkids.millionkidseducation.main.MainHomePage;
 import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
 import millionkids.millionkidseducation.menuUI.LearnMore;
@@ -33,20 +34,11 @@ public class ChildrenHome extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mHome:
-                //this.startActivity(new Intent(this, MainHomePage.class));
+                this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-            case R.id.mAbout:
-                this.startActivity(new Intent(this, About.class));
-                break;
-            case R.id.mLearnMore:
-                this.startActivity(new Intent(this, LearnMore.class));
-                break;
-            case R.id.mHelp:
-                this.startActivity(new Intent(this, Help.class));
-                break;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
-                break;
+//            case R.id.mHelp:
+//                this.startActivity(new Intent(this, Help.class));
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }
