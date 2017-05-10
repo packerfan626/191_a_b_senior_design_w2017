@@ -27,6 +27,7 @@ import millionkids.millionkidseducation.SQLite.AgeGroupsData;
 import millionkids.millionkidseducation.SQLite.MySQLiteHelper;
 import millionkids.millionkidseducation.SQLite.Scenario;
 import millionkids.millionkidseducation.SQLite.ScenarioData;
+
 import millionkids.millionkidseducation.main.MainHomePage;
 import millionkids.millionkidseducation.menuUI.About;
 import millionkids.millionkidseducation.menuUI.Help;
@@ -81,20 +82,11 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mHome:
-                //this.startActivity(new Intent(this, MainHomePage.class));
+                this.startActivity(new Intent(this, MainHomePage.class));
                 break;
-            case R.id.mAbout:
-                this.startActivity(new Intent(this, About.class));
-                break;
-            case R.id.mLearnMore:
-                this.startActivity(new Intent(this, LearnMore.class) );
-                break;
-            case R.id.mHelp:
-                this.startActivity(new Intent(this, Help.class));
-                break;
-            case R.id.mSetting:
-                this.startActivity(new Intent(this, Settings.class));
-                break;
+//            case R.id.mHelp:
+//                this.startActivity(new Intent(this, Help.class));
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }

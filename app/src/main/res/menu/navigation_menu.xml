@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/mSexTraffickingMinor"
+            android:title="Child Sex Trafficking">
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single" >
+        <item android:id="@+id/mSexTraffickingAdult"
+            android:title="Adult Sex Trafficking">
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/grp3"
+        android:checkableBehavior="single" >
+        <item android:id="@+id/mLaborTrafficking"
+            android:title="Labor Trafficking">
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/grp4"
+        android:checkableBehavior="single" >
+        <item android:id="@+id/mSextortion"
+            android:title="Sextortion" >
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/grp5"
+        android:checkableBehavior="single" >
+        <item android:id="@+id/mChildPornography"
+            android:title="Child Pornography" >
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/grp6"
+        android:checkableBehavior="single" >
+        <item android:id="@+id/mSocialMediaExploitation"
+            android:title="Social Media Exploitation" >
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/grp7"
+        android:checkableBehavior="single" >
+        <item android:title="About"
+            android:icon="@mipmap/ic_info_black_24dp"
+            android:id="@+id/mAbout"/>
+
+        <item android:title="Learn More"
+            android:id="@+id/mLearnMore"
+            android:icon="@mipmap/ic_help_black_24dp"/>
+
+        <!--<item android:title="Settings"-->
+            <!--android:icon="@mipmap/ic_settings_black_24dp"-->
+            <!--android:id="@+id/mSetting" />-->
+    </group>
+</menu>
+
+    <!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<item-->
+    <!--android:id="@+id/mSexTraffickingMinor_Summary"-->
+    <!--android:title="Summary" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/mSexTraffickingMinor_GroomingProcess"-->
+    <!--android:title="Grooming Process" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/mSexTraffickingMinor_WarningSigns"-->
+    <!--android:title="Warning Signs" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/mSexTraffickingMinor_PreventativeMeasures"-->
+    <!--android:title="Preventative Measures" />-->
+    <!--</menu>-->

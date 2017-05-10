@@ -5,15 +5,15 @@
     tools:context=".main.MainActivity">
 
     <item android:id="@+id/mHome"
-        android:title="Home" />
-    <item android:title="About"
-        android:id="@+id/mAbout"/>
-    <item android:title="Learn More"
-        android:id="@+id/mLearnMore"/>
-    <item android:title="Help"
-        android:id="@+id/mHelp"/>
-    <item android:title="Settings"
-        android:id="@+id/mSetting"/>
-
+        android:icon="@mipmap/ic_home_white_24dp"
+        android:title="Home"
+        app:showAsAction="always"/>
+    <!--<item android:title="Help"-->
+        <!--android:icon="@mipmap/ic_help_white_24dp"-->
+        <!--android:id="@+id/mHelp"-->
+        <!--app:showAsAction="always"/>-->
 
 </menu>
+
+    <!--android:icon="@mipmap/ic_home_black_24dp"-->
+    <!--android:icon="@mipmap/ic_help_black_24dp"-->

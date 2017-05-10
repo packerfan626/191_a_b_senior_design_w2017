@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp7"
+        android:checkableBehavior="single" >
+        <item android:title="About"
+            android:icon="@mipmap/ic_info_black_24dp"
+            android:id="@+id/mAbout"/>
+
+        <item android:title="Learn More"
+            android:id="@+id/mLearnMore"
+            android:icon="@mipmap/ic_help_black_24dp"/>
+
+        <!--<item android:title="Settings"-->
+            <!--android:icon="@mipmap/ic_settings_black_24dp"-->
+            <!--android:id="@+id/mSetting" />-->
+    </group>
+</menu>
