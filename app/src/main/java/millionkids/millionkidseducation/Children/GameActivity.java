@@ -43,6 +43,7 @@ public class GameActivity extends AppCompatActivity {
 
     //Used to set the background image from the SQLite Database
     ImageView background;
+    ImageView radiogroupBg;
 
     //Character imageView
     ImageView character;
@@ -102,6 +103,7 @@ public class GameActivity extends AppCompatActivity {
         option3 = (RadioButton)findViewById(R.id.option3);
         submit = (ImageButton)findViewById(R.id.submitButton);
         character = (ImageView)findViewById(R.id.childImage);
+        radiogroupBg = (ImageView)findViewById(R.id.radiogroupBackground);
 
         //Game declaration
         games = new LinkedList<Game>();
@@ -282,11 +284,12 @@ public class GameActivity extends AppCompatActivity {
         if(!currentIndex.getQuestionText().equals("null")) {
             gameText.setText(games.get(index).getQuestionText());
             gameText.setVisibility(View.VISIBLE);
+            radiogroupBg.setVisibility(View.VISIBLE);
         }
         else {
             gameText.setVisibility(View.INVISIBLE);
             //LinearLayout Parameters
-
+            radiogroupBg.setVisibility(View.INVISIBLE);
             optionsAvail = false;
         }
 

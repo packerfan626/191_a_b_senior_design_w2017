@@ -12,8 +12,16 @@
         android:layout_height="match_parent"
         app:srcCompat="@android:color/background_light"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/gameText"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/radiogroupBackground"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@android:color/background_light"
+        android:layout_alignStart="@+id/gameText"
+        android:layout_alignEnd="@+id/gameText" />
 
     <TextView
         android:id="@+id/gameText"
@@ -87,5 +95,7 @@
         android:layout_below="@+id/gameText"
         android:layout_toStartOf="@+id/submitButton"
         android:layout_marginEnd="14dp" />
+
+
 
 </RelativeLayout>

@@ -7,6 +7,6 @@
     <color name="whiteText">#FFFFFF</color>
     <color name="globeBlue">#203469 </color>
     <color name="lightgray">#a7afbc</color>
-    <color name="black">#00081d </color>
+    <color name="black">#00081d</color>
     <color name="actionBar">#00081d</color>
 </resources>
