@@ -37,10 +37,6 @@ import millionkids.millionkidseducation.SQLite.Game;
 import millionkids.millionkidseducation.SQLite.GameData;
 
 public class GameActivity extends AppCompatActivity {
-
-    //Scenario_Images Path
-    String IMAGE_PATH = "";
-
     //Used to set the background image from the SQLite Database
     ImageView background;
     ImageView radiogroupBg;
@@ -72,10 +68,6 @@ public class GameActivity extends AppCompatActivity {
 
     //Current index
     int index = 0;
-
-    //The FileName to open
-    String FILENAME;
-    FileInputStream fileInputStream;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,12 +196,12 @@ public class GameActivity extends AppCompatActivity {
                 }else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
                     //Display if the user selected the incorrect answer
                     new AlertDialog.Builder(GameActivity.this)
-                            .setTitle("Wrong Answer")
-                            .setMessage("This answer is incorrect: " + message)
+                            .setTitle("Let's try again!")
+                            .setMessage("This answer is not the best decision: " + message)
                             .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // continue with try again
-                                    radioButton.setVisibility(View.INVISIBLE);
+                                    //radioButton.setVisibility(View.INVISIBLE);
                                     radioGroup.clearCheck();
                                 }
                             })
@@ -234,7 +226,7 @@ public class GameActivity extends AppCompatActivity {
                         index++;
                         if(index == games.size()){
                             new AlertDialog.Builder(GameActivity.this)
-                                    .setTitle("Game Over!")
+                                    .setTitle("Nice Job!")
                                     .setMessage("Thank you for playing! We hope you " +
                                             "learned a lot!")
                                     .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {

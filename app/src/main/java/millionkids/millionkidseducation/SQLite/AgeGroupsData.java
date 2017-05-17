@@ -64,6 +64,8 @@ public class AgeGroupsData {
         //Log results of getAllScenarios
         Log.d("getAgeGroups", ageGroups.toString());
 
+        db.close();
+
         //Return scenarios
         return ageGroups;
     }

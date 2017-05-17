@@ -102,6 +102,9 @@ public class GameData {
                 gameData.add(game);
             }while(cursor.moveToNext());
         }
+
+        db.close();
+
         return gameData;
     }
 

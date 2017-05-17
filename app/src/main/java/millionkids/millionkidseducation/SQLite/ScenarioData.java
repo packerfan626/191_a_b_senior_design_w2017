@@ -93,6 +93,8 @@ public class ScenarioData{
             } while (cursor.moveToNext());
         }
 
+        db.close();
+
         //Return scenarios
         return scenarios;
     }
