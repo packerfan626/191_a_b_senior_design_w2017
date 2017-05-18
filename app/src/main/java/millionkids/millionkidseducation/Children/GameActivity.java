@@ -52,6 +52,7 @@ public class GameActivity extends AppCompatActivity {
     RadioButton option2;
     RadioButton option3;
 
+    //Set up the RadioGroup
     RadioGroup radioGroup;
 
     //Submit Option
@@ -106,13 +107,11 @@ public class GameActivity extends AppCompatActivity {
         //Get GameData depending on ScenarioID
         games = gameData.getGameData(scenarioId);
 
-
         //Set Character Image based on resources
         Resources res = getResources();
         int resId = res.getIdentifier(imageText, "drawable", getPackageName());
         Drawable drawable = res.getDrawable(resId, this.getTheme());
         character.setImageDrawable(drawable);
-
 
         //Display Data onto UI
         displayData(games);
