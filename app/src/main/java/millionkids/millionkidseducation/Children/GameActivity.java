@@ -84,6 +84,8 @@ public class GameActivity extends AppCompatActivity {
         int scenarioId = bundle.getInt("scenarioId");
         String imageText = bundle.getString("imageText");
 
+
+
         //Initial index; set to zero
         index = 0;
 
@@ -95,6 +97,8 @@ public class GameActivity extends AppCompatActivity {
         option3 = (RadioButton)findViewById(R.id.option3);
         submit = (ImageButton)findViewById(R.id.submitButton);
         character = (ImageView)findViewById(R.id.childImage);
+
+        submit.setScaleType(ImageView.ScaleType.FIT_XY);
 
         //Game declaration
         games = new LinkedList<Game>();
@@ -110,6 +114,7 @@ public class GameActivity extends AppCompatActivity {
         int resId = res.getIdentifier(imageText, "drawable", getPackageName());
         Drawable drawable = res.getDrawable(resId, this.getTheme());
         character.setImageDrawable(drawable);
+
 
         //Display Data onto UI
         displayData(games);
@@ -161,9 +166,15 @@ public class GameActivity extends AppCompatActivity {
                                     //Check if Index is equal to the size of games list
                                     if(index == games.size()){
                                         new AlertDialog.Builder(GameActivity.this)
-                                                .setTitle("Game Over!")
+                                                .setTitle("Nice Job!")
                                                 .setMessage("Thank you for playing! We hope you " +
-                                                        "learned a lot!")
+                                                        "learned a lot! \n\nRemember:" + "\n" +
+                                                        "Be S.A.F.E." + "\n" +
+                                                        "Stay S.A.F.E." +  "\n" +
+                                                        "S - Speak up.         " +  "\n" +
+                                                        "A - Ask first.           " + "\n" +
+                                                        "F - Find help.          " +  "\n" +
+                                                        "E - Educate others.")
                                                 .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int which) {
                                                         //Reset index and redisplay data
@@ -225,7 +236,13 @@ public class GameActivity extends AppCompatActivity {
                             new AlertDialog.Builder(GameActivity.this)
                                     .setTitle("Nice Job!")
                                     .setMessage("Thank you for playing! We hope you " +
-                                            "learned a lot!")
+                                            "learned a lot! Remember:" + "\n" +
+                                            "Be S.A.F.E." + "\n" +
+                                            "Stay S.A.F.E." +  "\n" +
+                                            "S - Speak up.         " +  "\n" +
+                                            "A - Ask first.           " + "\n" +
+                                            "F - Find help.          " +  "\n" +
+                                            "E - Educate others.")
                                     .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int which) {
                                             //Reset index and redisplay data
