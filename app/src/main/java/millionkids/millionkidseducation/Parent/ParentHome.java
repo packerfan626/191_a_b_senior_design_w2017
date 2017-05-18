@@ -15,6 +15,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.widget.Button;
 
+import millionkids.millionkidseducation.Parent.Utilities.Constants;
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.main.MainHomePage;
 import millionkids.millionkidseducation.menuUI.About;
@@ -22,18 +23,12 @@ import millionkids.millionkidseducation.menuUI.LearnMore;
 
 import android.webkit.WebView;
 public class ParentHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    private final String SEX_TRAFFICKING_MINOR = "Child Sex Trafficking",
-                        SEX_TRAFFICKING_ADULT = "Adult Sex Trafficking",
-                        LABOR_TRAFFICKING = "Labor Trafficking",
-                        SEXTORTION = "Sextortion",
-                        CHILD_PORNOGRAPHY = "Child Pornography",
-                        SOCIAL_MEDIA_EXPLOITATION = "Social Media Exploitation";
     private WebView mWebView;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private Button bSummary, bGroomingProcess, bWarrningSigns, bPreventMeasure, prevButton;
     //class that handles all the parent information
-    Content con = new Content(SEX_TRAFFICKING_MINOR);
+    Content con = new Content(Constants.SEX_TRAFFICKING_MINOR);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +36,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         setContentView(R.layout.activity_parent_home);
 
         //set private variables;
-        mWebView = (WebView) findViewById(R.id.test);
+        mWebView = (WebView) findViewById(R.id.mWebView);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.Open, R.string.close);
         bSummary = (Button) findViewById(R.id.bSummary);
@@ -52,11 +47,22 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         setTitle("Child Sex Trafficking");
 
         //set initial load
-        changeButtonColors(bSummary, null, SEX_TRAFFICKING_MINOR);
+        changeButtonColors(bSummary, null, Constants.SEX_TRAFFICKING_MINOR);
 
         //webview for html
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+        mWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+//        mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        mWebView.getSettings().setAppCacheEnabled(true);
+        mWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        webSettings.setSaveFormData(true);
+        webSettings.setEnableSmoothTransition(true);
+
         mWebView.loadUrl(con.summaryContent());
         mWebView.setBackgroundColor(Color.TRANSPARENT);
 
@@ -110,38 +116,38 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
         switch(item.getItemId())
         {
             case R.id.mSexTraffickingMinor:
-                con.setcurrentContent(SEX_TRAFFICKING_MINOR);
-                this.setTitle(SEX_TRAFFICKING_MINOR);
+                con.setcurrentContent(Constants.SEX_TRAFFICKING_MINOR);
+                this.setTitle(Constants.SEX_TRAFFICKING_MINOR);
                 changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSexTraffickingAdult:
-                con.setcurrentContent(SEX_TRAFFICKING_ADULT);
-                this.setTitle(SEX_TRAFFICKING_ADULT);
+                con.setcurrentContent(Constants.SEX_TRAFFICKING_ADULT);
+                this.setTitle(Constants.SEX_TRAFFICKING_ADULT);
                 changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mLaborTrafficking:
-                con.setcurrentContent(LABOR_TRAFFICKING);
-                this.setTitle(LABOR_TRAFFICKING);
+                con.setcurrentContent(Constants.LABOR_TRAFFICKING);
+                this.setTitle(Constants.LABOR_TRAFFICKING);
                 changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSextortion:
-                con.setcurrentContent(SEXTORTION);
-                this.setTitle(SEXTORTION);
+                con.setcurrentContent(Constants.SEXTORTION);
+                this.setTitle(Constants.SEXTORTION);
                 changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mChildPornography:
-                con.setcurrentContent(CHILD_PORNOGRAPHY);
-                this.setTitle(CHILD_PORNOGRAPHY);
+                con.setcurrentContent(Constants.CHILD_PORNOGRAPHY);
+                this.setTitle(Constants.CHILD_PORNOGRAPHY);
                 changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
             case R.id.mSocialMediaExploitation:
-                con.setcurrentContent(SOCIAL_MEDIA_EXPLOITATION);
-                this.setTitle(SOCIAL_MEDIA_EXPLOITATION);
+                con.setcurrentContent(Constants.SOCIAL_MEDIA_EXPLOITATION);
+                this.setTitle(Constants.SOCIAL_MEDIA_EXPLOITATION);
                 changeButtonColors(bSummary, prevButton, con.summaryContent());
                 mDrawerLayout.closeDrawers();
                 return true;
@@ -189,7 +195,7 @@ public class ParentHome extends AppCompatActivity implements NavigationView.OnNa
             gray.setBackgroundColor(Color.parseColor("#00081d")); //set unselected button to dark blue
             gray.setTextColor(Color.parseColor("#FFFFFF"));    //set unselected text to white
         }
-        clicked.setBackgroundColor(Color.parseColor("#203469"));  //set selected button to globeblue
+        clicked.setBackgroundColor(Color.parseColor("#203469"));  //set selected button to globe blue
         clicked.setTextColor(Color.parseColor("#fbb919")); //set text to gold
         prevButton = clicked;
     }

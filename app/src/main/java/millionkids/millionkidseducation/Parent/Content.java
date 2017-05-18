@@ -1,5 +1,7 @@
 package millionkids.millionkidseducation.Parent;
 
+import millionkids.millionkidseducation.Parent.Utilities.Constants;
+
 /**
  * Created by walki on 3/30/2017.
  */
@@ -12,15 +14,10 @@ public class Content
             returnGroomingContent = "",
             returnWarningSignsContent = "",
             returnPreventativeMeasure = "",
-            currentContent = "",
-    //SET CURRENT CONTENT
-            SEX_TRAFFICKING_MINOR = "Child Sex Trafficking",
-            SEX_TRAFFICKING_ADULT = "Adult Sex Trafficking",
-            LABOR_TRAFFICKING = "Labor Trafficking",
-            SEXTORTION = "Sextortion",
-            CHILD_PORNOGRAPHY = "Child Pornography",
-            SOCIAL_MEDIA_EXPLOITATION = "Social Media Exploitation",
+            currentContent = "";
+
     //links to contents HTML
+    private final String
             //sex trafficking minor contents location
             SEX_TRAFFICKING_MINOR_OVERVIEW = "file:///android_asset/Parent/ChildSexTrafficking/Child_Sex_Trafficking_Overview.html",
             SEX_TRAFFICKING_MINOR_GROOM = "file:///android_asset/Parent/ChildSexTrafficking/Child_Sex_Trafficking_Grooming-Process.html",
@@ -76,17 +73,17 @@ public class Content
 
     private void setContents(String currentContent)
     {
-        if(currentContent.equalsIgnoreCase(SEX_TRAFFICKING_MINOR))
+        if(currentContent.equalsIgnoreCase(Constants.SEX_TRAFFICKING_MINOR))
             setSexTraffickingMinor();
-        else if (currentContent.equalsIgnoreCase(SEX_TRAFFICKING_ADULT))
+        else if (currentContent.equalsIgnoreCase(Constants.SEX_TRAFFICKING_ADULT))
             setSexTraffickingAdult();
-        else if (currentContent.equalsIgnoreCase(LABOR_TRAFFICKING))
+        else if (currentContent.equalsIgnoreCase(Constants.LABOR_TRAFFICKING))
             setLaborTrafficking();
-        else if (currentContent.equalsIgnoreCase(SEXTORTION))
+        else if (currentContent.equalsIgnoreCase(Constants.SEXTORTION))
             setSextortion();
-        else if (currentContent.equalsIgnoreCase(CHILD_PORNOGRAPHY))
+        else if (currentContent.equalsIgnoreCase(Constants.CHILD_PORNOGRAPHY))
             setChildPornography();
-        else if (currentContent.equalsIgnoreCase(SOCIAL_MEDIA_EXPLOITATION))
+        else if (currentContent.equalsIgnoreCase(Constants.SOCIAL_MEDIA_EXPLOITATION))
             setSocialMediaExploitation();
     }
 
