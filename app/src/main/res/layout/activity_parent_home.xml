@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <WebView
-                android:id="@+id/test"
+                android:id="@+id/mWebView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="19dp"
@@ -40,15 +40,15 @@
 
                 <Button
                     android:id="@+id/bSummary"
+                    android:layout_width="85dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Overview"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp" />
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/bGroomingProcess"
@@ -65,29 +65,29 @@
 
                 <Button
                     android:id="@+id/bWarrningSigns"
+                    android:layout_width="86dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Warning Signs"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp"
-                    android:layout_width="79dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp"/>
+                    android:textSize="14dp" />
 
 
                 <Button
                     android:id="@+id/bPreventMeasure"
-                    android:layout_width="133dp"
+                    android:layout_width="100dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:layout_weight="1"
                     android:background="@color/actionBar"
                     android:text="Preventative Measure"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteText"
-                    android:textSize="14dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"/>
+                    android:textSize="14dp" />
 
 
             </LinearLayout>
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity = "start"
-        app:headerLayout="@layout/parent_navigation_header"
+        app:headerLayout="@layout/navigation_header"
         app:menu ="@menu/navigation_menu">
     </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="?attr/actionModeSplitBackground"
+    android:background="#30b6e9"
     android:orientation="vertical">
 
     <TextView
@@ -13,6 +13,6 @@
         android:layout_centerVertical="true"
         android:text="Navigation Menu"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="#000a1f"
         android:textSize="30sp" />
 </RelativeLayout>
