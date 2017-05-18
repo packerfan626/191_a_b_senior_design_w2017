@@ -1,91 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="millionkids.millionkidseducation.Children.GameActivity">
+    tools:context="millionkids.millionkidseducation.Children.GameActivity"
+    tools:layout_editor_absoluteY="73dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <ImageView
         android:id="@+id/bgImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="295dp"
         app:srcCompat="@android:color/background_light"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/gameText"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        tools:layout_constraintTop_creator="1"
+        android:scaleType="centerCrop"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gameText"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
         android:background="@drawable/textview_border"
         android:maxLines="9"
         android:paddingLeft="4dp"
         android:scrollbars="vertical"
         android:text="Displays text to the user and optionally allows them to edit it. A TextView is a complete text editor, however the basic class is configured to not allow editing; see EditText for a subclass that configures the text view for editing.  To allow users to copy some or all of the TextView's value and paste it somewhere else, set the XML attribute android:textIsSelectable to &quot;true&quot; or call setTextIsSelectable(true). The textIsSelectable flag allows users to make selection gestures in the TextView, which in turn triggers the system's built-in copy/paste controls."
-        android:textColor="@android:color/black" />
-<RadioGroup
-    android:id="@+id/radio"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/gameText"
-    android:layout_alignStart="@+id/gameText"
-    android:layout_alignEnd="@+id/gameText">
-
-    <RadioButton
-        android:id="@+id/option1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/gameText"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/gameText"
-        android:layout_marginTop="11dp"
-        android:text="RadioButton"
-        android:textStyle="bold" />
-
-    <RadioButton
-        android:id="@+id/option2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/option1"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/option1"
-        android:layout_marginTop="19dp"
-        android:text="RadioButton"
-        android:textStyle="bold" />
-
-    <RadioButton
-        android:id="@+id/option3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/option2"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/option2"
-        android:layout_marginTop="13dp"
-        android:text="RadioButton"
-        android:textStyle="bold" />
-
-</RadioGroup>
+        android:textColor="@android:color/black"
+        app:layout_constraintRight_toLeftOf="@+id/childImage"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/radio"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_media_ff"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/nextbutton"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="2dp" />
 
     <ImageView
         android:id="@+id/childImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="101dp"
+        android:layout_height="129dp"
         app:srcCompat="@drawable/boy5_8"
         android:layout_below="@+id/gameText"
         android:layout_toStartOf="@+id/submitButton"
-        android:layout_marginEnd="14dp" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="160dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="177dp" />
 
-</RelativeLayout>
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="0dp"
+        android:layout_height="97dp"
+        android:layout_alignEnd="@+id/gameText"
+        android:layout_alignStart="@+id/gameText"
+        android:layout_below="@+id/gameText"
+        app:layout_constraintRight_toLeftOf="@+id/childImage"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="13dp"
+        android:layout_marginTop="38dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="31dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/childImage">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/gameText"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/gameText"
+            android:layout_marginTop="0dp"
+            android:text="RadioButton"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/option1"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/option1"
+            android:layout_marginTop="0dp"
+            android:text="RadioButton"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/option2"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/option2"
+            android:layout_marginTop="0dp"
+            android:text="RadioButton"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -37,10 +37,6 @@ import millionkids.millionkidseducation.SQLite.Game;
 import millionkids.millionkidseducation.SQLite.GameData;
 
 public class GameActivity extends AppCompatActivity {
-
-    //Scenario_Images Path
-    String IMAGE_PATH = "";
-
     //Used to set the background image from the SQLite Database
     ImageView background;
 
@@ -55,6 +51,7 @@ public class GameActivity extends AppCompatActivity {
     RadioButton option2;
     RadioButton option3;
 
+    //Set up the RadioGroup
     RadioGroup radioGroup;
 
     //Submit Option
@@ -72,10 +69,6 @@ public class GameActivity extends AppCompatActivity {
     //Current index
     int index = 0;
 
-    //The FileName to open
-    String FILENAME;
-    FileInputStream fileInputStream;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +84,8 @@ public class GameActivity extends AppCompatActivity {
         int scenarioId = bundle.getInt("scenarioId");
         String imageText = bundle.getString("imageText");
 
+
+
         //Initial index; set to zero
         index = 0;
 
@@ -103,6 +98,8 @@ public class GameActivity extends AppCompatActivity {
         submit = (ImageButton)findViewById(R.id.submitButton);
         character = (ImageView)findViewById(R.id.childImage);
 
+        submit.setScaleType(ImageView.ScaleType.FIT_XY);
+
         //Game declaration
         games = new LinkedList<Game>();
 
@@ -111,7 +108,6 @@ public class GameActivity extends AppCompatActivity {
 
         //Get GameData depending on ScenarioID
         games = gameData.getGameData(scenarioId);
-
 
         //Set Character Image based on resources
         Resources res = getResources();
@@ -170,9 +166,15 @@ public class GameActivity extends AppCompatActivity {
                                     //Check if Index is equal to the size of games list
                                     if(index == games.size()){
                                         new AlertDialog.Builder(GameActivity.this)
-                                                .setTitle("Game Over!")
+                                                .setTitle("Nice Job!")
                                                 .setMessage("Thank you for playing! We hope you " +
-                                                        "learned a lot!")
+                                                        "learned a lot! \n\nRemember:" + "\n" +
+                                                        "Be S.A.F.E." + "\n" +
+                                                        "Stay S.A.F.E." +  "\n" +
+                                                        "S - Speak up.         " +  "\n" +
+                                                        "A - Ask first.           " + "\n" +
+                                                        "F - Find help.          " +  "\n" +
+                                                        "E - Educate others.")
                                                 .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int which) {
                                                         //Reset index and redisplay data
@@ -202,12 +204,12 @@ public class GameActivity extends AppCompatActivity {
                 }else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
                     //Display if the user selected the incorrect answer
                     new AlertDialog.Builder(GameActivity.this)
-                            .setTitle("Wrong Answer")
-                            .setMessage("This answer is incorrect: " + message)
+                            .setTitle("Let's try again!")
+                            .setMessage("This answer is not the best decision: " + message)
                             .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // continue with try again
-                                    radioButton.setVisibility(View.INVISIBLE);
+                                    //radioButton.setVisibility(View.INVISIBLE);
                                     radioGroup.clearCheck();
                                 }
                             })
@@ -232,9 +234,15 @@ public class GameActivity extends AppCompatActivity {
                         index++;
                         if(index == games.size()){
                             new AlertDialog.Builder(GameActivity.this)
-                                    .setTitle("Game Over!")
+                                    .setTitle("Nice Job!")
                                     .setMessage("Thank you for playing! We hope you " +
-                                            "learned a lot!")
+                                            "learned a lot! Remember:" + "\n" +
+                                            "Be S.A.F.E." + "\n" +
+                                            "Stay S.A.F.E." +  "\n" +
+                                            "S - Speak up.         " +  "\n" +
+                                            "A - Ask first.           " + "\n" +
+                                            "F - Find help.          " +  "\n" +
+                                            "E - Educate others.")
                                     .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int which) {
                                             //Reset index and redisplay data
@@ -282,11 +290,12 @@ public class GameActivity extends AppCompatActivity {
         if(!currentIndex.getQuestionText().equals("null")) {
             gameText.setText(games.get(index).getQuestionText());
             gameText.setVisibility(View.VISIBLE);
+            //radiogroupBg.setVisibility(View.VISIBLE);
         }
         else {
             gameText.setVisibility(View.INVISIBLE);
             //LinearLayout Parameters
-
+            //radiogroupBg.setVisibility(View.INVISIBLE);
             optionsAvail = false;
         }
 
