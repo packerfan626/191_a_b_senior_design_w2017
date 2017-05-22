@@ -218,6 +218,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .formatP {text-align:justify;}
 
 .btn {
+	width: 100%;
     display: inline-block;
     background: #e2e2e2;
     border: 0;
@@ -242,6 +243,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     width: 2.5em;
     transition: margin 200ms;
     margin-left: .75em;
+    float: right;
 }
 
 button::-moz-focus-inner {
