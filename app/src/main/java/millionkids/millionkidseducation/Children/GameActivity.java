@@ -152,6 +152,8 @@ public class GameActivity extends AppCompatActivity {
                     validSelection = false;
                 }
 
+                //Here
+
                 //Check if answer is correct or not, and provide the feedback in the dialog
                 if(games.get(index).getCorrectAnswer() == selectedId) {
                     //Display if the user selected the correct answer.
