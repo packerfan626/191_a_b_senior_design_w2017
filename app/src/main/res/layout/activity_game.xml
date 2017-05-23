@@ -47,8 +47,8 @@
 
     <ImageButton
         android:id="@+id/submitButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:srcCompat="@drawable/nextbutton"
         android:scaleType="centerCrop"
         android:background="#00000000"
