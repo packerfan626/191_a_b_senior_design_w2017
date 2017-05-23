@@ -43,6 +43,8 @@ public class ScenarioOptions extends AppCompatActivity {
         //Set screen orientation to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        this.setFinishOnTouchOutside(true);
+
         //Receive Data from Previous screen (ChildrenHome.java)
         Bundle bundle = getIntent().getExtras();
         String ageId = bundle.getString("ageId");
@@ -115,6 +117,7 @@ public class ScenarioOptions extends AppCompatActivity {
 
                                     intent.putExtras(bundle);
 
+                                    finish();
                                     startActivity(intent);
                                 }
                             })
@@ -138,6 +141,7 @@ public class ScenarioOptions extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(ScenarioOptions.this, ChildrenHome.class);
+        finish();
         startActivity(intent);
     }
 }

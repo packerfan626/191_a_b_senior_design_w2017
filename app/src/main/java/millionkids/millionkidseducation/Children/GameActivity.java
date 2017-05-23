@@ -35,6 +35,7 @@ import java.util.List;
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.SQLite.Game;
 import millionkids.millionkidseducation.SQLite.GameData;
+import millionkids.millionkidseducation.main.MainHomePage;
 
 public class GameActivity extends AppCompatActivity {
     //Used to set the background image from the SQLite Database
@@ -83,8 +84,6 @@ public class GameActivity extends AppCompatActivity {
         //Store recieved (from previous screen) scenarioId into int scenarioId
         int scenarioId = bundle.getInt("scenarioId");
         String imageText = bundle.getString("imageText");
-
-
 
         //Initial index; set to zero
         index = 0;
@@ -151,8 +150,6 @@ public class GameActivity extends AppCompatActivity {
                 }else{
                     validSelection = false;
                 }
-
-                //Here
 
                 //Check if answer is correct or not, and provide the feedback in the dialog
                 if(games.get(index).getCorrectAnswer() == selectedId) {
@@ -354,5 +351,9 @@ public class GameActivity extends AppCompatActivity {
     //Disables back button from doing anything
     @Override
     public void onBackPressed(){
+        Intent intentExtras;
+        intentExtras = new Intent(this, ChildrenHome.class);
+        finish();
+        startActivity(intentExtras);
     }
 }

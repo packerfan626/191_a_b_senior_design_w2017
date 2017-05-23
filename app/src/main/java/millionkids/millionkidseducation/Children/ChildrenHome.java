@@ -133,6 +133,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
 
         //Start the new activity w/ send data
         intent.putExtras(data);
+        finish();
         startActivity(intent);
     }
 
@@ -140,6 +141,7 @@ public class ChildrenHome extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(ChildrenHome.this, MainHomePage.class);
+        finish();
         startActivity(intent);
     }
 }
