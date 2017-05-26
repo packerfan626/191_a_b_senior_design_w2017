@@ -270,6 +270,7 @@ public class GameActivity extends AppCompatActivity {
 
     //Display the data onto the UI that is taken in from the Database
     public void displayData(List<Game> games){
+        optionsAvail = false;
         //Stores currentIndex of game
         Game currentIndex = games.get(index);
 
