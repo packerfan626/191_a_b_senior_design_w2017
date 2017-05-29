@@ -253,6 +253,7 @@ public class GameActivity extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int which) {
                                             //Game jumps back to Game--MainMenu
                                             Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
+                                            finish();
                                             startActivity(intent);
                                         }
                                     })
