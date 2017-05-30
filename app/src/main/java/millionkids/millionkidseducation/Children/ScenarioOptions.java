@@ -93,8 +93,9 @@ public class ScenarioOptions extends AppCompatActivity {
             //Formatting
             imageButtons[i].setLayoutParams(lp);
             imageButtons[i].setBackgroundColor(Color.TRANSPARENT);
-            imageButtons[i].setMaxHeight(300);
-            imageButtons[i].setMaxWidth(300);
+            imageButtons[i].setMaxHeight(400);
+            imageButtons[i].setMaxWidth(400);
+            imageButtons[i].setPadding(10, 70, 10, 0);
             imageButtons[i].setAdjustViewBounds(true);
 
             //OnClick options for button
