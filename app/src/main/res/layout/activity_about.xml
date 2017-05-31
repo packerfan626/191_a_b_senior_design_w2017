@@ -24,13 +24,17 @@
                 android:id="@+id/tvAboutDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginTop="19dp"
                 android:layout_weight="0.02"
                 android:text="Million Kids began with a simple concept. We believe if the bad guys are harming this many children a year, then the good guys must help even more. And with the efforts of our partners and your support, we can.  Million Kids works with local law enforcement and concerned citizens, businesses, and organizations to end human trafficking domestically. Locally, we serve on the Riverside County Anti-Human Trafficking Task Force (RCAHT). We help activists and communities develop effective anti-trafficking programs in their locales. We educate and engage individuals, organizations and corporations about human trafficking. Internationally, we conduct programs and work with partners to serve rescued children and to create prevention strategies. We provide local solutions while taking a global perspective on the human trafficking problem.  In order to conduct our work, both here and abroad, we depend on the generous support of individuals, businesses, and organizations. Million Kids is a 501(c)(3) public benefit nonprofit that fights human trafficking. All gifts are tax deductible."
                 android:textColor="@android:color/white"
                 android:layout_below="@+id/tvAboutDescriptionTitle"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:textAlignment="gravity"
+                android:layout_marginBottom="10dp"
+                android:paddingBottom="10dp"/>
 
             <TextView
                 android:id="@+id/tvAboutDescriptionTitle"

@@ -30,9 +30,13 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="2dp"
             android:layout_marginTop="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textAlignment="gravity"
             android:autoLink="web"
             android:textColor="@color/whiteText"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"/>
         <!--android:layout_marginLeft="5dp"-->
         <!--android:layout_marginRight="2dp"-->
 

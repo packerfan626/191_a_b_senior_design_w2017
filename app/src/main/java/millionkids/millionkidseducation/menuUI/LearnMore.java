@@ -30,8 +30,8 @@ public class LearnMore extends AppCompatActivity implements NavigationView.OnNav
             "exploitation.\n\nContact us at 1-(951)-323-0298 or visit our website, " +
             "https://www.millionkids.org to be trained or to arrange a speaking engagement for " +
             "groups and organizations to learn about trafficking in the community.\n\nTo report any" +
-            "human trafficking contact either: \n\tNational Hotline: 1-888-373-7888 \n\tRiverside " +
-            "County Anti-Human Trafficking Task Force (RCAHT) Hotline: 1855-758-3733";
+            " human trafficking contact either: \n\t\u2022 National Hotline: 1-888-373-7888 \n\t\u2022 " +
+            "Riverside County Anti-Human Trafficking Task Force (RCAHT) Hotline: 1855-758-3733";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
