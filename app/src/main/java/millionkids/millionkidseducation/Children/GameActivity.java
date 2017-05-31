@@ -108,6 +108,8 @@ public class GameActivity extends AppCompatActivity {
         //Get GameData depending on ScenarioID
         games = gameData.getGameData(scenarioId);
 
+        this.setFinishOnTouchOutside(true);
+
         //Set Character Image based on resources
         Resources res = getResources();
         int resId = res.getIdentifier(imageText, "drawable", getPackageName());
