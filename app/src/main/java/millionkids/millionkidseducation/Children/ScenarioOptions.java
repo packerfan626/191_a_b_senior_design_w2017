@@ -43,6 +43,8 @@ public class ScenarioOptions extends AppCompatActivity {
         //Set screen orientation to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        this.setFinishOnTouchOutside(true);
+
         //Receive Data from Previous screen (ChildrenHome.java)
         Bundle bundle = getIntent().getExtras();
         String ageId = bundle.getString("ageId");
@@ -91,8 +93,9 @@ public class ScenarioOptions extends AppCompatActivity {
             //Formatting
             imageButtons[i].setLayoutParams(lp);
             imageButtons[i].setBackgroundColor(Color.TRANSPARENT);
-            imageButtons[i].setMaxHeight(300);
-            imageButtons[i].setMaxWidth(300);
+            imageButtons[i].setMaxHeight(400);
+            imageButtons[i].setMaxWidth(400);
+            imageButtons[i].setPadding(10, 70, 10, 0);
             imageButtons[i].setAdjustViewBounds(true);
 
             //OnClick options for button
@@ -115,6 +118,7 @@ public class ScenarioOptions extends AppCompatActivity {
 
                                     intent.putExtras(bundle);
 
+                                    finish();
                                     startActivity(intent);
                                 }
                             })
@@ -138,6 +142,7 @@ public class ScenarioOptions extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(ScenarioOptions.this, ChildrenHome.class);
+        finish();
         startActivity(intent);
     }
 }

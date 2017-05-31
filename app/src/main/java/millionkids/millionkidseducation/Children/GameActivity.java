@@ -35,6 +35,7 @@ import java.util.List;
 import millionkids.millionkidseducation.R;
 import millionkids.millionkidseducation.SQLite.Game;
 import millionkids.millionkidseducation.SQLite.GameData;
+import millionkids.millionkidseducation.main.MainHomePage;
 
 public class GameActivity extends AppCompatActivity {
     //Used to set the background image from the SQLite Database
@@ -83,8 +84,6 @@ public class GameActivity extends AppCompatActivity {
         //Store recieved (from previous screen) scenarioId into int scenarioId
         int scenarioId = bundle.getInt("scenarioId");
         String imageText = bundle.getString("imageText");
-
-
 
         //Initial index; set to zero
         index = 0;
@@ -254,6 +253,7 @@ public class GameActivity extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int which) {
                                             //Game jumps back to Game--MainMenu
                                             Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
+                                            finish();
                                             startActivity(intent);
                                         }
                                     })
@@ -271,6 +271,7 @@ public class GameActivity extends AppCompatActivity {
 
     //Display the data onto the UI that is taken in from the Database
     public void displayData(List<Game> games){
+        optionsAvail = false;
         //Stores currentIndex of game
         Game currentIndex = games.get(index);
 
@@ -352,5 +353,9 @@ public class GameActivity extends AppCompatActivity {
     //Disables back button from doing anything
     @Override
     public void onBackPressed(){
+        Intent intentExtras;
+        intentExtras = new Intent(this, ChildrenHome.class);
+        finish();
+        startActivity(intentExtras);
     }
 }

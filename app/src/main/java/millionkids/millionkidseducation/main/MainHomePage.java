@@ -87,11 +87,13 @@ public class MainHomePage extends AppCompatActivity implements View.OnClickListe
             case R.id.bChild:
                 //intent child
                 intentExtras = new Intent(MainHomePage.this, ChildrenHome.class);
+                finish();
                 startActivity(intentExtras);
                 break;
             case R.id.bParent:
                 //intent Parent
                 intentExtras = new Intent(MainHomePage.this, ParentHome.class);
+                finish();
                 startActivity(intentExtras);
                 break;
 //
