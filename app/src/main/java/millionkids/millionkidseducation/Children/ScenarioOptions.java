@@ -82,6 +82,7 @@ public class ScenarioOptions extends AppCompatActivity {
                             }
                         })
                         .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setCancelable(false)
                         .show();
                 e.printStackTrace();
             }
@@ -126,6 +127,7 @@ public class ScenarioOptions extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                 }
                             })
+                            .setCancelable(false)
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
 

@@ -15,7 +15,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -57,6 +60,7 @@ public class GameActivity extends AppCompatActivity {
 
     //Submit Option
     ImageButton submit;
+
 
     //Declaration of GameData
     GameData gameData = new GameData(this);
@@ -102,13 +106,13 @@ public class GameActivity extends AppCompatActivity {
         //Game declaration
         games = new LinkedList<Game>();
 
+
         //Setting scrollable for GameText TextView
         gameText.setMovementMethod(new ScrollingMovementMethod());
 
         //Get GameData depending on ScenarioID
         games = gameData.getGameData(scenarioId);
 
-        this.setFinishOnTouchOutside(true);
 
         //Set Character Image based on resources
         Resources res = getResources();
@@ -125,150 +129,160 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void addListenerButton(){
-        //Link RadioGroup to the RadioGroupXML
-        radioGroup = (RadioGroup)findViewById(R.id.radio);
+            //Link RadioGroup to the RadioGroupXML
+            radioGroup = (RadioGroup) findViewById(R.id.radio);
 
-        //Checks the imageButton "Submit" when OnClick
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Recognize which radioButton is selected
-                int radioButtonId = radioGroup.getCheckedRadioButtonId();
-                final View radioButton = radioGroup.findViewById(radioButtonId);
-                final int selectedId = radioGroup.indexOfChild(radioButton);
-                boolean validSelection = false;
+            //Checks the imageButton "Submit" when OnClick
+            submit.setOnClickListener(new View.OnClickListener() {
 
-                //Get feedback from selectedID.
-                String message = "";
-                if(selectedId == 0){
-                    message = games.get(index).getAnswer1text();
-                    validSelection = true;
-                }else if (selectedId == 1){
-                    message = games.get(index).getAnswer2text();
-                    validSelection = true;
-                }else if (selectedId == 2){
-                    message = games.get(index).getAnswer3text();
-                    validSelection = true;
-                }else{
-                    validSelection = false;
-                }
+                @Override
+                public void onClick(View view) {
+                    //Recognize which radioButton is selected
+                    int radioButtonId = radioGroup.getCheckedRadioButtonId();
+                    final View radioButton = radioGroup.findViewById(radioButtonId);
+                    final int selectedId = radioGroup.indexOfChild(radioButton);
+                    boolean validSelection = false;
 
-                //Check if answer is correct or not, and provide the feedback in the dialog
-                if(games.get(index).getCorrectAnswer() == selectedId) {
-                    //Display if the user selected the correct answer.
-                    new AlertDialog.Builder(GameActivity.this)
-                            .setTitle("Correct")
-                            .setMessage("This is the correct answer: " + message)
-                            .setPositiveButton("Next!", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //Increment index by 1
-                                    index++;
+                    //Get feedback from selectedID.
+                    String message = "";
+                    if (selectedId == 0) {
+                        message = games.get(index).getAnswer1text();
+                        validSelection = true;
+                    } else if (selectedId == 1) {
+                        message = games.get(index).getAnswer2text();
+                        validSelection = true;
+                    } else if (selectedId == 2) {
+                        message = games.get(index).getAnswer3text();
+                        validSelection = true;
+                    } else {
+                        validSelection = false;
+                    }
 
-                                    //Check if Index is equal to the size of games list
-                                    if(index == games.size()){
-                                        new AlertDialog.Builder(GameActivity.this)
-                                                .setTitle("Nice Job!")
-                                                .setMessage("Thank you for playing! We hope you " +
-                                                        "learned a lot! \n\nRemember:" + "\n" +
-                                                        "Be S.A.F.E." + "\n" +
-                                                        "Stay S.A.F.E." +  "\n" +
-                                                        "S - Speak up.         " +  "\n" +
-                                                        "A - Ask first.           " + "\n" +
-                                                        "F - Find help.          " +  "\n" +
-                                                        "E - Educate others.")
-                                                .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
-                                                    public void onClick(DialogInterface dialog, int which) {
-                                                        //Reset index and redisplay data
-                                                        finish();
-                                                        startActivity(getIntent());
-                                                    }
-                                                })
-                                                .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
-                                                    public void onClick(DialogInterface dialog, int which) {
-                                                        //Game jumps back to Game--MainMenu
-                                                        Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
-                                                        startActivity(intent);
-                                                    }
-                                                })
-                                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                                .show();
-                                    }else{
+                    //Check if answer is correct or not, and provide the feedback in the dialog
+                    if (games.get(index).getCorrectAnswer() == selectedId) {
+                        //Display if the user selected the correct answer.
+                        new AlertDialog.Builder(GameActivity.this)
+                                .setTitle("Correct")
+                                .setMessage("This is the correct answer: " + message)
+                                .setPositiveButton("Next!", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //Increment index by 1
+                                        index++;
+
+                                        //Check if Index is equal to the size of games list
+                                        if (index == games.size()) {
+                                            new AlertDialog.Builder(GameActivity.this)
+                                                    .setTitle("Nice Job!")
+                                                    .setMessage("Thank you for playing! We hope you " +
+                                                            "learned a lot! \n\nRemember:" + "\n" +
+                                                            "Be S.A.F.E." + "\n" +
+                                                            "Stay S.A.F.E." + "\n" +
+                                                            "S - Speak up.         " + "\n" +
+                                                            "A - Ask first.           " + "\n" +
+                                                            "F - Find help.          " + "\n" +
+                                                            "E - Educate others.")
+                                                    .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int which) {
+                                                            //Reset index and redisplay data
+                                                            finish();
+                                                            startActivity(getIntent());
+                                                        }
+                                                    })
+                                                    .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int which) {
+                                                            //Game jumps back to Game--MainMenu
+                                                            Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
+                                                            finish();
+                                                            startActivity(intent);
+                                                        }
+                                                    })
+                                                    .setCancelable(false)
+
+                                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                                    .show();
+                                        } else {
                                         /*If there are still questions within the scenario and then
                                         continue*/
-                                        radioGroup.clearCheck();
-                                        displayData(games);
-                                    }
-                                }
-                            })
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
-                }else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
-                    //Display if the user selected the incorrect answer
-                    new AlertDialog.Builder(GameActivity.this)
-                            .setTitle("Let's try again!")
-                            .setMessage("This answer is not the best decision: " + message)
-                            .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // continue with try again
-                                    //radioButton.setVisibility(View.INVISIBLE);
-                                    radioGroup.clearCheck();
-                                }
-                            })
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
-                }
-                else if (!validSelection){
-                    //Check if options are available, if yes display an error dialog
-                    if(optionsAvail) {
-                        new AlertDialog.Builder(GameActivity.this)
-                                .setTitle("Make a Selection")
-                                .setMessage("You must make a selection!")
-                                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        // continue with try again
+                                            radioGroup.clearCheck();
+                                            displayData(games);
+                                        }
                                     }
                                 })
                                 .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setCancelable(false)
                                 .show();
-                    //If no options available allow them to proceed by simply clicking select
-                    }else{
-                        index++;
-                        if(index == games.size()){
+                    } else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
+                        //Display if the user selected the incorrect answer
+                        new AlertDialog.Builder(GameActivity.this)
+                                .setTitle("Let's try again!")
+                                .setMessage("This answer is not the best decision: " + message)
+                                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // continue with try again
+                                        //radioButton.setVisibility(View.INVISIBLE);
+                                        radioGroup.clearCheck();
+                                    }
+                                })
+
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setCancelable(false)
+                                .show();
+                    } else if (!validSelection) {
+                        //Check if options are available, if yes display an error dialog
+                        if (optionsAvail) {
                             new AlertDialog.Builder(GameActivity.this)
-                                    .setTitle("Nice Job!")
-                                    .setMessage("Thank you for playing! We hope you " +
-                                            "learned a lot! Remember:" + "\n" +
-                                            "Be S.A.F.E." + "\n" +
-                                            "Stay S.A.F.E." +  "\n" +
-                                            "S - Speak up.         " +  "\n" +
-                                            "A - Ask first.           " + "\n" +
-                                            "F - Find help.          " +  "\n" +
-                                            "E - Educate others.")
-                                    .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                                    .setTitle("Make a Selection")
+                                    .setMessage("You must make a selection!")
+                                    .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int which) {
-                                            //Reset index and redisplay data
-                                            finish();
-                                            startActivity(getIntent());
-                                        }
-                                    })
-                                    .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            //Game jumps back to Game--MainMenu
-                                            Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
-                                            finish();
-                                            startActivity(intent);
+                                            // continue with try again
                                         }
                                     })
                                     .setIcon(android.R.drawable.ic_dialog_alert)
+                                    .setCancelable(false)
                                     .show();
-                        }else {
-                            radioGroup.clearCheck();
-                            displayData(games);
+                            //If no options available allow them to proceed by simply clicking select
+                        } else {
+                            index++;
+                            if (index == games.size()) {
+                                new AlertDialog.Builder(GameActivity.this)
+                                        .setTitle("Nice Job!")
+                                        .setMessage("Thank you for playing! We hope you " +
+                                                "learned a lot! Remember:" + "\n" +
+                                                "Be S.A.F.E." + "\n" +
+                                                "Stay S.A.F.E." + "\n" +
+                                                "S - Speak up.         " + "\n" +
+                                                "A - Ask first.           " + "\n" +
+                                                "F - Find help.          " + "\n" +
+                                                "E - Educate others.")
+                                        .setPositiveButton("Play Again", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                //Reset index and redisplay data
+                                                finish();
+                                                startActivity(getIntent());
+                                            }
+                                        })
+                                        .setNegativeButton("Main Menu", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                //Game jumps back to Game--MainMenu
+                                                Intent intent = new Intent(GameActivity.this, ChildrenHome.class);
+                                                finish();
+                                                startActivity(intent);
+                                            }
+                                        })
+                                        .setCancelable(false)
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .show();
+                            } else {
+                                radioGroup.clearCheck();
+                                displayData(games);
+                            }
                         }
                     }
                 }
             }
-        });
+            );
+
     }
 
     //Display the data onto the UI that is taken in from the Database
@@ -346,6 +360,7 @@ public class GameActivity extends AppCompatActivity {
                             // continue with try again
                         }
                     })
+                    .setCancelable(false)
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
             e.printStackTrace();
@@ -360,4 +375,6 @@ public class GameActivity extends AppCompatActivity {
         finish();
         startActivity(intentExtras);
     }
+
+
 }
