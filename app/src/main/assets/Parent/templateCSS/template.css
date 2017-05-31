@@ -277,3 +277,5 @@ button::-moz-focus-inner {
     padding: 15px;
     border-radius: 50%;
 }
+
+.addInfo h4 { color: white; }
