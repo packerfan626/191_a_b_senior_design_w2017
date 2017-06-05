@@ -198,7 +198,7 @@ public class GameActivity extends AppCompatActivity {
                                                     })
                                                     .setCancelable(false)
 
-                                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                                    .setIcon(R.drawable.thumbs_up)
                                                     .show();
                                         } else {
                                         /*If there are still questions within the scenario and then
@@ -224,7 +224,7 @@ public class GameActivity extends AppCompatActivity {
                                     }
                                 })
 
-                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setIcon(R.drawable.thumbs_down)
                                 .setCancelable(false)
                                 .show();
                     } else if (!validSelection) {
@@ -238,7 +238,7 @@ public class GameActivity extends AppCompatActivity {
                                             // continue with try again
                                         }
                                     })
-                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                    .setIcon(R.drawable.thumbs_down)
                                     .setCancelable(false)
                                     .show();
                             //If no options available allow them to proceed by simply clicking select
@@ -271,7 +271,7 @@ public class GameActivity extends AppCompatActivity {
                                             }
                                         })
                                         .setCancelable(false)
-                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setIcon(R.drawable.thumbs_up)
                                         .show();
                             } else {
                                 radioGroup.clearCheck();
