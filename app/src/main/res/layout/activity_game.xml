@@ -25,32 +25,36 @@
         android:scrollbars="vertical"
         android:text="Displays text to the user and optionally allows them to edit it. A TextView is a complete text editor, however the basic class is configured to not allow editing; see EditText for a subclass that configures the text view for editing.  To allow users to copy some or all of the TextView's value and paste it somewhere else, set the XML attribute android:textIsSelectable to &quot;true&quot; or call setTextIsSelectable(true). The textIsSelectable flag allows users to make selection gestures in the TextView, which in turn triggers the system's built-in copy/paste controls."
         android:textColor="@android:color/black"
-        tools:layout_constraintTop_creator="1"
         android:layout_marginStart="16dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/childImage"
         android:layout_marginTop="16dp"
         tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="1dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/radio"
-        tools:layout_constraintBottom_creator="1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/submitButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/nextbutton"
         android:scaleType="centerCrop"
         android:background="#00000000"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="10dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView2" />
 
     <ImageView
         android:id="@+id/childImage"
@@ -59,32 +63,28 @@
         app:srcCompat="@drawable/boy5_8"
         android:layout_below="@+id/gameText"
         android:layout_toStartOf="@+id/submitButton"
+        android:layout_marginEnd="215dp"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="215dp"
+        app:layout_constraintBottom_toBottomOf="@+id/radio"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="215dp" />
+        android:layout_marginBottom="14dp" />
 
     <RadioGroup
         android:id="@+id/radio"
-        android:layout_width="257dp"
+        android:layout_width="0dp"
         android:layout_height="118dp"
         android:layout_alignEnd="@+id/gameText"
         android:layout_alignStart="@+id/gameText"
         android:layout_below="@+id/gameText"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toLeftOf="@+id/childImage"
+        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bgImage"
+        android:layout_marginEnd="3dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/childImage"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_marginBottom="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/gameText">
 
         <RadioButton
             android:id="@+id/option1"
@@ -125,17 +125,16 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:layout_marginRight="16dp"
         android:text="Next"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/submitButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/submitButton"
+        android:layout_marginEnd="12dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginBottom="56dp" />
 
 
 </android.support.constraint.ConstraintLayout>

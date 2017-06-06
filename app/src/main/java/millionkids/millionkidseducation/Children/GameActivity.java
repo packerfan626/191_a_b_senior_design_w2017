@@ -208,7 +208,7 @@ public class GameActivity extends AppCompatActivity {
                                         }
                                     }
                                 })
-                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setIcon(R.drawable.thumbs_up)
                                 .setCancelable(false)
                                 .show();
                     } else if (games.get(index).getCorrectAnswer() != selectedId && validSelection) {
